@@ -18,7 +18,7 @@
       "navTitle": "LEGO House Pre & Post Experience",
       "title": "LEGO House",
       "subtitle": "Improving the pre & post experience of world's best pay date",
-      "visible": true,
+      "visible": false,
       "password": "public",
       "order": 0,
       "blocks": [
@@ -404,7 +404,7 @@
       "subtitle": "Image management system for companies",
       "visible": true,
       "password": "public",
-      "order": 2,
+      "order": 4,
       "blocks": [
         {
           "type": "subheading",
@@ -624,7 +624,7 @@
       "subtitle": "Guest journey experience mapping",
       "visible": true,
       "password": "public",
-      "order": 3,
+      "order": 2,
       "blocks": [
         {
           "type": "subheading",
@@ -841,7 +841,7 @@
       "subtitle": "From Entry to Exit: Rethinking Access at LEGO House",
       "visible": true,
       "password": "public",
-      "order": 4,
+      "order": 3,
       "blocks": [
         {
           "type": "subheading",
@@ -1602,7 +1602,7 @@
       "navTitle": "Deccan Herald",
       "title": "Deccan Herald",
       "subtitle": "Helping a legacy a media brand get on the digital bandwagon.",
-      "visible": true,
+      "visible": false,
       "password": "public",
       "order": 7,
       "blocks": [
