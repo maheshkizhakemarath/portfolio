@@ -18,7 +18,7 @@
       "navTitle": "LEGO House Pre & Post Experience",
       "title": "LEGO House",
       "subtitle": "Improving the pre & post experience of world's best pay date",
-      "visible": true,
+      "visible": false,
       "password": "public",
       "order": 0,
       "blocks": [
@@ -38,7 +38,7 @@
         },
         {
           "type": "paragraph",
-          "text": "At LEGO House, I held a hybrid role as Experience Design lead and Senior Product Manager for the pre- and post-visit experience. I was responsible for shaping the end-to-end guest journey\u2014before, during, and after the visit by combining physical, digital, and service touch points into one cohesive experience. I owned the digital guest journey at LEGO House, connecting pre- and post-visit experiences into one unified end user experience."
+          "text": "At LEGO House, I held a hybrid role as Experience Design lead and Senior Product Manager for the pre- and post-visit experience. I was responsible for shaping the end-to-end guest journey—before, during, and after the visit by combining physical, digital, and service touch points into one cohesive experience. I owned the digital guest journey at LEGO House, connecting pre- and post-visit experiences into one unified end user experience."
         },
         {
           "type": "paragraph",
@@ -84,7 +84,7 @@
             "Lead product strategy for pre and post visit digital touch points",
             "Led a multidisciplinary design team spanning UX/UI, industrial design, architecture, and spatial experience.",
             "Replace outdated ticketing infrastructure",
-            "Redesign the \u201cMemories\u201d experience",
+            "Redesign the “Memories” experience",
             "Align tech, experience, and ops teams",
             "Prioritise guest needs through research and insight",
             "Work closely with external vendors and partners"
@@ -187,7 +187,7 @@
         },
         {
           "type": "paragraph",
-          "text": "When LEGO House first opened, the ticketing system was built to support a brand-new attraction with relatively predictable needs. Over seven years, the way guests planned, booked, and experienced their visits changed significantly, and the system gradually began to show its limits. By 2024, it was clear that the platform had outgrown what it was originally designed for, making everyday operations harder and limiting how the experience could evolve. Migrating the ticketing system at LEGO House became a necessary step to meet today\u2019s demand and support the experiences guests now expect."
+          "text": "When LEGO House first opened, the ticketing system was built to support a brand-new attraction with relatively predictable needs. Over seven years, the way guests planned, booked, and experienced their visits changed significantly, and the system gradually began to show its limits. By 2024, it was clear that the platform had outgrown what it was originally designed for, making everyday operations harder and limiting how the experience could evolve. Migrating the ticketing system at LEGO House became a necessary step to meet today’s demand and support the experiences guests now expect."
         },
         {
           "type": "image-row",
@@ -290,7 +290,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Partner Integrations - API\u2019s - Kiosks - Gates - Help desk - exit - Memories"
+          "text": "Partner Integrations - API’s - Kiosks - Gates - Help desk - exit - Memories"
         },
         {
           "type": "paragraph",
@@ -380,7 +380,7 @@
           "items": [
             "Clear ownership is required to reduce, ambiguity.",
             "Involving legal, and accounts early helps fast track the process.",
-            "Trust-building matters \u2013 Addressing security concerns helped increase conversions."
+            "Trust-building matters – Addressing security concerns helped increase conversions."
           ]
         },
         {
@@ -428,7 +428,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Over time, Skyfish\u2019s technology stack had begun to show its age. Years of incremental additions had resulted in a tightly coupled, spaghetti-like codebase, making even small changes risky and time consuming. This slowed down development, limited scalability, and made it increasingly difficult to evolve the product in response to user and business needs, despite the experience itself still being valued by customers."
+          "text": "Over time, Skyfish’s technology stack had begun to show its age. Years of incremental additions had resulted in a tightly coupled, spaghetti-like codebase, making even small changes risky and time consuming. This slowed down development, limited scalability, and made it increasingly difficult to evolve the product in response to user and business needs, despite the experience itself still being valued by customers."
         },
         {
           "type": "subheading",
@@ -524,7 +524,7 @@
         },
         {
           "type": "paragraph",
-          "text": "We moved the front end to React.js and introduced a new design system built on top of MUI ( mui.com ), customised to Skyfish\u2019s visual language and product needs. This gave us a well-supported component library."
+          "text": "We moved the front end to React.js and introduced a new design system built on top of MUI ( mui.com ), customised to Skyfish’s visual language and product needs. This gave us a well-supported component library."
         },
         {
           "type": "paragraph",
@@ -550,7 +550,7 @@
         },
         {
           "type": "paragraph",
-          "text": "By reframing the product around end-to-end workflows and user intent not isolated screens, we were able to enhance key interactions. This shift helped move conversations from \u201cwhy can\u2019t we build this?\u201d to \u201cdoes this make storing and using images easier for our users?\u201d , creating stronger alignment and better decisions across the team."
+          "text": "By reframing the product around end-to-end workflows and user intent not isolated screens, we were able to enhance key interactions. This shift helped move conversations from “why can’t we build this?” to “does this make storing and using images easier for our users?” , creating stronger alignment and better decisions across the team."
         },
         {
           "type": "image-row",
@@ -782,7 +782,7 @@
         },
         {
           "type": "paragraph",
-          "text": "We clustered all the guest signals into themes. Pre and post- experiences are clustered in temporal themes since the journey is linear at this point. Themes during the visit are cross-cutting reflecting the free flow of the house. Each theme is presented as pain points, tensions, or unmet needs (the pink slides) and as opportunity spaces and early solutions (the yellow slides). An opportunity emerges when a theme shows potential for improvement, and a solution is a specific response to that opportunity. One solution can often address multiple \u201cthemes\u201d. The themes make up the foundation for the Dream Bigger scenarios. After prioritisation move into full ideation and look on possible solutions for the chosen scenarios. Thematic categories helped prioritise strategic priorities for further investments of a 4 year strategy cycle."
+          "text": "We clustered all the guest signals into themes. Pre and post- experiences are clustered in temporal themes since the journey is linear at this point. Themes during the visit are cross-cutting reflecting the free flow of the house. Each theme is presented as pain points, tensions, or unmet needs (the pink slides) and as opportunity spaces and early solutions (the yellow slides). An opportunity emerges when a theme shows potential for improvement, and a solution is a specific response to that opportunity. One solution can often address multiple “themes”. The themes make up the foundation for the Dream Bigger scenarios. After prioritisation move into full ideation and look on possible solutions for the chosen scenarios. Thematic categories helped prioritise strategic priorities for further investments of a 4 year strategy cycle."
         },
         {
           "type": "image-row",
@@ -816,7 +816,7 @@
           "type": "list",
           "items": [
             "Developed research briefs for partners to follow.",
-            "Create research protocols in collaboration with partners to conduct ethnographic studies, interviews, and guest observations ensuring rigour and alignment with LEGO\u2019s Brand standards.",
+            "Create research protocols in collaboration with partners to conduct ethnographic studies, interviews, and guest observations ensuring rigour and alignment with LEGO’s Brand standards.",
             "Creating Strategic Alignment: Aligned stakeholders across operations, product, tech, and brand to co-own service challenges and co-create solutions.",
             "Ensure timely completions and project success.",
             "Scaling and Coaching: Mentored designers in adopting service thinking and rituals to make service design repeatable and scalable."
@@ -839,7 +839,7 @@
       "navTitle": "LEGO House Access",
       "title": "LEGO House Access",
       "subtitle": "From Entry to Exit: Rethinking Access at LEGO House",
-      "visible": true,
+      "visible": false,
       "password": "public",
       "order": 4,
       "blocks": [
@@ -1028,7 +1028,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Around 2015\u20132016, AT&T was experiencing explosive growth in connected vehicles, with major automobile manufacturers relying on AT&T to power in-car connectivity. At any given time, close to 30 million SIMs were active across automotive clients alone. While the network scaled successfully, the operational side had not anticipated the volume and complexity of service requests that would follow, specially around connectivity issues, diagnostics, and lifecycle management."
+          "text": "Around 2015–2016, AT&T was experiencing explosive growth in connected vehicles, with major automobile manufacturers relying on AT&T to power in-car connectivity. At any given time, close to 30 million SIMs were active across automotive clients alone. While the network scaled successfully, the operational side had not anticipated the volume and complexity of service requests that would follow, specially around connectivity issues, diagnostics, and lifecycle management."
         },
         {
           "type": "paragraph",
@@ -1102,7 +1102,7 @@
         },
         {
           "type": "paragraph",
-          "text": "These insights became the foundation for identifying where failures occurred, what needed protection, and where proactive monitoring and automation could replace manual effort\u2014directly shaping our \u201chow might we\u201d problem framing and solution direction."
+          "text": "These insights became the foundation for identifying where failures occurred, what needed protection, and where proactive monitoring and automation could replace manual effort—directly shaping our “how might we” problem framing and solution direction."
         },
         {
           "type": "image-row",
@@ -2100,7 +2100,7 @@
       "navTitle": "Figo",
       "title": "Figo",
       "subtitle": "Market place for roaming plans",
-      "visible": true,
+      "visible": false,
       "password": "public",
       "order": 8,
       "blocks": [
@@ -2322,7 +2322,7 @@
       "navTitle": "Zafin",
       "title": "Zafin",
       "subtitle": "Analytical executive dashboard redesign: Data design",
-      "visible": true,
+      "visible": false,
       "password": "public",
       "order": 9,
       "blocks": [
@@ -2361,7 +2361,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Even though most cash management is done digitally, there is still enormous room for error, and financial institutions are failing to capture all revenue possible. McKinsey writes about leakage in the context of what they call dual manual and digital \u201cecosystems\u201d that don\u2019t communicate. \u201cThis leads to leakages on the ground,\u201d the authors write. \u201cFinancial companies therefore need to ensure that the physical and digital worlds merge seamlessly and that there are no break points.\u201d"
+          "text": "Even though most cash management is done digitally, there is still enormous room for error, and financial institutions are failing to capture all revenue possible. McKinsey writes about leakage in the context of what they call dual manual and digital “ecosystems” that don’t communicate. “This leads to leakages on the ground,” the authors write. “Financial companies therefore need to ensure that the physical and digital worlds merge seamlessly and that there are no break points.”"
         },
         {
           "type": "subheading",
@@ -2437,7 +2437,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Purpose: Enable design team to assess and recommend improvements to the analytical dashboard built for LOB\u2019s."
+          "text": "Purpose: Enable design team to assess and recommend improvements to the analytical dashboard built for LOB’s."
         },
         {
           "type": "paragraph",
@@ -2519,7 +2519,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Region centric: Providing the higher level information that user needs pivoting to regions, this concept is minimal and task based. It gives a quick update and doesn\u2019t overwhelm the user with all information at once"
+          "text": "Region centric: Providing the higher level information that user needs pivoting to regions, this concept is minimal and task based. It gives a quick update and doesn’t overwhelm the user with all information at once"
         },
         {
           "type": "paragraph",
@@ -2531,7 +2531,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Conventional: A familiar but effective approach using familiar design patterns, where user can see all data in a single page without any navigation with overlay drill downs so that user doesn\u2019t loose the context."
+          "text": "Conventional: A familiar but effective approach using familiar design patterns, where user can see all data in a single page without any navigation with overlay drill downs so that user doesn’t loose the context."
         },
         {
           "type": "subheading",
