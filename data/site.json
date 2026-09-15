@@ -18,7 +18,7 @@
       "navTitle": "LEGO House Pre & Post Experience",
       "title": "LEGO House",
       "subtitle": "Improving the pre & post experience of world's best pay date",
-      "visible": false,
+      "visible": true,
       "password": "public",
       "order": 0,
       "blocks": [
@@ -839,7 +839,7 @@
       "navTitle": "LEGO House Access",
       "title": "LEGO House Access",
       "subtitle": "From Entry to Exit: Rethinking Access at LEGO House",
-      "visible": false,
+      "visible": true,
       "password": "public",
       "order": 4,
       "blocks": [
