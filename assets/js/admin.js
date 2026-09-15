@@ -307,7 +307,7 @@
       ${
         onCaseStudyPage
           ? '<button type="button" class="admin-btn admin-btn--sm" data-admin-edit-study>Edit this work</button>'
-          : '<button type="button" class="admin-btn admin-btn--sm" data-admin-edit-profile>Edit profile</button><button type="button" class="admin-btn admin-btn--sm" data-admin-manage-studies>Manage past work</button>'
+          : '<button type="button" class="admin-btn admin-btn--sm" data-admin-edit-profile>Edit profile</button><button type="button" class="admin-btn admin-btn--sm" data-admin-manage-studies>Manage Past Work</button>'
       }
       <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-admin-logout>Log out</button>
     `;
@@ -435,7 +435,7 @@
 
     const { overlay, close } = openModal(
       `
-      <h2>Manage past work</h2>
+      <h2>Manage Past Work</h2>
       <p class="admin-modal-hint">Use ↑ / ↓ to change the order your past work appears in on the home page.</p>
       <div class="admin-study-list" data-rows></div>
       <div class="admin-new-study">
