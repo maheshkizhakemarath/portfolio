@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Status Pages (template) — Mahesh Marath</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <script>
+    if (localStorage.getItem("mkm-case-study-unlocked") !== "true") {
+      document.documentElement.classList.add("gate-locked");
+    }
+  </script>
+
+  <div class="password-gate">
+    <form class="password-gate-card" data-password-gate-form>
+      <h2>This case study is password protected</h2>
+      <p>Enter the password to view this case study.</p>
+      <div class="password-gate-form">
+        <input type="password" name="password" placeholder="Password" autocomplete="off" required />
+        <button type="submit">Unlock</button>
+      </div>
+      <p class="password-gate-error" data-password-gate-error></p>
+    </form>
+  </div>
+
+  <div class="page">
+    <div class="shell">
+      <header class="site-header site-header--case">
+        <a href="../index.html" class="logo-link" aria-label="Mahesh Marath — home">
+          <svg class="logo" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.9336 0C18 0.000152785 19.9999 2.18657 20 5.51953V5.77344C20 6.3257 19.5523 6.77341 19 6.77344H16.9072C16.4062 6.77344 16 6.36726 16 5.86621C15.9999 4.53313 15.3599 3.67975 14.0801 3.67969C12.7467 3.67969 12 4.61323 12 6.18652C12 6.63578 11.6358 6.99997 11.1865 7H9C8.44771 7 8 6.55228 8 6V5.86621C7.9999 4.53313 7.35989 3.67975 6.08008 3.67969C4.74675 3.67969 4 4.61323 4 6.18652V12.7061C4 13.2583 3.55226 13.706 3 13.7061H1C0.447715 13.7061 4.47514e-09 13.2583 0 12.7061V1.02441C1.69755e-07 0.472129 0.447715 0.0244141 1 0.0244141H3.63086C3.8346 0.0246679 3.99978 0.189802 4 0.393555C4 0.757888 4.54724 0.958514 4.84668 0.750977C5.50489 0.294835 6.40873 1.4897e-05 7.57324 0C8.55938 9.32133e-06 9.38843 0.25137 10.0537 0.714844C10.6312 1.11718 11.519 1.12988 12.1064 0.742188C12.8163 0.27377 13.7434 0 14.9336 0ZM11 11C11.5523 11 12 11.4477 12 12V12.7061C12 13.2583 11.5523 13.706 11 13.7061H9C8.44771 13.7061 8 13.2583 8 12.7061V12C8 11.4477 8.44772 11 9 11H11ZM19 10.8623C19.5523 10.8623 20 11.31 20 11.8623V12.7061C20 13.2583 19.5523 13.706 19 13.7061H17C16.4477 13.7061 16 13.2583 16 12.7061V11.8623C16 11.31 16.4477 10.8623 17 10.8623H19ZM15 6.75586C15.5522 6.75591 16 7.20361 16 7.75586V9.84375C16 10.396 15.5522 10.8437 15 10.8438H12.9111C12.3588 10.8438 11.9111 10.396 11.9111 9.84375V7.75586C11.9111 7.20357 12.3588 6.75586 12.9111 6.75586H15Z" fill="#171717"/>
+          </svg>
+        </a>
+      </header>
+
+      <main class="column">
+        <h1 class="case-title">Project name</h1>
+
+        <button type="button" class="case-hero case-shot" data-preview data-preview-alt="Status page redesign — full view">
+          <div class="mock-window">
+            <div class="mock-brand">OpenAI</div>
+            <div class="mock-status-banner"><span class="dot"></span> We're fully operational</div>
+            <div class="mock-status-sub">We're not aware of any issues affecting our systems.</div>
+
+            <div class="mock-card">
+              <div class="mock-card-title"><span>System status</span><span>‹ Feb 2025 ›</span></div>
+
+              <div class="mock-row"><span>✓ Application <em style="font-style:normal;opacity:.7">2 components</em></span><span>99.999% uptime</span></div>
+              <div class="mock-uptime-bar"><span class="accent" style="left:52%"></span><span class="accent amber" style="left:78%"></span></div>
+
+              <div class="mock-row" style="margin-top:10px"><span>✓ GraphQL API <em style="font-style:normal;opacity:.7">2 components</em></span><span>99.999% uptime</span></div>
+              <div class="mock-uptime-bar"><span class="accent blue" style="left:38%"></span><span class="accent red" style="left:60%"></span></div>
+
+              <div class="mock-row" style="margin-top:10px"><span>✓ Integrations <em style="font-style:normal;opacity:.7">2 components</em></span><span>99.999% uptime</span></div>
+              <div class="mock-uptime-bar"><span class="accent" style="left:52%"></span><span class="accent amber" style="left:78%"></span></div>
+            </div>
+
+            <div class="mock-card">
+              <div class="mock-card-title"><span>Calendar</span><span>‹ Feb 2025 ›</span></div>
+              <div class="mock-cal-grid">
+                <span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span>
+                <span></span><span></span><span></span><span></span><span></span><span></span><span class="day">1</span>
+                <span class="day today">2</span><span class="day">3</span><span class="day">4</span><span class="day">5</span><span class="day">6</span><span class="day">7</span><span class="day">8</span>
+                <span class="day">9</span><span class="day">10</span><span class="day flag-red">11</span><span class="day flag-red">12</span><span class="day selected">13</span><span class="day">14</span><span class="day">15</span>
+                <span class="day">16</span><span class="day">17</span><span class="day">18</span><span class="day">19</span><span class="day">20</span><span class="day">21</span><span class="day">22</span>
+                <span class="day">23</span><span class="day">24</span><span class="day">25</span><span class="day">26</span><span class="day">27</span><span class="day">28</span><span class="day flag-blue">29</span>
+              </div>
+            </div>
+
+            <div class="mock-logos">
+              <span>Etsy</span><span>HashiCorp</span><span>Square</span><span>Linear</span><span class="active">OpenAI</span>
+            </div>
+          </div>
+        </button>
+        <p class="case-caption">Our new Status Pages, as used by OpenAI and friends.</p>
+
+        <section class="case-section">
+          <h2>Context</h2>
+          <p>Incident.io provides tools for managing and communicating incidents, including hosted status pages used by companies like Linear, HashiCorp, Etsy and Square. These pages were already live in production for hundreds of paying customers and often used during outages, so stability and visual consistency were critical.</p>
+          <p>In early 2023, OpenAI committed to adopting our status pages, bringing with them a huge audience: their existing Atlassian-hosted page had around 250,000 subscribers — 10x more than our second-largest customer at the time. It was a major opportunity and a reputational risk. But the pages hadn't been touched in months and no team currently owned them.</p>
+        </section>
+
+        <section class="case-section">
+          <h2>Problem</h2>
+          <p>The existing pages had drifted significantly from our design system. Years of small tweaks had created visual clutter: duplicate components, gradients, inconsistent spacing, and unclear hierarchy.</p>
+          <p>Because major customers were already using the pages, the redesign had a strict constraint: it had to modernise the experience without breaking trust or disrupting existing users. These companies were historically very sensitive to visual change — any unexpected modification risked support tickets or frustration during an outage.</p>
+        </section>
+
+        <div class="case-image-row">
+          <button type="button" class="case-shot" data-preview data-preview-alt="Status page — before">
+            <div class="mock-window compact">
+              <div class="mock-brand">OpenAI</div>
+              <div class="mock-status-banner"><span class="dot"></span> We're fully operational</div>
+              <div class="mock-card" style="margin-top:10px">
+                <div class="mock-card-title" style="font-size:10px"><span>System status</span></div>
+                <div class="mock-uptime-bar"></div>
+                <div class="mock-uptime-bar"></div>
+                <div class="mock-uptime-bar"></div>
+              </div>
+            </div>
+          </button>
+          <button type="button" class="case-shot" data-preview data-preview-alt="Incident update page">
+            <div class="mock-window compact">
+              <div class="mock-brand" style="justify-content:space-between;display:flex"><span>My website</span><span style="font-weight:400;opacity:.6;font-size:9px">Subscribe to updates</span></div>
+              <div class="mock-card" style="margin-top:10px">
+                <div class="mock-card-title"><span>Elevated error rate</span><span style="font-weight:400;opacity:.6">Open</span></div>
+                <div class="mock-row"><span>Started</span><span>14 Feb 2025, 08:14</span></div>
+                <div class="mock-row"><span>Affected components</span><span></span></div>
+                <div class="mock-uptime-bar"></div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-title"><span>Updates</span></div>
+                <ul class="mock-list">
+                  <li><span>Further updates will appear here soon</span></li>
+                  <li><span>Monitoring</span><span style="opacity:.6">08:41</span></li>
+                  <li><span>Investigating</span><span style="opacity:.6">08:14</span></li>
+                </ul>
+              </div>
+            </div>
+          </button>
+        </div>
+        <p class="case-caption">Our new Status Pages, as used by OpenAI and friends.</p>
+
+        <section class="case-section">
+          <h2>Solution</h2>
+          <p>A clean, minimal, trustworthy status-page design that aligned with our design system, presented information clearly, and stayed visually neutral across customers. The new layout improved readability, simplified the hierarchy, and removed the visual "jank" that had accumulated over time.</p>
+        </section>
+
+        <div class="case-image-row">
+          <button type="button" class="case-shot" data-preview data-preview-alt="Status page — after, light">
+            <div class="mock-window compact">
+              <div class="mock-brand">OpenAI</div>
+              <div class="mock-status-banner"><span class="dot"></span> We're fully operational</div>
+              <div class="mock-card" style="margin-top:10px">
+                <div class="mock-card-title" style="font-size:10px"><span>System status</span></div>
+                <div class="mock-uptime-bar"></div>
+                <div class="mock-uptime-bar"></div>
+                <div class="mock-uptime-bar"></div>
+              </div>
+            </div>
+          </button>
+          <button type="button" class="case-shot" data-preview data-preview-alt="Incident update page — after">
+            <div class="mock-window compact">
+              <div class="mock-brand" style="justify-content:space-between;display:flex"><span>My website</span><span style="font-weight:400;opacity:.6;font-size:9px">Subscribe to updates</span></div>
+              <div class="mock-card" style="margin-top:10px">
+                <div class="mock-card-title"><span>Elevated error rate</span><span style="font-weight:400;opacity:.6">Open</span></div>
+                <div class="mock-row"><span>Started</span><span>14 Feb 2025, 08:14</span></div>
+                <div class="mock-row"><span>Affected components</span><span></span></div>
+                <div class="mock-uptime-bar"></div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-card-title"><span>Updates</span></div>
+                <ul class="mock-list">
+                  <li><span>Further updates will appear here soon</span></li>
+                  <li><span>Monitoring</span><span style="opacity:.6">08:41</span></li>
+                  <li><span>Investigating</span><span style="opacity:.6">08:14</span></li>
+                </ul>
+              </div>
+            </div>
+          </button>
+        </div>
+        <p class="case-caption">Our new Status Pages, as used by OpenAI and friends.</p>
+
+        <section class="case-section">
+          <h2>Impact</h2>
+          <p>The redesign launched ahead of OpenAI's rollout and was viewed by hundreds of thousands of users within the first weeks. Despite the sensitivity of our existing customer base — including Linear, HashiCorp, Etsy and Square — the launch resulted in zero complaints, demonstrating that we improved the product without disrupting expectations.</p>
+          <p>Internal feedback was extremely positive, and the redesign became a reference point for customer-facing surfaces across incident.io. It also strengthened trust with enterprise prospects and set the visual foundation for future product marketing surfaces.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2026 Mahesh Marath</p>
+        <div class="theme-toggle" role="group" aria-label="Theme">
+          <button type="button" data-theme-btn="light" aria-pressed="true" aria-label="Light theme">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M8 1v1.5M8 13.5V15M15 8h-1.5M2.5 8H1M12.95 3.05l-1.06 1.06M4.11 11.89l-1.06 1.06M12.95 12.95l-1.06-1.06M4.11 4.11L3.05 3.05" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button type="button" data-theme-btn="dark" aria-pressed="false" aria-label="Dark theme">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.34 9.24A5.6 5.6 0 016.76 2.66a5.6 5.6 0 106.58 6.58Z" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="lightbox" data-lightbox>
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close preview">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <div class="lightbox-card">
+      <div data-lightbox-body></div>
+    </div>
+  </div>
+
+  <script src="../assets/js/site.js"></script>
+</body>
+</html>

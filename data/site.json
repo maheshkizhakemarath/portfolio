@@ -1,0 +1,2585 @@
+{
+  "about": {
+    "name": "Mahesh Marath",
+    "role": "VP of design at Qualitia",
+    "bio": [
+      "I am a design leader with 17+ years of experience in digital product design, product strategy, and people leadership."
+    ]
+  },
+  "connect": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mahesh-marath/"
+    }
+  ],
+  "caseStudies": [
+    {
+      "slug": "lego-house-pre-post",
+      "navTitle": "LEGO House Pre & Post Experience",
+      "title": "LEGO House",
+      "subtitle": "Improving the pre & post experience of world's best pay date",
+      "visible": true,
+      "password": "public",
+      "order": 0,
+      "blocks": [
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-pre-post/img-01.jpg",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "My role @ LEGO House"
+        },
+        {
+          "type": "paragraph",
+          "text": "At LEGO House, I held a hybrid role as Experience Design lead and Senior Product Manager for the pre- and post-visit experience. I was responsible for shaping the end-to-end guest journey\u2014before, during, and after the visit by combining physical, digital, and service touch points into one cohesive experience. I owned the digital guest journey at LEGO House, connecting pre- and post-visit experiences into one unified end user experience."
+        },
+        {
+          "type": "paragraph",
+          "text": "Key contributions included:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Introducing and implementing service design as a core practice, aligning internal teams around guest journeys, service blueprints, and operational touch points.",
+            "Leading the UX and experience strategy across interactive installations, digital platforms, and support services",
+            "Driving product discovery and delivery for pre- and post-visit experiences such as planning tools, personalised content, and memory creation. This role was loosely designed structured to embedding service design thinking into how LEGO House serves its guests holistically."
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "What does Pre & Post look like"
+        },
+        {
+          "type": "paragraph",
+          "text": "My role was to manage the digital and service touch points before and after a guest visits LEGO House from ticketing and planning to post-visit memories and re-engagement."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-pre-post/img-02.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "My Mission @ LEGO House"
+        },
+        {
+          "type": "paragraph",
+          "text": "To create a frictionless, emotionally resonant journey that enhances anticipation before the visit and extends brand connection long after guests leave."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Lead product strategy for pre and post visit digital touch points",
+            "Led a multidisciplinary design team spanning UX/UI, industrial design, architecture, and spatial experience.",
+            "Replace outdated ticketing infrastructure",
+            "Redesign the \u201cMemories\u201d experience",
+            "Align tech, experience, and ops teams",
+            "Prioritise guest needs through research and insight",
+            "Work closely with external vendors and partners"
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-pre-post/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "My Contributions @ LEGO House"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-pre-post/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Ticketing System Migration"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Scoped and led migration from legacy ticketing to a modern, scalable platform.",
+            "Balanced backend operational needs with an improved guest-facing flow.",
+            "Enabled better data capture, smoother check-ins, and personalisation opportunities. Check out."
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-pre-post/img-05.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Redesigning Memories"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Identified and framed key friction points in the guest memory retrieval experience.",
+            "Facilitated cross-functional workshops with internal and external partners.",
+            "Led rollout of a simplified digital journey that boosted memory access success and guest delight. Check out."
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-pre-post/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Guest Journey Mapping"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mapped the full guest lifecycle across digital and physical touch points (pre, during, post)",
+            "Revealed gaps, emotional highs/lows, and unmet needs",
+            "Used journey maps as strategic tools to align teams and prioritise Investment opportunities. Check out."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lego-house-ticketing-migration",
+      "navTitle": "LEGO House Ticketing Migration",
+      "title": "LEGO House Ticketing Migration",
+      "subtitle": "Rebuilding the foundation to enable future growth and flexibility",
+      "visible": true,
+      "password": "public",
+      "order": 1,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Overview"
+        },
+        {
+          "type": "paragraph",
+          "text": "When LEGO House first opened, the ticketing system was built to support a brand-new attraction with relatively predictable needs. Over seven years, the way guests planned, booked, and experienced their visits changed significantly, and the system gradually began to show its limits. By 2024, it was clear that the platform had outgrown what it was originally designed for, making everyday operations harder and limiting how the experience could evolve. Migrating the ticketing system at LEGO House became a necessary step to meet today\u2019s demand and support the experiences guests now expect."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-01.jpg",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Challenges"
+        },
+        {
+          "type": "paragraph",
+          "text": "Out dated tech backbone. Bespoke & rigid for changes."
+        },
+        {
+          "type": "paragraph",
+          "text": "Unreliable, Often had downtime when there were high load."
+        },
+        {
+          "type": "paragraph",
+          "text": "No support from the vendor (previous) leaving us helpless."
+        },
+        {
+          "type": "paragraph",
+          "text": "Guest ops team had to mobilise resources from time to time."
+        },
+        {
+          "type": "paragraph",
+          "text": "Unable to scale products to 9+ different ticket types."
+        },
+        {
+          "type": "subheading",
+          "text": "Solution"
+        },
+        {
+          "type": "paragraph",
+          "text": "In order to support growth ambition, we replaced current custom-built solution with a market-ready, off-the-shelf platform from Visit Group . This allowed us to adopt a proven ticketing foundation while focusing our efforts on configuration, integration, and experience quality rather than maintaining bespoke infrastructure."
+        },
+        {
+          "type": "subheading",
+          "text": "Discovery"
+        },
+        {
+          "type": "paragraph",
+          "text": "6 teams were impacted by the platform change that served 7 years ! Some felt relieved and for some it was a new opportunity"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Marketing",
+            "Guest Exp: / Ops team",
+            "Tours team",
+            "Facilities",
+            "Experience team"
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-02.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Guest Touch points impacted in the migration"
+        },
+        {
+          "type": "paragraph",
+          "text": "The ticketing system sat at the core of LEGO House , influencing every part of its day-to-day operation. From guest entry and capacity planning to retail, experiences, and post-visit touchpoints. To understand the full impact of changing this backbone system, I created a holistic journey map by working closely with department heads across operations, guest services, retail, and other teams. These conversations helped surface hidden dependencies, pain points, and risks, allowing us to see the system not just as technology, but as a connected experience across people, processes, and platforms."
+        },
+        {
+          "type": "subheading",
+          "text": "Roadmap & Rollout Strategy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Stage 1 : Launch AFOL Day tickets Test Hero/Core Flow"
+        },
+        {
+          "type": "paragraph",
+          "text": "Purchase ticket - Redeem wrist bands - Enter LH Gates - Experience zones - Exit"
+        },
+        {
+          "type": "paragraph",
+          "text": "Stage 2 : Fix all bells & whistles Test Peripherals"
+        },
+        {
+          "type": "paragraph",
+          "text": "Partner Integrations - API\u2019s - Kiosks - Gates - Help desk - exit - Memories"
+        },
+        {
+          "type": "paragraph",
+          "text": "Stage 3 : Go all in Full launch"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-04.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-05.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Outcome"
+        },
+        {
+          "type": "paragraph",
+          "text": "Improved system stability"
+        },
+        {
+          "type": "paragraph",
+          "text": "Faster turn around for changes"
+        },
+        {
+          "type": "paragraph",
+          "text": "Allowed us to grow to 360K Guests"
+        },
+        {
+          "type": "paragraph",
+          "text": "Better Revenue protection during peak seasons"
+        },
+        {
+          "type": "paragraph",
+          "text": "Reduced operational and support overhead"
+        },
+        {
+          "type": "paragraph",
+          "text": "Frictionless flow across Kiosk and gates & Exp: zones"
+        },
+        {
+          "type": "paragraph",
+          "text": "2.5x more footprints on our memories"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Before"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-07.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "After"
+        },
+        {
+          "type": "subheading",
+          "text": "Learnings"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Clear ownership is required to reduce, ambiguity.",
+            "Involving legal, and accounts early helps fast track the process.",
+            "Trust-building matters \u2013 Addressing security concerns helped increase conversions."
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Next Steps"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Continue roadmap & prioritise for v2 of ticketing implementation",
+            "Create prioritised list based on user feedbacks and stakeholder input",
+            "Identify new opportunities working with stakeholders & exec: leadership"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "skyfish",
+      "navTitle": "Skyfish",
+      "title": "Skyfish",
+      "subtitle": "Image management system for companies",
+      "visible": true,
+      "password": "public",
+      "order": 2,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Overview"
+        },
+        {
+          "type": "paragraph",
+          "text": "Skyfish is a digital asset management (DAM) platform that helps teams store, organise, and distribute visual content at scale. It is used by organisations that rely heavily on images and videos. It is mostly used by marketing teams where speed, consistency, and governance are essential."
+        },
+        {
+          "type": "paragraph",
+          "text": "Skyfish also handles the contractual and usage rights tied to images, helping businesses stay compliant and avoid legal risk. By tracking licenses, usage terms, and expiry conditions alongside each asset, the platform ensures content is used correctly across channels. This combination of asset management and rights control allows teams to work confidently, knowing their visual content is both accessible and legally safe, while being highly collaborative."
+        },
+        {
+          "type": "paragraph",
+          "text": "Skyfish is Scandinavia's most trusted brands among major corporations and public sectors like all Kommunes in Denmark, Norway & other Scandinavian countries. DSB, Novo nordisk, SKAT, Nordea etc."
+        },
+        {
+          "type": "subheading",
+          "text": "Problem"
+        },
+        {
+          "type": "paragraph",
+          "text": "Over time, Skyfish\u2019s technology stack had begun to show its age. Years of incremental additions had resulted in a tightly coupled, spaghetti-like codebase, making even small changes risky and time consuming. This slowed down development, limited scalability, and made it increasingly difficult to evolve the product in response to user and business needs, despite the experience itself still being valued by customers."
+        },
+        {
+          "type": "subheading",
+          "text": "Solution"
+        },
+        {
+          "type": "paragraph",
+          "text": "We took a decision to modernise the tech architecture without disrupting experience. The solution was a complete re-architecture of the platform, decoupling core systems and keep the overall experience similar. As we migrated, we introduced small, improvements where it made sense. This approach allowed us a smooth transition for existing customers."
+        },
+        {
+          "type": "subheading",
+          "text": "Role"
+        },
+        {
+          "type": "paragraph",
+          "text": "Head of Product Design"
+        },
+        {
+          "type": "subheading",
+          "text": "Tools"
+        },
+        {
+          "type": "paragraph",
+          "text": "Figma, Miro"
+        },
+        {
+          "type": "subheading",
+          "text": "Team"
+        },
+        {
+          "type": "paragraph",
+          "text": "2 UX designers, 4 developers"
+        },
+        {
+          "type": "subheading",
+          "text": "Challeneges"
+        },
+        {
+          "type": "paragraph",
+          "text": "When I joined Skyfish, the product was not in a good state. Years of accumulated technical and design debt, spaghetti code, where even small changes took an enormous amount of time and coordination. Product decisions were constrained by technology, requiring repeated alignment with engineering just to understand what was feasible."
+        },
+        {
+          "type": "paragraph",
+          "text": "This had a direct impact on the business. Customers were loosing trust, with a churn rate of around 10%, and several key product areas were still stuck in an MVP state. Users were vocal about their dissatisfaction with the core experience, while the team struggled to move fast enough to respond."
+        },
+        {
+          "type": "paragraph",
+          "text": "One of the biggest challenges was breaking this cycle, creating alignment between product, design, and engineering, and influencing a shift in technical direction that would allow faster decision-making and meaningful progress again."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/skyfish/img-01.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Step1: Creating a shared awarness"
+        },
+        {
+          "type": "paragraph",
+          "text": "The first step was to bring the organisation together around a shared understanding of the problem. While symptoms showed up in the user experience, delivery speed, and churn, the root cause was largely hidden in the underlying tech stack."
+        },
+        {
+          "type": "paragraph",
+          "text": "To make this visible, I initiated a cross-functional workshop where product, design, engineering, and business stakeholders jointly mapped the as-is customer journey. By walking through real scenarios and identifying friction points end to end, it became clear how technical constraints were shaping and often limiting the experience."
+        },
+        {
+          "type": "paragraph",
+          "text": "This exercise helped shift the conversation from isolated issues to systemic problems. It created alignment, reduced finger-pointing, and built a common language for why change was necessary setting the foundation for decisions around architecture, priorities, and pace moving forward at Skyfish."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/skyfish/img-02.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Journey mapping & identifying frictions to be address in an AS-IS map"
+        },
+        {
+          "type": "subheading",
+          "text": "Step2: Resolve tech stack and design govenrance"
+        },
+        {
+          "type": "paragraph",
+          "text": "We moved the front end to React.js and introduced a new design system built on top of MUI ( mui.com ), customised to Skyfish\u2019s visual language and product needs. This gave us a well-supported component library."
+        },
+        {
+          "type": "paragraph",
+          "text": "Alongside the tech shift, we established clearer design governance. Shared components, patterns, and interaction rules were documented and maintained in a central design library, reducing duplication and guesswork."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/skyfish/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Surveys"
+        },
+        {
+          "type": "paragraph",
+          "text": "The core promise of Skyfish is simple: making image storage and usage easy, safe, and dependable for teams. My role was to reconnect everyday design decisions back to that promise, and to ensure every interaction added real impact for user."
+        },
+        {
+          "type": "paragraph",
+          "text": "By reframing the product around end-to-end workflows and user intent not isolated screens, we were able to enhance key interactions. This shift helped move conversations from \u201cwhy can\u2019t we build this?\u201d to \u201cdoes this make storing and using images easier for our users?\u201d , creating stronger alignment and better decisions across the team."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/skyfish/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "For"
+        },
+        {
+          "type": "subheading",
+          "text": "Example ..."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/skyfish/img-05.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/skyfish/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Before - 2020"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/skyfish/img-07.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "After - 2023"
+        },
+        {
+          "type": "subheading",
+          "text": "Impact"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Reduced churn to almost zero.",
+            "12% higher feature adoption resulting in DKK 4 million revenue growth.",
+            "Clearer value proposition for business; reduced sales cycle from 9 months to 6."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lego-house-journey",
+      "navTitle": "LEGO House Journey",
+      "title": "LEGO House Journey",
+      "subtitle": "Guest journey experience mapping",
+      "visible": true,
+      "password": "public",
+      "order": 3,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Overview"
+        },
+        {
+          "type": "paragraph",
+          "text": "LEGO House was going through an evaluation period of a 4 year long strategic initiatives. This was the time when all the tech has been rebuilt in the house, and was the perfect storm period to look at how to improve the guest experience with the new tech backbone. This when we decided to conduct a time bound journey mapping exercise."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-01.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "We wanted to understanding the guest from the outside in. Also to explore how the experience is actually lived, felt and navigated by different types of guests, pre, during and post. Based on that understanding, we define the as-is journey and provide a clear view of the underlying pain points that shape it. Along the way, we also identify the moments that create emotional lift and deep connection. We call these magic makers. They are what make the experience unforgettable and should be protected and amplified as the journey evolves."
+        },
+        {
+          "type": "subheading",
+          "text": "State of affair State of affair today"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-02.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Methodology"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "IMMERSIVE FIELDWORK"
+        },
+        {
+          "type": "paragraph",
+          "text": "Over a period of two months we have conducted a multitude of observations, semi-structured and structured interviews talking to and observing guests from Bermuda to Ballerup."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "PATTEN CLUSTERING"
+        },
+        {
+          "type": "paragraph",
+          "text": "Triangulated data from interviews, behaviour and observations analysed and clustered with the LEGO House team. Identified key dynamics across the journey, including friction points and emotional highs."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-05.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "SYNTHESIS & MAPPING"
+        },
+        {
+          "type": "paragraph",
+          "text": "Insights condensed into an as-is guest journey and thematic clusters. Designed to inform the next phase: to- be journey mapping and opportunity space exploration."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "50+"
+        },
+        {
+          "type": "paragraph",
+          "text": "Brief interviews, with 12 nationalities"
+        },
+        {
+          "type": "paragraph",
+          "text": "20+"
+        },
+        {
+          "type": "paragraph",
+          "text": "Semi structured interviews, with 7 nationalities"
+        },
+        {
+          "type": "paragraph",
+          "text": "100+ HOURS"
+        },
+        {
+          "type": "paragraph",
+          "text": "Desktop research: internal docs., brand assets, etc."
+        },
+        {
+          "type": "paragraph",
+          "text": "200+ HOURS"
+        },
+        {
+          "type": "paragraph",
+          "text": "Data triangulation: from interviews & observations"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-07.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Outcome: AS-IS Guest journey map"
+        },
+        {
+          "type": "subheading",
+          "text": "Thematic categories"
+        },
+        {
+          "type": "paragraph",
+          "text": "We clustered all the guest signals into themes. Pre and post- experiences are clustered in temporal themes since the journey is linear at this point. Themes during the visit are cross-cutting reflecting the free flow of the house. Each theme is presented as pain points, tensions, or unmet needs (the pink slides) and as opportunity spaces and early solutions (the yellow slides). An opportunity emerges when a theme shows potential for improvement, and a solution is a specific response to that opportunity. One solution can often address multiple \u201cthemes\u201d. The themes make up the foundation for the Dream Bigger scenarios. After prioritisation move into full ideation and look on possible solutions for the chosen scenarios. Thematic categories helped prioritise strategic priorities for further investments of a 4 year strategy cycle."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-08.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "10 Thematic areas to invest in ..."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-09.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "My role ..."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Developed research briefs for partners to follow.",
+            "Create research protocols in collaboration with partners to conduct ethnographic studies, interviews, and guest observations ensuring rigour and alignment with LEGO\u2019s Brand standards.",
+            "Creating Strategic Alignment: Aligned stakeholders across operations, product, tech, and brand to co-own service challenges and co-create solutions.",
+            "Ensure timely completions and project success.",
+            "Scaling and Coaching: Mentored designers in adopting service thinking and rituals to make service design repeatable and scalable."
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-journey/img-10.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "lego-house-access",
+      "navTitle": "LEGO House Access",
+      "title": "LEGO House Access",
+      "subtitle": "From Entry to Exit: Rethinking Access at LEGO House",
+      "visible": true,
+      "password": "public",
+      "order": 4,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Overview"
+        },
+        {
+          "type": "paragraph",
+          "text": "At LEGO House, the wristband is far more than an entry pass, it is the backbone of the entire experience. From the moment a guest enters, the wristband carries essential user information and acts as a single point of access across the house."
+        },
+        {
+          "type": "paragraph",
+          "text": "Using RFID scanning, the wristband seamlessly recognises and validates guests at different touchpoints, allowing them to move freely and enjoy experiences without friction. Every scan quietly connects the physical and digital worlds, enabling play, participation, and personalisation throughout the visit."
+        },
+        {
+          "type": "paragraph",
+          "text": "The wristband also holds the key to memories. When guests return home, it unlocks the creations and moments they made inside LEGO House extending the experience beyond the visit itself. Without the wristband, there is no LEGO House experience; it carries both the weight of access and the emotional value of memories."
+        },
+        {
+          "type": "subheading",
+          "text": "The real Challenge"
+        },
+        {
+          "type": "paragraph",
+          "text": "Users had to solve a puzzle to access their memories, due to which not many attempted to access !!!"
+        },
+        {
+          "type": "paragraph",
+          "text": "Guests needed to keep either of the two visitor materials to access memories, This was causing less users to access their memories. Also guests were not aware that they had to preserve these guest materials."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-access/img-01.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Solution"
+        },
+        {
+          "type": "paragraph",
+          "text": "Transforming a Clunky Process into a Seamless Memory Journey : A Simple 2 step process"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-access/img-02.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "What did it take to achieve the solution"
+        },
+        {
+          "type": "paragraph",
+          "text": "It required aligning the right people, resources, and timing to make meaningful progress. To move away from friction and give guests better experience, I had to rally the right people , shape the vision, and build the momentum for change. Here are some milestones achieved by me in order to get to final result."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Identify friction & time it in the project",
+            "Secured stakeholder buy-in",
+            "Define the problem strategically",
+            "Identified budget and resourcing",
+            "Converge operational mindset",
+            "Plan cross-functional workshops & collabs",
+            "Mapped the path to delivery"
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-access/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Understanding how it impacts: Wrist band / Booking information travels with the user from the moment a ticket is booked to reliving the experience"
+        },
+        {
+          "type": "subheading",
+          "text": "Solution"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-access/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Before"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-access/img-05.gif",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "After"
+        },
+        {
+          "type": "subheading",
+          "text": "My role in the project"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Initiating change",
+            "Framing the strategy",
+            "Align stakeholders & convene",
+            "System Thinker",
+            "Product Owner & Execution Lead",
+            "Experience advocate"
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "My role in the project"
+        },
+        {
+          "type": "list",
+          "items": [
+            "LEGO House: Experience Designers + Engineers Marketing team Guest experience",
+            "Visit group: Ticketing Partner",
+            "Wrist band vendors",
+            "Trifork- Eng: partner"
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Impact"
+        },
+        {
+          "type": "paragraph",
+          "text": "The solution delivered a frictionless way for guests to access their LEGO House memories"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/lego-house-access/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "at-t",
+      "navTitle": "AT&T",
+      "title": "AT&T",
+      "subtitle": "IoT connectivity management platform",
+      "visible": true,
+      "password": "public",
+      "order": 5,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Overview"
+        },
+        {
+          "type": "paragraph",
+          "text": "Around 2015\u20132016, AT&T was experiencing explosive growth in connected vehicles, with major automobile manufacturers relying on AT&T to power in-car connectivity. At any given time, close to 30 million SIMs were active across automotive clients alone. While the network scaled successfully, the operational side had not anticipated the volume and complexity of service requests that would follow, specially around connectivity issues, diagnostics, and lifecycle management."
+        },
+        {
+          "type": "paragraph",
+          "text": "As device volumes increased, so did customer support escalations. Troubleshooting connectivity problems was slow, fragmented, and heavily dependent on manual processes and internal tools not designed for this scale. The lack of real-time visibility into device status quickly became a critical business risk, impacting both AT&T teams and their automotive partners."
+        },
+        {
+          "type": "paragraph",
+          "text": "Recognising this gap, AT&T decided to invest in a dedicated digital platform that would allow enterprises to monitor, manage, and diagnose connectivity at scale. Our team was commissioned to design and deliver this IoT connection management platform, transforming how connectivity was monitored, issues were identified, and service teams responded, moving from reactive support to proactive, data-driven operations."
+        },
+        {
+          "type": "subheading",
+          "text": "Role"
+        },
+        {
+          "type": "paragraph",
+          "text": "Design Leader & Strategist"
+        },
+        {
+          "type": "subheading",
+          "text": "Team"
+        },
+        {
+          "type": "paragraph",
+          "text": "2 UX / UI designers, 4 developers"
+        },
+        {
+          "type": "subheading",
+          "text": "Timeline"
+        },
+        {
+          "type": "paragraph",
+          "text": "9 Months"
+        },
+        {
+          "type": "subheading",
+          "text": "Challenges"
+        },
+        {
+          "type": "paragraph",
+          "text": "AT&T saw rapid growth in its IoT division, mainly due to demand in connected vehicles and millions of active SIMs that connects them."
+        },
+        {
+          "type": "paragraph",
+          "text": "While connectivity scaled, core capabilities, device provisioning, SIM/eSIM management, and connectivity tracking, remained fragmented."
+        },
+        {
+          "type": "paragraph",
+          "text": "The lack of visibility resulted in delayed diagnosing issues which takes up to a week. Additionally overwhelming engineering teams and impacting customer trust. This growing gap between scale and operational readiness made a unified IoT management platform essential."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/at-t/img-01.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Insights + Alignment"
+        },
+        {
+          "type": "paragraph",
+          "text": "To start designing a solution that worked at scale (Billions of device monitor-ability) we studied the full lifecycle of a SIM from commissioning to decommissioning across systems, teams, and real-world workflows at AT&T. We combined PRDs, stakeholder interviews, workshops, whiteboard sessions, and system walkthroughs to map how work actually happened, not how it was documented."
+        },
+        {
+          "type": "paragraph",
+          "text": "By abstracting each stage of the lifecycle, we surfaced critical service moments and friction points engineers faced when switching between operational, diagnostic, and service roles. Inputs from MNO admins, OEM admins, engineers, and operations teams revealed recurring needs around visibility, safety, traceability, and confidence when working with live systems."
+        },
+        {
+          "type": "paragraph",
+          "text": "These insights became the foundation for identifying where failures occurred, what needed protection, and where proactive monitoring and automation could replace manual effort\u2014directly shaping our \u201chow might we\u201d problem framing and solution direction."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/at-t/img-02.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/at-t/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/at-t/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Insight Synthesis"
+        },
+        {
+          "type": "paragraph",
+          "text": "To start designing a solution that worked at scale (Billions of device monitor-ability) we studied the full lifecycle of a SIM from commissioning to decommissioning across systems, teams, and real-world workflows at AT&T. We combined PRDs, stakeholder interviews, workshops, whiteboard sessions, and system walkthroughs to map how work actually happened, not how it was documented."
+        },
+        {
+          "type": "subheading",
+          "text": "Concept Explorations"
+        },
+        {
+          "type": "paragraph",
+          "text": "We explored multiple concepts to see what felt most natural for users managing complex systems. By testing layouts, navigation, and information density with real users, we focused on reducing friction and cognitive load. The final design was chosen for its clarity and familiarity, making tasks feel simpler, and faster."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/at-t/img-05.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/at-t/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Following AT&T's Visual Guidelines"
+        },
+        {
+          "type": "subheading",
+          "text": "Outcome"
+        },
+        {
+          "type": "subheading",
+          "text": "Value addition"
+        },
+        {
+          "type": "paragraph",
+          "text": "Showcasing ongoing transactions of SIM reduced manual interventions into production and reduced double work . This was not part of the original BRD. I found a need for showcasing a realtime transaction detail, I pitched the idea, which demanded additional development effort."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/at-t/img-07.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "This is something that was not part of the original BRD, having understood the brief clearly. I recommended to have transaction detail where users can actually see transactions realtime. This needed additional engineering effort but doable."
+        },
+        {
+          "type": "paragraph",
+          "text": "Showcasing ongoing transactions of SIM reduced manual interventions into production and reduced double work . This was not part of the original BRD. I found a need for showcasing a realtime transaction detail, I pitched the idea, which demanded additional development effort."
+        },
+        {
+          "type": "subheading",
+          "text": "Impact"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Reduced 5-day turnaround time to few hours & reduced cases.",
+            "Visibility to millions of provisioned sims, around the globe.",
+            "Reduce redundancy and double work",
+            "This ability to maintain gave a new foundation to AT&T to build their IoT ambitions further. Later this became a buz Div."
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Reflections"
+        },
+        {
+          "type": "paragraph",
+          "text": "Co-create system flows with engineering right from the discovery phase, which I later started to do."
+        }
+      ]
+    },
+    {
+      "slug": "manorama-yearbook",
+      "navTitle": "Manorama Yearbook",
+      "title": "Yearbook",
+      "subtitle": "Digitising a 53 year old legacy ...",
+      "visible": true,
+      "password": "public",
+      "order": 6,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Background"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Manorama Yearbook is a treasure trove of information widely referred by one who are preparing for UPSC exams* and other keen readers.We created a comprehensive platform which provides one stop solution to all aspirants while retaining the 53-year-old legacy of Manorama Yearbook of being a trusted content provider."
+        },
+        {
+          "type": "paragraph",
+          "text": "*UPSC Exams are the screening process for public services in India where successful candidates holds most powerful positions nationally like District collectors, Head of police, Foriegn Ambassadors etc. More than 500,000 aspirant each year compete for 980 vacancies in UPSC Civil Services."
+        },
+        {
+          "type": "paragraph",
+          "text": "The original remit of the Yearbook was to bridge the gap between knowledge divide that existed in the society. Over the years the Yearbook has proved to be a perfect guide for students by providing unique perspectives on general knowledge & current affairs."
+        },
+        {
+          "type": "subheading",
+          "text": "My Role & Team"
+        },
+        {
+          "type": "paragraph",
+          "text": "I am the design strategist in the project, My responsibilities were: to be in touch key stakeholders of the company & define foundation for their first digital experience. Set direction for the team, monitor the progress time to time, set guidelines for the team, involve hands on & help team in design detailing, mentor team for successful execution. My team involved 2 Designers, 1UI Developer & 1 Design lead:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Rajeev",
+            "Suhail",
+            "Piyush Singania",
+            "Sathish"
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Challenges"
+        },
+        {
+          "type": "paragraph",
+          "text": "In the age of free news & content the challenge was to figure out a unique experience for General knowledge & Current affairs. The space was crowded with online media houses, news aggregators & traditional news media houses. It was distraction for serious aspirants to get the right information."
+        },
+        {
+          "type": "paragraph",
+          "text": "Another major challenge is aspirants today has multiple silos that he/she has to access to get a comprehensive picture of current affairs."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-01.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Yearly editions of Manorama Yearbook"
+        },
+        {
+          "type": "heading",
+          "text": "Foundation"
+        },
+        {
+          "type": "subheading",
+          "text": "Stakeholder Workshop"
+        },
+        {
+          "type": "paragraph",
+          "text": "Basis: Identify key users and assess the current state, brainstorm on possible foundational building blocks for the product. Align the team with a common goal."
+        },
+        {
+          "type": "paragraph",
+          "text": "Motive: Enable design team to familiarise with and strategise solution, recommend value additions to client's product in order to create a digital \"yearbook\" experience."
+        },
+        {
+          "type": "paragraph",
+          "text": "Significance: Help & guide client understand the digital behaviour patterns & align the business, to cater new set of digital audience."
+        },
+        {
+          "type": "paragraph",
+          "text": "Activities: Business canvas, Empathy mapping, Day in life of the user, user journey map, competition study."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-02.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Persona"
+        },
+        {
+          "type": "paragraph",
+          "text": "The following persona's were uncovered during workshop. Various future state scenarios of product usage were considered to develop a picture. We mapped \"day in life\" of user to evaluate influence of different form factors during the day to arrive at a usage pattern."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Day in life of persona's identified to inform design"
+        },
+        {
+          "type": "subheading",
+          "text": "Mental model"
+        },
+        {
+          "type": "paragraph",
+          "text": "Since the preparation for UPSC is a long drawn process which requires great amount of perseverance, we wanted to understand various emotional journey the user is subjected to. This further can inform our design, also helps how we plan our feature functionalities."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "User mental model to inform design."
+        },
+        {
+          "type": "subheading",
+          "text": "User journey map"
+        },
+        {
+          "type": "paragraph",
+          "text": "Future state of user jouney was traced from discovery to purchase phase. This activity helped in identifying key flows and touch points which users will come across."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-05.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Journey map of both buyer & non-buyer"
+        },
+        {
+          "type": "heading",
+          "text": "Research"
+        },
+        {
+          "type": "subheading",
+          "text": "Contextual inquiry"
+        },
+        {
+          "type": "paragraph",
+          "text": "To understand the lifestyle of UPSC aspirants more closely, Think Design team conducted primary research and spent a day with an UPSC aspirants preparing to appear in forthcoming examinations. By using Questionnaire and Photo Elicitation method useful insights were drawn."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Contextual inquiry"
+        },
+        {
+          "type": "heading",
+          "text": "Strategy"
+        },
+        {
+          "type": "subheading",
+          "text": "Opportunity areas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Through the discovery we have identified opportunity areas that can create an impact in users exam preparation. Opportunity areas were uncovered to help focus on effective concept development."
+        },
+        {
+          "type": "paragraph",
+          "text": "360 degree experience: Cover all aspects of UPSC preparation & bring it all together for end user consumption. Currently users have silos of activities, consolidation itself is a big value add in this domain."
+        },
+        {
+          "type": "paragraph",
+          "text": "Rethink content anatomy: Catering to multiple persona types, means address needs of multiple users. Rethinking the content anatomy helps address diverse users."
+        },
+        {
+          "type": "paragraph",
+          "text": "Self evaluation & track progress: Most critical aspect of learning is understand gaps, in order to understand gaps, self evaluation & tracking progress plays a major role. No digital products in the market is currently addressing this."
+        },
+        {
+          "type": "paragraph",
+          "text": "Community learning: Enable meaningful and frictionless interactions during potential moments learning collaboration between peers, experts & x aspirants."
+        },
+        {
+          "type": "paragraph",
+          "text": "These were some of the basis for building the information architecture."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-07.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Feature value adds"
+        },
+        {
+          "type": "paragraph",
+          "text": "This activity was conducted to identify the unique and distinctive features which will best suit Manorama Yearbook online platform. This is an exhaustive list of features that can help users resonate with their needs & help stand out from any competition."
+        },
+        {
+          "type": "subheading",
+          "text": "Information architecture"
+        },
+        {
+          "type": "paragraph",
+          "text": "We focused on identifying distinctive ways of organising structuring, and labelling content in an effective and sustainable way. The goal is to help users find information and complete tasks."
+        },
+        {
+          "type": "paragraph",
+          "text": "Action driven IA: This Information Architecture is structured using bottom to top approach which involves grouping the information in desired buckets to bring out the need, aspirations and gap areas essential for the users. The objective was by identifying the opportunity areas structuring new ideas & features for the platform"
+        },
+        {
+          "type": "paragraph",
+          "text": "Purpose driven IA: This Information Architecture is structured based on understanding users different needs and the purpose behind seeking information on various stages involved."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-08.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Purpose driven, Information architecture"
+        },
+        {
+          "type": "subheading",
+          "text": "Concepts"
+        },
+        {
+          "type": "paragraph",
+          "text": "An ideal product experience is single stop shop for all its users needs. We visualised 5 navigation concepts that targeted pain points & added moments of delight within the ideal product experience."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-09.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Navigation concepts"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-10.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Wireframes"
+        },
+        {
+          "type": "paragraph",
+          "text": "We created a robust information architecture to help the users find the information they seek while ensuring a way to provide new content that may be relevant contextually."
+        },
+        {
+          "type": "paragraph",
+          "text": "Moving away from the conventional news browsing where the breaking news disrupts the reading flow, we sought to give users a new editorial experience by letting them seamlessly see the current affairs along with curated topics."
+        },
+        {
+          "type": "paragraph",
+          "text": "The unique content layout provides a distinct product identity for the brand, making it stand out amongst other news media platforms."
+        },
+        {
+          "type": "heading",
+          "text": "Final outcome"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-11.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Responsive web, Native IOS & Android apps"
+        },
+        {
+          "type": "heading",
+          "text": "Impact"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/manorama-yearbook/img-12.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The layout and architecture of the platform witnessed a drastic rise in the level of engagement in terms of the browsing and reading experience. Moreover, the effects of digitalization also boosted the sales of the physical copy books."
+        },
+        {
+          "type": "paragraph",
+          "text": "The numbers of subscribers increased to over 30,000 aspirants who use the platform not only as a source for knowledge but a learning tool."
+        },
+        {
+          "type": "paragraph",
+          "text": "Web app: https://www.manoramayearbook.in/home.html"
+        },
+        {
+          "type": "paragraph",
+          "text": "Android: https://play.google.com/store/apps/details?id=com.manorama.yearbook"
+        },
+        {
+          "type": "paragraph",
+          "text": "IOS: https://apps.apple.com/in/app/manorama-yearbook/id1475394103"
+        },
+        {
+          "type": "paragraph",
+          "text": "Manorama yearbook also won CII Design excellence award : https://www.ciidesign.in/index.php/ciidesign/excellence_awards_winners_2019"
+        }
+      ]
+    },
+    {
+      "slug": "deccan-herald",
+      "navTitle": "Deccan Herald",
+      "title": "Deccan Herald",
+      "subtitle": "Helping a legacy a media brand get on the digital bandwagon.",
+      "visible": true,
+      "password": "public",
+      "order": 7,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Background"
+        },
+        {
+          "type": "paragraph",
+          "text": "Deccan Herald (DH) is an English daily newspaper published from the Indian state of Karnataka by The Printers (Mysore) Private Limited, with a daily readership of 5.6 m readers nationally. The paradigm shift of readers to digital news media consumption urged the brand to get on the bandwagon to keep their loyal users happy. The objective is also to expand their reach to younger demography, while satisfying their existing loyal users. Our job was to create a product that not only resonate the brand legacy but also to maintain comfortable unique experience."
+        },
+        {
+          "type": "subheading",
+          "text": "My Team & Role"
+        },
+        {
+          "type": "paragraph",
+          "text": "I am the design strategist in the project, My responsibilities were: to be in touch with the board of directors & other key stakeholders of the company & define a vision to achieve the objectives. Set direction for the team, monitor the progress time to time, set research frame work, set guidelines for the team, involve hands on & help team in design detailing, mentor team for successful execution. My team involved 2 design researchers, 3 designers & 1 design lead:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Anupriy Kanti",
+            "Piyush Singania",
+            "Roshini omega pukkadiyil",
+            "Sumit Kumar",
+            "Siddesh Menon"
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Challenges"
+        },
+        {
+          "type": "paragraph",
+          "text": "The marketplace of mobile news application is already saturated with lot of aggregators as well as publishing houses. Numerous formats of news are already available to the users. This narrows the window of opportunity to a new entrant."
+        },
+        {
+          "type": "paragraph",
+          "text": "Another major challenge is of introducing new concepts. Since the brand is quite late in this space, so it finds it difficult to try unique new feature so as not be disregarded as a stranger but at the same time comfortably maintains its uniqueness."
+        },
+        {
+          "type": "paragraph",
+          "text": "Approach: Research driven approach, followed with intensive collaboration with key client stakeholders."
+        },
+        {
+          "type": "heading",
+          "text": "Research & synthesis"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-01.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Research process"
+        },
+        {
+          "type": "subheading",
+          "text": "Research intent"
+        },
+        {
+          "type": "paragraph",
+          "text": "The research was conducted in order to understand the current mental model in news consumption given the landscape, to find out any unaddressed issues in the personal news consumption, to gather insights that can help design break the saturated market,"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-02.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Research objectives"
+        },
+        {
+          "type": "subheading",
+          "text": "Areas of inquiry"
+        },
+        {
+          "type": "paragraph",
+          "text": "In the overall digital news consumption, I identified three areas of inquiry: each areas is further broken down to multiple other areas. This helped us gather insights in a structured manner without any distractions. Also helps in prioritising research areas."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Areas of inquiry"
+        },
+        {
+          "type": "subheading",
+          "text": "Research frame work"
+        },
+        {
+          "type": "paragraph",
+          "text": "Based on the objective of learning digital media consumption, I decided to use 3 different research methods."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Planning & logistics"
+        },
+        {
+          "type": "paragraph",
+          "text": "Research was conducted 3 locations in India: the research is done in tier 1 & 2 cities in India. We shortlisted users based on demographics & reading habits, in total total number of participants for the research were 36."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-05.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Plan & questionnaire"
+        },
+        {
+          "type": "paragraph",
+          "text": "A total of 36 participants were a part of research conducted, research was conducted at:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mumbai",
+            "Hyderabad",
+            "Bangalore"
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-07.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-08.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "We shadowed users to understand current behaviour on the news platforms, some of the platforms used by participants were: The Hindu, Google news, crickbuzz, times of India etc."
+        },
+        {
+          "type": "subheading",
+          "text": "Insights"
+        },
+        {
+          "type": "paragraph",
+          "text": "Some of the research insights really helped shape the product, for example. Features like \"what's brewing today\",\" Light version\" of the app, \"personalisation\" etc are drawn out of some of the insights gathered."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-09.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Insights"
+        },
+        {
+          "type": "heading",
+          "text": "Alignment workshop"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-10.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Objective of the workshop was to align & come out with a design strategy;"
+        },
+        {
+          "type": "paragraph",
+          "text": "Research review"
+        },
+        {
+          "type": "list",
+          "items": [
+            "A brief walkthrough of the data collected and patterns found during the research activities.",
+            "On the basis of the findings, showcasing alongside the synthesized inference for actions to be taken."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Understanding the Business Perspective"
+        },
+        {
+          "type": "paragraph",
+          "text": "Defining business success as envisioned, key stakeholders views on the platform & what they expect from the envisioned product."
+        },
+        {
+          "type": "paragraph",
+          "text": "Aligning with the editorial strategy"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Defining collaboratively the categorisations of news content to be featured on the app as per the editorial plan and business requirement.",
+            "Understanding the news mediums (written, audio, video etc.) in terms of frequencies, constraints, and emphasis."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Design direction"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Brainstorming on keywords and phrases to establish a guidances while designing, based on the business and product vision gathered in the previous exercise.",
+            "Discussion on the proposed hierarchy of sections and features of the app."
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-11.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Perception map created along with the stakeholders"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-12.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "User persona's"
+        },
+        {
+          "type": "heading",
+          "text": "Concepts"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-13.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Concept sketches"
+        },
+        {
+          "type": "paragraph",
+          "text": "18 concepts were developed aligned with the research outcomes and the design objectives."
+        },
+        {
+          "type": "paragraph",
+          "text": "The primary criteria chosen for scoring among the concepts was:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Discoverability",
+            "Aesthetics",
+            "Scalability"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "A total of 5 concepts were then selected through either combining best of the features or pure concept."
+        },
+        {
+          "type": "paragraph",
+          "text": "After a discussion on across team, 3 concepts were crystallised through visuals."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-14.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Concept round 1"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-15.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Concept round 2"
+        },
+        {
+          "type": "heading",
+          "text": "Design outcome"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-16.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-17.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-18.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-19.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-20.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-21.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-22.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-23.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-24.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-25.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-26.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Features"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-27.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Impact"
+        },
+        {
+          "type": "paragraph",
+          "text": "The app was launched on both IOS & Android platforms, More than 1K download each day without any digital marketing activities."
+        },
+        {
+          "type": "list",
+          "items": [
+            "IOS: https://apps.apple.com/in/app/deccan-herald-news/id1511179557",
+            "Android: https://play.google.com/store/apps/details?id=com.tpml.dh"
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/deccan-herald/img-28.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "figo",
+      "navTitle": "Figo",
+      "title": "Figo",
+      "subtitle": "Market place for roaming plans",
+      "visible": true,
+      "password": "public",
+      "order": 8,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Background"
+        },
+        {
+          "type": "paragraph",
+          "text": "Our client is a global connectivity solution for businesses worldwide with its network providing connectivity for a wide range of devices and operators. With increase in the number of users wanting to use data while they roam without having to lose their identity, a new opportunity was born. We were asked to collaborate & build foundation on their key B2C initiative. The product intended as a marketplace for data plans. With no competition, this product is first in market."
+        },
+        {
+          "type": "subheading",
+          "text": "My Team & Role"
+        },
+        {
+          "type": "paragraph",
+          "text": "I am the design strategist in the project, My responsibilities were: to be in touch with key stakeholders of the company & define a vision to achieve the objectives. Set direction for the team, monitor the progress time to time, set guidelines for the team, involve hands on & help team in design detailing, mentor team for successful execution. My team involved 2 designers & 1 design lead:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Shavak Tanwar",
+            "Gaurav shravage"
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Challenges"
+        },
+        {
+          "type": "list",
+          "items": [
+            "To gain an understanding of the actual backend flow of \"enabling data connections across service providers\" through mobile app & simplify the complex backend flow.",
+            "To identify & assess opportunity areas since this is the first ever app being built."
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Approach"
+        },
+        {
+          "type": "paragraph",
+          "text": "Immersion: Understand the current landscape & opportunities. Gaining deeper understanding into telecommunication & roaming behaviours etc."
+        },
+        {
+          "type": "paragraph",
+          "text": "3 day Workshop: Business canvas, Understand & align client's business strategy. Gain deeper understanding of how the solution is envisaged from the engineering angle."
+        },
+        {
+          "type": "paragraph",
+          "text": "Develop the vision: Uncover different actors. Create a future state user journey which informs design, most importantly craft a future story."
+        },
+        {
+          "type": "heading",
+          "text": "Workshop"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/figo/img-01.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Focus: Identify the purpose of startup, uncover differentiators for the products from the user's point of view and build a UX Vision."
+        },
+        {
+          "type": "paragraph",
+          "text": "Purpose: Enable the experience design team to assess and recommend improvements. Build a UX Strategy that can help, come out with an effective tangible result."
+        },
+        {
+          "type": "paragraph",
+          "text": "Significance: Help client align business goals to the design strategy."
+        },
+        {
+          "type": "paragraph",
+          "text": "Activities: Business canvas, Empathy mapping, Scenarios, Affinity mapping"
+        },
+        {
+          "type": "subheading",
+          "text": "Business model canvas"
+        },
+        {
+          "type": "paragraph",
+          "text": "Familiarising the business model to evaluate how idea can leverage end user experience. Gathering insights on how the start up plan to help users while the business becomes profitable."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/figo/img-02.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Business model canvas : From design perspective"
+        },
+        {
+          "type": "subheading",
+          "text": "Persona"
+        },
+        {
+          "type": "paragraph",
+          "text": "Business travellers: Someone who is always on the move. Switch between location to location is very frequent, travel plans are sporadic. They prefer convenience over cost."
+        },
+        {
+          "type": "paragraph",
+          "text": "Student travellers: They care on the cost more than convenience, usually are well advanced in travel plans. In most cases they are not repeat users of the app."
+        },
+        {
+          "type": "paragraph",
+          "text": "Leisure travellers: Some one who looks for a hassle free experience, Both cost & convenience is a deciding factor for them."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/figo/img-03.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "User journey heading"
+        },
+        {
+          "type": "paragraph",
+          "text": "The future state user journey illustrates Strategic vision of how an end user experience should feel like for both buying a service & using a service."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/figo/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Shaping experience"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/figo/img-05.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Affinity mapping"
+        },
+        {
+          "type": "paragraph",
+          "text": "Helps build information architecture, when building a product ground up. Grouping of all features & information to arrive at a hierarchy."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/figo/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Final outcome"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/figo/img-07.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Impact & Awards"
+        },
+        {
+          "type": "paragraph",
+          "text": "Initially launched in Singapore, phase 1 release targeted to cover Asian & European market."
+        },
+        {
+          "type": "subheading",
+          "text": "Awards"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Creative pool 2017: https://creativepool.com/thinkdesigncollaborative/projects/figo-app-for-globetouch",
+            "Good design 2017: https://good-design.org/projects/figo-roaming-with-no-strings-attached/"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "zafin-dashboard",
+      "navTitle": "Zafin",
+      "title": "Zafin",
+      "subtitle": "Analytical executive dashboard redesign: Data design",
+      "visible": true,
+      "password": "public",
+      "order": 9,
+      "blocks": [
+        {
+          "type": "subheading",
+          "text": "Background"
+        },
+        {
+          "type": "paragraph",
+          "text": "Client approached us to re-design \"cash management\" module of product master suite. The existing experience is built with bootstrap components & proving to be not effective. With the current product acceptance for this BI Dashboard is low & usage of the dashboard is less than 10%. Purpose of this analytical dashboard is to inform \"LOB's\" of large financial institution on the current business situation."
+        },
+        {
+          "type": "subheading",
+          "text": "My Team & Role"
+        },
+        {
+          "type": "paragraph",
+          "text": "I am the design strategist in the project, My responsibilities were: to be in touch with key stakeholders of the company & define a vision to achieve the objectives. Set direction for the team, monitor the progress time to time, set guidelines for the team, involve hands on & help team in design detailing, mentor team for successful execution. My team involved 2 designers, 1 UI Developer & 1 design lead:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Abhishek",
+            "Komal",
+            "Subhrajit",
+            "Sathish"
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Challenges"
+        },
+        {
+          "type": "paragraph",
+          "text": "Access to actual users were not possible. Insights to usage & scenario's came from product experts within Zafin. Gaining deeper understanding on how data drives decision making."
+        },
+        {
+          "type": "paragraph",
+          "text": "Even though most cash management is done digitally, there is still enormous room for error, and financial institutions are failing to capture all revenue possible. McKinsey writes about leakage in the context of what they call dual manual and digital \u201cecosystems\u201d that don\u2019t communicate. \u201cThis leads to leakages on the ground,\u201d the authors write. \u201cFinancial companies therefore need to ensure that the physical and digital worlds merge seamlessly and that there are no break points.\u201d"
+        },
+        {
+          "type": "subheading",
+          "text": "Approach"
+        },
+        {
+          "type": "paragraph",
+          "text": "Product evaluation: Since this is a Dashboard that already exists, we wanted to understand how is it performing & aspects those are missing in the existing dashboard."
+        },
+        {
+          "type": "paragraph",
+          "text": "Stakeholder Workshop: Business aspirations, Understand & align client's business strategy. Gain deeper understanding on how Line of business operate day to day."
+        },
+        {
+          "type": "paragraph",
+          "text": "Develop the vision: Uncover opportunity areas. Create a dashboard that drives decision making."
+        },
+        {
+          "type": "heading",
+          "text": "Current dashboard evaluation"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-01.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Existing product"
+        },
+        {
+          "type": "subheading",
+          "text": "Dashboard evaluation Points"
+        },
+        {
+          "type": "paragraph",
+          "text": "An extensive evaluation is carried out on the product to understand the gaps. Few of the take away from the evaluation is below:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Information hierarchy is missing.",
+            "Unstructured data.",
+            "Non intuitive navigation.",
+            "Workflow intrusive drill downs.",
+            "Current information design do not foster decision making.",
+            "Current information design was not efficient & effective to the user's job style.",
+            "Dashboard was mix of information for multiple type of users, which results in excessive information."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Stakeholder workshop"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-02.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Focus: Identify key user scenarios and assess opportunities to enhance the dashboard experience while mapping the data extraction. Uncover performance indicators for the dashboard."
+        },
+        {
+          "type": "paragraph",
+          "text": "Purpose: Enable design team to assess and recommend improvements to the analytical dashboard built for LOB\u2019s."
+        },
+        {
+          "type": "paragraph",
+          "text": "Significance: Help client shape data design vision, to Improve dashboard efficiency in dissemination. Define a data hierarchy that suits the target audience."
+        },
+        {
+          "type": "paragraph",
+          "text": "Activities: Current dashboard scanning, Going through the current data extraction, Empathy mapping, Scenarios, Information architecture."
+        },
+        {
+          "type": "subheading",
+          "text": "Supporting Archetypes"
+        },
+        {
+          "type": "paragraph",
+          "text": "Prompt data analyst: Ensures data collection & data dissemination through weekly/monthly reports to all the executives."
+        },
+        {
+          "type": "paragraph",
+          "text": "Remarkable RM Lead: Meeting sales target working with RM's who are in turn responsible for converting & maintaining business leads."
+        },
+        {
+          "type": "paragraph",
+          "text": "Esteemed LOB Head: Making sure revenues and profits only go up, strategise new products for regions & customers."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-03.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-04.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Data extract scan"
+        },
+        {
+          "type": "paragraph",
+          "text": "Data extracts were scanned to gain deeper understanding the gap & opportunities between user expections and the current dashboard. Scan also helped the team rethink how the data is structured."
+        },
+        {
+          "type": "heading",
+          "text": "Shaping experience"
+        },
+        {
+          "type": "subheading",
+          "text": "Information architecture"
+        },
+        {
+          "type": "paragraph",
+          "text": "Current IA is not role based, hence there is data clutter. Role based IA enabled clarity of information for end users."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-05.png",
+              "alt": "Uploaded image"
+            },
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-06.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Design directions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Region centric: Providing the higher level information that user needs pivoting to regions, this concept is minimal and task based. It gives a quick update and doesn\u2019t overwhelm the user with all information at once"
+        },
+        {
+          "type": "paragraph",
+          "text": "Data list: This concepts gives a list of data points that the user will want to monitor and in case it is required, user can drill down to a detailed view."
+        },
+        {
+          "type": "paragraph",
+          "text": "Tiled: Everything stacked together, still giving a hierarchy of information through fonts and UI, TILE is the simplest way to monitor every detail of your business."
+        },
+        {
+          "type": "paragraph",
+          "text": "Conventional: A familiar but effective approach using familiar design patterns, where user can see all data in a single page without any navigation with overlay drill downs so that user doesn\u2019t loose the context."
+        },
+        {
+          "type": "subheading",
+          "text": "Mapping general trends"
+        },
+        {
+          "type": "paragraph",
+          "text": "Digital design trends are observed that are accepted widely and these trends makes platform a mark higher and hence make you stand out in the competition."
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-07.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Design outcome"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-08.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Impact"
+        },
+        {
+          "type": "image-row",
+          "images": [
+            {
+              "type": "image",
+              "src": "../assets/img/case-studies/zafin-dashboard/img-09.png",
+              "alt": "Uploaded image"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
