@@ -306,8 +306,8 @@
       <span class="admin-bar-tag">Admin</span>
       ${
         onCaseStudyPage
-          ? '<button type="button" class="admin-btn admin-btn--sm" data-admin-edit-study>Edit this case study</button>'
-          : '<button type="button" class="admin-btn admin-btn--sm" data-admin-edit-profile>Edit profile</button><button type="button" class="admin-btn admin-btn--sm" data-admin-manage-studies>Manage case studies</button>'
+          ? '<button type="button" class="admin-btn admin-btn--sm" data-admin-edit-study>Edit this work</button>'
+          : '<button type="button" class="admin-btn admin-btn--sm" data-admin-edit-profile>Edit profile</button><button type="button" class="admin-btn admin-btn--sm" data-admin-manage-studies>Manage past work</button>'
       }
       <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-admin-logout>Log out</button>
     `;
@@ -435,12 +435,12 @@
 
     const { overlay, close } = openModal(
       `
-      <h2>Manage case studies</h2>
-      <p class="admin-modal-hint">Use ↑ / ↓ to change the order case studies appear in on the home page.</p>
+      <h2>Manage past work</h2>
+      <p class="admin-modal-hint">Use ↑ / ↓ to change the order your past work appears in on the home page.</p>
       <div class="admin-study-list" data-rows></div>
       <div class="admin-new-study">
-        <input class="admin-input" type="text" placeholder="New case study title…" data-new-title />
-        <button type="button" class="admin-btn" data-new-study>+ New case study</button>
+        <input class="admin-input" type="text" placeholder="New work title…" data-new-title />
+        <button type="button" class="admin-btn" data-new-study>+ New work</button>
       </div>
       <p class="admin-form-error" data-manage-error></p>
       <div class="admin-modal-actions">
@@ -541,8 +541,8 @@
       btn.disabled = true;
       btn.textContent = "Saving…";
       try {
-        await saveSiteJson(site, "Admin: update case study list");
-        toast("Case study list saved.");
+        await saveSiteJson(site, "Admin: update past work list");
+        toast("Past work list saved.");
         close();
         if (window.MKM.renderHome && document.querySelector("[data-home-root]")) {
           window.MKM.renderHome();
@@ -641,7 +641,7 @@
 
     function render() {
       body.innerHTML = `
-        <h2>Edit case study</h2>
+        <h2>Edit work</h2>
         <label class="admin-label">Title</label>
         <input class="admin-input" type="text" data-f-title value="${window.MKM.esc(draft.title || "")}" />
         <label class="admin-label">Subtitle</label>
@@ -664,7 +664,7 @@
         <p class="admin-form-error" data-editor-error></p>
         <div class="admin-modal-actions">
           <button type="button" class="admin-btn admin-btn--ghost" data-modal-close>Cancel</button>
-          <button type="button" class="admin-btn" data-editor-save>Save case study</button>
+          <button type="button" class="admin-btn" data-editor-save>Save work</button>
         </div>
       `;
       wireBlockEvents();
@@ -801,8 +801,8 @@
         if (idx >= 0) site.caseStudies[idx] = toSave;
         else site.caseStudies.push(toSave);
 
-        await saveSiteJson(site, `Admin: update case study "${draft.title}"`);
-        toast("Case study saved.");
+        await saveSiteJson(site, `Admin: update work "${draft.title}"`);
+        toast("Work saved.");
         close();
         if (window.MKM.renderCaseStudy && document.querySelector("[data-case-root]")) {
           window.MKM.renderCaseStudy();
@@ -810,7 +810,7 @@
       } catch (err) {
         errorEl.textContent = err.message;
         saveBtn.disabled = false;
-        saveBtn.textContent = "Save case study";
+        saveBtn.textContent = "Save work";
       }
     });
   }

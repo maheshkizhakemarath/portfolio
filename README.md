@@ -51,10 +51,10 @@ compromised, revoke the token on GitHub and issue a new one.
 **Once logged in**, a small "Admin" bar appears bottom-left on every page:
 
 - **On the home page:** *Edit profile* (name, role, About text, Connect
-  links) and *Manage case studies* (reorder with ↑ / ↓ — this is the order
+  links) and *Manage past work* (reorder with ↑ / ↓ — this is the order
   they appear in on the home page — toggle each one visible/hidden, set or
   change its password, delete it, or add a new one).
-- **On a case study page:** *Edit this case study* opens a block editor —
+- **On a case study page:** *Edit this work* opens a block editor —
   add/remove/reorder headings, sub-headings, paragraphs, lists, and image
   blocks (upload images directly; they're committed into
   `assets/img/case-studies/<slug>/`), and edit the title/subtitle.

@@ -119,7 +119,7 @@
     const cs = (site.caseStudies || []).find((c) => c.slug === slug);
 
     if (!cs) {
-      root.innerHTML = '<p class="case-not-found">Case study not found.</p>';
+      root.innerHTML = '<p class="case-not-found">Work not found.</p>';
       document.title = "Not found — Mahesh Marath";
       return { site, caseStudy: null };
     }
