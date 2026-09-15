@@ -226,9 +226,7 @@
       `
       <h2>Admin login</h2>
       <p class="admin-modal-hint">
-        Paste a GitHub Personal Access Token scoped to
-        <strong>${GH_OWNER}/${GH_REPO}</strong> with Contents read/write access.
-        It's stored only in this browser.
+        Type your personal token to access, It's stored only in this browser.
       </p>
       <form data-login-form>
         <input type="password" name="token" placeholder="ghp_… or github_pat_…" autocomplete="off" class="admin-input" required />
