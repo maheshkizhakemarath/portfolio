@@ -12,6 +12,18 @@
     return d.innerHTML;
   }
 
+  // Lightweight markdown-style links: "[label](https://example.com)" inside
+  // any admin-editable text becomes a real link. Text is HTML-escaped first
+  // so this is the only way to get a tag into the output — a "[...](...)"
+  // that isn't a safe http(s)/mailto URL is left as plain (escaped) text.
+  const LINK_PATTERN = /\[([^\]]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+)\)/g;
+  function linkify(s) {
+    return esc(s).replace(
+      LINK_PATTERN,
+      (_, label, url) => `<a class="text-link" href="${url}" target="_blank" rel="noopener">${label}</a>`
+    );
+  }
+
   async function loadSite() {
     const res = await fetch(DATA_URL, { cache: "no-store" });
     if (!res.ok) throw new Error("Could not load site data (" + res.status + ")");
@@ -35,17 +47,17 @@
     for (const b of blocks || []) {
       if (b.type === "heading") {
         if (inSection) out.push("</section>");
-        out.push(`<section class="case-section"><h2>${esc(b.text)}</h2>`);
+        out.push(`<section class="case-section"><h2>${linkify(b.text)}</h2>`);
         inSection = true;
       } else if (b.type === "subheading") {
         openSection();
-        out.push(`<h3>${esc(b.text)}</h3>`);
+        out.push(`<h3>${linkify(b.text)}</h3>`);
       } else if (b.type === "paragraph") {
         openSection();
-        out.push(`<p>${esc(b.text)}</p>`);
+        out.push(`<p>${linkify(b.text)}</p>`);
       } else if (b.type === "list") {
         openSection();
-        out.push("<ul>" + (b.items || []).map((i) => `<li>${esc(i)}</li>`).join("") + "</ul>");
+        out.push("<ul>" + (b.items || []).map((i) => `<li>${linkify(i)}</li>`).join("") + "</ul>");
       } else if (b.type === "image-row") {
         openSection();
         const imgs = (b.images || []).filter((i) => i.src);
@@ -76,12 +88,9 @@
     const site = await loadSite();
     const about = site.about || {};
     root.querySelector("[data-name]").textContent = about.name || "";
-    // innerHTML (not textContent): the role line can contain a hyperlink
-    // (e.g. linking a company name), same trust boundary as bio below —
-    // this only ever reflects what the site owner saved via the admin panel.
-    root.querySelector("[data-role]").innerHTML = about.role || "";
+    root.querySelector("[data-role]").innerHTML = linkify(about.role || "");
     const bioEl = root.querySelector("[data-bio]");
-    bioEl.innerHTML = (about.bio || []).map((p) => `<p>${esc(p)}</p>`).join("");
+    bioEl.innerHTML = (about.bio || []).map((p) => `<p>${linkify(p)}</p>`).join("");
 
     const isAdmin = document.documentElement.classList.contains("admin-mode");
     const studies = (site.caseStudies || [])
@@ -131,7 +140,7 @@
     root.querySelector("[data-cs-title]").textContent = cs.title;
     const subEl = root.querySelector("[data-cs-subtitle]");
     if (cs.subtitle) {
-      subEl.textContent = cs.subtitle;
+      subEl.innerHTML = linkify(cs.subtitle);
       subEl.hidden = false;
     } else {
       subEl.hidden = true;

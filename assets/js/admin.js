@@ -157,6 +157,54 @@
   }
 
   // ---------------------------------------------------------------------
+  // Inline "+ Link" affordance for text fields.
+  // Links are written as markdown-style "[label](https://...)" — render.js
+  // (linkify()) turns that into a real <a> everywhere this text is shown.
+  // Any input/textarea can get one: render a labelWithLink() row instead of
+  // a plain <label>, then call wireLinkButtons(container) once after the
+  // markup is in the DOM.
+  // ---------------------------------------------------------------------
+  function labelWithLink(text, targetSelector) {
+    return `<label class="admin-label admin-label-row"><span>${text}</span><button type="button" class="admin-link-btn" data-insert-link="${targetSelector}">+ Link</button></label>`;
+  }
+
+  function insertLinkSnippet(field) {
+    if (!field) return;
+    const start = field.selectionStart ?? field.value.length;
+    const end = field.selectionEnd ?? field.value.length;
+    const selected = field.value.slice(start, end);
+    const label = window.prompt("Link text:", selected || "");
+    if (label === null) return;
+    const url = window.prompt("URL (https://…):", "https://");
+    if (url === null) return;
+    const trimmedUrl = url.trim();
+    if (!trimmedUrl) return;
+    const snippet = `[${label.trim() || trimmedUrl}](${trimmedUrl})`;
+    field.value = field.value.slice(0, start) + snippet + field.value.slice(end);
+    field.focus();
+    const pos = start + snippet.length;
+    field.setSelectionRange(pos, pos);
+  }
+
+  // Wires every "+ Link" button within `container`. `data-insert-link` is a
+  // CSS selector scoped to the SAME container (works when the field is
+  // unique, e.g. the profile modal); pass `scopeSelector` to instead scope
+  // each button to its closest matching ancestor (needed in the block
+  // editor, where every block repeats the same [data-b-text] attribute).
+  function wireLinkButtons(container, scopeSelector) {
+    container.querySelectorAll("[data-insert-link]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetSelector = btn.getAttribute("data-insert-link");
+        // Fields that repeat per-block (every block has a [data-b-text])
+        // need scoping to their own card; a one-off field (like Subtitle,
+        // which isn't inside any block card) falls back to the container.
+        const scope = (scopeSelector && btn.closest(scopeSelector)) || container;
+        insertLinkSnippet(scope.querySelector(targetSelector));
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------------
   // Small UI helpers (toast, modal shell)
   // ---------------------------------------------------------------------
   function toast(message, isError) {
@@ -333,19 +381,20 @@
   function openProfileEditor() {
     const site = state.site;
     const about = site.about || {};
-    const { close } = openModal(
+    const { overlay, close } = openModal(
       `
       <h2>Edit profile</h2>
       <label class="admin-label">Name</label>
       <input class="admin-input" type="text" data-f-name value="${window.MKM.esc(about.name || "")}" />
-      <label class="admin-label">Role</label>
+      ${labelWithLink("Role", "[data-f-role]")}
       <input class="admin-input" type="text" data-f-role value="${window.MKM.esc(about.role || "")}" />
-      <label class="admin-label">About (one paragraph per line)</label>
+      ${labelWithLink("About (one paragraph per line)", "[data-f-bio]")}
       <textarea class="admin-textarea" rows="4" data-f-bio>${window.MKM.esc((about.bio || []).join("\n"))}</textarea>
       <label class="admin-label">Connect links (one per line, "Label | URL")</label>
       <textarea class="admin-textarea" rows="3" data-f-connect>${window.MKM.esc(
         (site.connect || []).map((c) => `${c.label} | ${c.url}`).join("\n")
       )}</textarea>
+      <p class="admin-modal-hint">Turn any text into a link by selecting it (or just placing your cursor) and pressing the "+ Link" button next to a field.</p>
       <p class="admin-form-error" data-profile-error></p>
       <div class="admin-modal-actions">
         <button type="button" class="admin-btn admin-btn--ghost" data-modal-close>Cancel</button>
@@ -354,6 +403,7 @@
     `,
       {}
     );
+    wireLinkButtons(overlay);
     document.querySelector("[data-profile-save]").addEventListener("click", async (e) => {
       const btn = e.currentTarget;
       const errorEl = document.querySelector("[data-profile-error]");
@@ -565,7 +615,10 @@
         <div class="admin-block" data-block-index="${i}" data-block-type="${t}">
           <div class="admin-block-head">
             <span class="admin-block-type">${t === "heading" ? "Section heading" : "Sub-heading"}</span>
-            ${blockControls(i)}
+            <span class="admin-block-head-actions">
+              <button type="button" class="admin-link-btn" data-insert-link="[data-b-text]">+ Link</button>
+              ${blockControls(i)}
+            </span>
           </div>
           <input class="admin-input" type="text" data-b-text value="${window.MKM.esc(block.text || "")}" />
         </div>`;
@@ -575,7 +628,10 @@
         <div class="admin-block" data-block-index="${i}" data-block-type="${t}">
           <div class="admin-block-head">
             <span class="admin-block-type">Paragraph</span>
-            ${blockControls(i)}
+            <span class="admin-block-head-actions">
+              <button type="button" class="admin-link-btn" data-insert-link="[data-b-text]">+ Link</button>
+              ${blockControls(i)}
+            </span>
           </div>
           <textarea class="admin-textarea" rows="3" data-b-text>${window.MKM.esc(block.text || "")}</textarea>
         </div>`;
@@ -585,7 +641,10 @@
         <div class="admin-block" data-block-index="${i}" data-block-type="${t}">
           <div class="admin-block-head">
             <span class="admin-block-type">List (one item per line)</span>
-            ${blockControls(i)}
+            <span class="admin-block-head-actions">
+              <button type="button" class="admin-link-btn" data-insert-link="[data-b-items]">+ Link</button>
+              ${blockControls(i)}
+            </span>
           </div>
           <textarea class="admin-textarea" rows="4" data-b-items>${window.MKM.esc((block.items || []).join("\n"))}</textarea>
         </div>`;
@@ -644,7 +703,7 @@
         <h2>Edit work</h2>
         <label class="admin-label">Title</label>
         <input class="admin-input" type="text" data-f-title value="${window.MKM.esc(draft.title || "")}" />
-        <label class="admin-label">Subtitle</label>
+        ${labelWithLink("Subtitle", "[data-f-subtitle]")}
         <input class="admin-input" type="text" data-f-subtitle value="${window.MKM.esc(draft.subtitle || "")}" />
         <label class="admin-label">Home-page link text</label>
         <input class="admin-input" type="text" data-f-navtitle value="${window.MKM.esc(draft.navTitle || draft.title || "")}" />
@@ -751,6 +810,10 @@
           render();
         })
       );
+      // Subtitle's button targets a single, unique field; each block's
+      // button is scoped to its own block card (every block repeats the
+      // same [data-b-text]/[data-b-items] attribute).
+      wireLinkButtons(body, "[data-block-index]");
     }
 
     const { overlay, close } = openModal("", { wide: true, onClose: () => {} });

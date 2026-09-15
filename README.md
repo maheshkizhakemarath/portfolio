@@ -59,6 +59,13 @@ compromised, revoke the token on GitHub and issue a new one.
   blocks (upload images directly; they're committed into
   `assets/img/case-studies/<slug>/`), and edit the title/subtitle.
 
+**Adding a link inside any text**: Role, About, a case study's Subtitle,
+and every heading/sub-heading/paragraph/list block have a **+ Link**
+button next to them. Click it, give it link text and a URL, and it
+inserts `[label](https://example.com)` at your cursor — that markdown-
+style syntax is what turns into a real, clickable link wherever the text
+is displayed. You can also just type that syntax by hand.
+
 Every "Save" writes straight to this GitHub repo (updating `data/site.json`
 and, for new images, adding files under `assets/img/...`) as a commit on the
 repo's default branch. GitHub Pages picks it up and redeploys automatically
