@@ -37,6 +37,7 @@
   async function ghRepoInfo() {
     const res = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}`, {
       headers: ghHeaders(),
+      cache: "no-store",
     });
     if (!res.ok) {
       throw new Error(
@@ -49,9 +50,13 @@
   }
 
   async function ghGetFile(path) {
+    // cache: "no-store" matters here — without it the browser can serve a
+    // stale cached response for this exact URL, handing back an outdated
+    // sha. GitHub then rejects the save that sha is used for with a 409
+    // ("does not match"), even though nothing actually conflicted.
     const res = await fetch(
       `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}?ref=${encodeURIComponent(state.branch || "main")}`,
-      { headers: ghHeaders() }
+      { headers: ghHeaders(), cache: "no-store" }
     );
     if (res.status === 404) return null;
     if (!res.ok) throw new Error(`GitHub error (${res.status}) reading ${path}.`);
@@ -59,25 +64,36 @@
   }
 
   async function ghPutFile(path, base64Content, message) {
-    const existing = await ghGetFile(path).catch(() => null);
-    const body = {
-      message,
-      content: base64Content,
-      branch: state.branch || "main",
-    };
-    if (existing && existing.sha) body.sha = existing.sha;
-    const res = await fetch(
-      `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`,
-      {
+    async function attempt() {
+      const existing = await ghGetFile(path).catch(() => null);
+      const body = {
+        message,
+        content: base64Content,
+        branch: state.branch || "main",
+      };
+      if (existing && existing.sha) body.sha = existing.sha;
+      return fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`, {
         method: "PUT",
         headers: Object.assign({ "Content-Type": "application/json" }, ghHeaders()),
         body: JSON.stringify(body),
-      }
-    );
+      });
+    }
+
+    let res = await attempt();
+    if (res.status === 409) {
+      // Stale sha (usually a caching artifact, occasionally a genuine
+      // concurrent edit) — re-read the real current version and retry once
+      // before giving up.
+      res = await attempt();
+    }
     if (!res.ok) {
       const detail = await res.json().catch(() => ({}));
+      const suffix =
+        res.status === 409
+          ? " Someone or something else changed this file — reload the page to get the latest version, then try your edit again."
+          : "";
       throw new Error(
-        `GitHub error (${res.status}) saving ${path}: ${detail.message || "unknown error"}`
+        `GitHub error (${res.status}) saving ${path}: ${detail.message || "unknown error"}.${suffix}`
       );
     }
     return res.json();
