@@ -2162,7 +2162,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/figo/img-01.png",
               "alt": "Uploaded image"
             }
@@ -2196,7 +2195,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/figo/img-02.png",
               "alt": "Uploaded image"
             }
@@ -2226,7 +2224,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/figo/img-03.png",
               "alt": "Uploaded image"
             }
@@ -2244,7 +2241,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/figo/img-04.png",
               "alt": "Uploaded image"
             }
@@ -2258,7 +2254,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/figo/img-05.png",
               "alt": "Uploaded image"
             }
@@ -2276,7 +2271,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/figo/img-06.png",
               "alt": "Uploaded image"
             }
@@ -2290,7 +2284,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/figo/img-07.png",
               "alt": "Uploaded image"
             }
