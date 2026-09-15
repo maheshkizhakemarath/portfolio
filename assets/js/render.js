@@ -76,7 +76,10 @@
     const site = await loadSite();
     const about = site.about || {};
     root.querySelector("[data-name]").textContent = about.name || "";
-    root.querySelector("[data-role]").textContent = about.role || "";
+    // innerHTML (not textContent): the role line can contain a hyperlink
+    // (e.g. linking a company name), same trust boundary as bio below —
+    // this only ever reflects what the site owner saved via the admin panel.
+    root.querySelector("[data-role]").innerHTML = about.role || "";
     const bioEl = root.querySelector("[data-bio]");
     bioEl.innerHTML = (about.bio || []).map((p) => `<p>${esc(p)}</p>`).join("");
 
