@@ -383,12 +383,21 @@
   // ---------------------------------------------------------------------
   function openManageStudies() {
     const site = state.site;
-    const studies = site.caseStudies.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+    // Local working copy of the display order. Entries are the SAME object
+    // references as in site.caseStudies, so mutating cs.order here already
+    // updates the underlying data — reordering doesn't need to wait for Save.
+    let studies = site.caseStudies.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
     function rowHTML(cs, i) {
       return `
         <div class="admin-study-card" data-row data-slug="${window.MKM.esc(cs.slug)}">
-          <div class="admin-study-card-title">${window.MKM.esc(cs.title)}</div>
+          <div class="admin-study-card-title">
+            <span class="admin-reorder-controls">
+              <button type="button" class="admin-icon-btn" data-move="-1" title="Move up" ${i === 0 ? "disabled" : ""}>↑</button>
+              <button type="button" class="admin-icon-btn" data-move="1" title="Move down" ${i === studies.length - 1 ? "disabled" : ""}>↓</button>
+            </span>
+            ${window.MKM.esc(cs.title)}
+          </div>
           <div class="admin-study-card-fields">
             <label class="admin-study-field">
               <span>Visible</span>
@@ -413,7 +422,8 @@
     const { overlay, close } = openModal(
       `
       <h2>Manage case studies</h2>
-      <div class="admin-study-list" data-rows>${studies.map(rowHTML).join("")}</div>
+      <p class="admin-modal-hint">Use ↑ / ↓ to change the order case studies appear in on the home page.</p>
+      <div class="admin-study-list" data-rows></div>
       <div class="admin-new-study">
         <input class="admin-input" type="text" placeholder="New case study title…" data-new-title />
         <button type="button" class="admin-btn" data-new-study>+ New case study</button>
@@ -427,25 +437,67 @@
       { wide: true }
     );
 
-    overlay.querySelectorAll("[data-delete]").forEach((btn) =>
-      btn.addEventListener("click", () => {
-        const slug = btn.getAttribute("data-delete");
-        const cs = site.caseStudies.find((c) => c.slug === slug);
-        if (!cs) return;
-        if (!confirm(`Delete "${cs.title}"? This removes it from site.json (images stay in the repo). This can't be undone here.`)) return;
-        site.caseStudies = site.caseStudies.filter((c) => c.slug !== slug);
-        btn.closest("tr").remove();
-      })
-    );
+    const rowsEl = overlay.querySelector("[data-rows]");
 
-    overlay.querySelectorAll("[data-open-editor]").forEach((btn) =>
-      btn.addEventListener("click", () => {
-        const slug = btn.getAttribute("data-open-editor");
-        location.href = csUrl(slug, "&edit=1");
-      })
-    );
+    // Read whatever the admin has typed/toggled in each visible row back
+    // into the study objects, so re-rendering after a move/delete doesn't
+    // discard in-progress (unsaved) edits.
+    function syncRowFieldsToStudies() {
+      rowsEl.querySelectorAll("[data-row]").forEach((row) => {
+        const slug = row.getAttribute("data-slug");
+        const cs = studies.find((c) => c.slug === slug);
+        if (!cs) return;
+        cs.visible = row.querySelector("[data-f-visible]").checked;
+        cs.password = row.querySelector("[data-f-password]").value.trim();
+      });
+    }
+
+    function renderRows() {
+      rowsEl.innerHTML = studies.map(rowHTML).join("");
+
+      rowsEl.querySelectorAll("[data-move]").forEach((btn) =>
+        btn.addEventListener("click", () => {
+          syncRowFieldsToStudies();
+          const i = studies.indexOf(
+            studies.find((c) => c.slug === btn.closest("[data-row]").getAttribute("data-slug"))
+          );
+          const j = i + Number(btn.getAttribute("data-move"));
+          if (j < 0 || j >= studies.length) return;
+          const tmp = studies[i];
+          studies[i] = studies[j];
+          studies[j] = tmp;
+          studies.forEach((cs, k) => (cs.order = k));
+          renderRows();
+        })
+      );
+
+      rowsEl.querySelectorAll("[data-delete]").forEach((btn) =>
+        btn.addEventListener("click", () => {
+          const slug = btn.getAttribute("data-delete");
+          const cs = studies.find((c) => c.slug === slug);
+          if (!cs) return;
+          if (!confirm(`Delete "${cs.title}"? This removes it from site.json (images stay in the repo). This can't be undone here.`)) return;
+          syncRowFieldsToStudies();
+          studies = studies.filter((c) => c.slug !== slug);
+          studies.forEach((c, k) => (c.order = k));
+          site.caseStudies = site.caseStudies.filter((c) => c.slug !== slug);
+          renderRows();
+        })
+      );
+
+      rowsEl.querySelectorAll("[data-open-editor]").forEach((btn) =>
+        btn.addEventListener("click", () => {
+          syncRowFieldsToStudies();
+          const slug = btn.getAttribute("data-open-editor");
+          location.href = csUrl(slug, "&edit=1");
+        })
+      );
+    }
+
+    renderRows();
 
     overlay.querySelector("[data-new-study]").addEventListener("click", () => {
+      syncRowFieldsToStudies();
       const input = overlay.querySelector("[data-new-title]");
       const title = input.value.trim();
       if (!title) return;
@@ -460,7 +512,7 @@
         subtitle: "",
         visible: false,
         password: "public",
-        order: (Math.max(0, ...site.caseStudies.map((c) => c.order ?? 0)) || 0) + 1,
+        order: studies.length,
         blocks: [],
       };
       site.caseStudies.push(cs);
@@ -471,13 +523,7 @@
     overlay.querySelector("[data-manage-save]").addEventListener("click", async (e) => {
       const btn = e.currentTarget;
       const errorEl = overlay.querySelector("[data-manage-error]");
-      overlay.querySelectorAll("[data-row]").forEach((row) => {
-        const slug = row.getAttribute("data-slug");
-        const cs = site.caseStudies.find((c) => c.slug === slug);
-        if (!cs) return;
-        cs.visible = row.querySelector("[data-f-visible]").checked;
-        cs.password = row.querySelector("[data-f-password]").value.trim();
-      });
+      syncRowFieldsToStudies();
       btn.disabled = true;
       btn.textContent = "Saving…";
       try {

@@ -1021,10 +1021,29 @@ body.admin-modal-open {
 }
 
 .admin-study-card-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 14px;
   font-weight: 500;
   color: var(--text-primary);
   margin-bottom: 10px;
+}
+
+.admin-reorder-controls {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.admin-icon-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.admin-icon-btn:disabled:hover {
+  background: none;
+  color: var(--text-secondary);
 }
 
 .admin-study-card-fields {
