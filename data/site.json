@@ -839,7 +839,7 @@
       "navTitle": "LEGO House Access",
       "title": "LEGO House Access",
       "subtitle": "From Entry to Exit: Rethinking Access at LEGO House",
-      "visible": true,
+      "visible": false,
       "password": "public",
       "order": 3,
       "blocks": [
