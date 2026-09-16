@@ -1273,13 +1273,9 @@
             {
               "src": "../assets/img/case-studies/manorama-yearbook/img-01.png",
               "alt": "Uploaded image",
-              "caption": null
+              "caption": "Yearly editions of Manorama Yearbook"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Yearly editions of Manorama Yearbook"
         },
         {
           "type": "heading",
@@ -2012,8 +2008,7 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-01.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -2046,10 +2041,13 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-02.png",
-              "alt": "Uploaded image",
-              "caption": "Business model canvas : From design perspective"
+              "alt": "Uploaded image"
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Business model canvas : From design perspective"
         },
         {
           "type": "subheading",
@@ -2072,8 +2070,7 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-03.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -2090,8 +2087,7 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-04.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -2104,8 +2100,7 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-05.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -2122,8 +2117,7 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-06.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -2136,8 +2130,7 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-07.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -2235,13 +2228,10 @@
           "images": [
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-01.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Existing product"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Existing product"
         },
         {
           "type": "subheading",
@@ -2272,7 +2262,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-02.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2313,11 +2304,13 @@
           "images": [
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-03.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             },
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-04.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2346,11 +2339,13 @@
           "images": [
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-05.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             },
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-06.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2387,7 +2382,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-07.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2400,7 +2396,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-08.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2413,7 +2410,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/zafin-dashboard/img-09.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         }
