@@ -286,6 +286,10 @@
         },
         {
           "type": "paragraph",
+          "text": "\n\n"
+        },
+        {
+          "type": "paragraph",
           "text": "The ticketing system sat at the core of LEGO House , influencing every part of its day-to-day operation. From guest entry and capacity planning to retail, experiences, and post-visit touchpoints. To understand the full impact of changing this backbone system, I created a holistic journey map by working closely with department heads across operations, guest services, retail, and other teams. These conversations helped surface hidden dependencies, pain points, and risks, allowing us to see the system not just as technology, but as a connected experience across people, processes, and platforms."
         },
         {
