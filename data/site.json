@@ -505,7 +505,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/skyfish/img-01.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -530,13 +531,10 @@
           "images": [
             {
               "src": "../assets/img/case-studies/skyfish/img-02.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Journey mapping & identifying frictions to be address in an AS-IS map"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Journey mapping & identifying frictions to be address in an AS-IS map"
         },
         {
           "type": "subheading",
@@ -555,7 +553,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/skyfish/img-03.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -576,24 +575,22 @@
           "images": [
             {
               "src": "../assets/img/case-studies/skyfish/img-04.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
         {
           "type": "subheading",
-          "text": "For"
-        },
-        {
-          "type": "subheading",
-          "text": "Example ..."
+          "text": "For Example ..."
         },
         {
           "type": "image-row",
           "images": [
             {
               "src": "../assets/img/case-studies/skyfish/img-05.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -602,26 +599,20 @@
           "images": [
             {
               "src": "../assets/img/case-studies/skyfish/img-mu46nqvxm7yg.png",
-              "alt": null
+              "alt": null,
+              "caption": "Before - 2020"
             }
           ]
-        },
-        {
-          "type": "subheading",
-          "text": "Before - 2020"
         },
         {
           "type": "image-row",
           "images": [
             {
               "src": "../assets/img/case-studies/skyfish/img-07.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "After - 2023"
             }
           ]
-        },
-        {
-          "type": "subheading",
-          "text": "After - 2023"
         },
         {
           "type": "subheading",
