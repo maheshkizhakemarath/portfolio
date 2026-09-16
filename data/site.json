@@ -594,10 +594,15 @@
             {
               "src": "../assets/img/case-studies/skyfish/img-05.png",
               "alt": "Uploaded image"
-            },
+            }
+          ]
+        },
+        {
+          "type": "image-row",
+          "images": [
             {
-              "src": "../assets/img/case-studies/skyfish/img-06.png",
-              "alt": "Uploaded image"
+              "src": "../assets/img/case-studies/skyfish/img-mu46lu3684cf.png",
+              "alt": null
             }
           ]
         },
