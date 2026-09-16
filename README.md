@@ -13,9 +13,6 @@ data/site.json                Single source of truth: about, connect links, all 
 case-studies/
   view.html                   One template that renders any case study from data/site.json (?slug=...)
   <slug>.html                 Old direct links — each just redirects to view.html?slug=<slug>
-  status-pages-demo.html      Static reference/demo page (not in site.json, not linked in nav)
-  clinical-handoffs.html      Static leftover placeholder (not in site.json, not linked)
-  distributed-planning.html   Static leftover placeholder (not in site.json, not linked)
 assets/
   css/styles.css              All styles: design tokens, light/dark theme, admin UI
   js/render.js                Fetches data/site.json and renders the home page / a case study
@@ -126,11 +123,3 @@ Then in the repo on GitHub: **Settings → Pages → Source: Deploy from a
 branch → `main` / `root`**. The site will be live at
 `https://maheshkizhakemarath.github.io/portfolio/`. From then on, admin
 edits (which commit to `main`) redeploy the live site automatically.
-
-## Leftover static pages
-
-`status-pages-demo.html`, `clinical-handoffs.html`, and
-`distributed-planning.html` predate the data-driven rebuild and are not
-part of `data/site.json` or linked from the nav. They still work standalone
-if you open them directly; delete them whenever you don't need them as
-reference.
