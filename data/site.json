@@ -1271,9 +1271,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-01.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -1309,9 +1309,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-02.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -1327,15 +1327,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-03.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Day in life of persona's identified to inform design"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Day in life of persona's identified to inform design"
         },
         {
           "type": "subheading",
@@ -1349,15 +1345,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-04.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "User mental model to inform design."
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "User mental model to inform design."
         },
         {
           "type": "subheading",
@@ -1371,15 +1363,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-05.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Journey map of both buyer & non-buyer"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Journey map of both buyer & non-buyer"
         },
         {
           "type": "heading",
@@ -1397,15 +1385,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-06.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Contextual inquiry"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Contextual inquiry"
         },
         {
           "type": "heading",
@@ -1443,15 +1427,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-07.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Feature value adds"
             }
           ]
-        },
-        {
-          "type": "subheading",
-          "text": "Feature value adds"
         },
         {
           "type": "paragraph",
@@ -1477,15 +1457,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-08.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Purpose driven, Information architecture"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Purpose driven, Information architecture"
         },
         {
           "type": "subheading",
@@ -1499,29 +1475,25 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-09.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Navigation concepts"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Navigation concepts"
         },
         {
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-10.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Wireframes"
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "Wireframes"
+          "text": ""
         },
         {
           "type": "paragraph",
@@ -1543,15 +1515,15 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-11.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Responsive web, Native IOS & Android apps"
             }
           ]
         },
         {
           "type": "paragraph",
-          "text": "Responsive web, Native IOS & Android apps"
+          "text": ""
         },
         {
           "type": "heading",
@@ -1561,9 +1533,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/manorama-yearbook/img-12.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -1732,10 +1704,6 @@
               "caption": "Questionnaire"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "\n\n"
         },
         {
           "type": "paragraph",
