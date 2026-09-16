@@ -634,7 +634,7 @@
         }
       ],
       "group": "colourbox",
-      "coverImage": "../assets/img/case-studies/skyfish/cover-mu3vi18d7qt9.png"
+      "coverImage": "../assets/img/case-studies/skyfish/cover-mu3v76oo3dn5.png"
     },
     {
       "slug": "lego-house-journey",
@@ -2403,7 +2403,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-01.png",
               "alt": "Uploaded image"
             }
@@ -2441,7 +2440,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-02.png",
               "alt": "Uploaded image"
             }
@@ -2483,12 +2481,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-03.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-04.png",
               "alt": "Uploaded image"
             }
@@ -2518,12 +2514,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-05.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-06.png",
               "alt": "Uploaded image"
             }
@@ -2561,7 +2555,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-07.png",
               "alt": "Uploaded image"
             }
@@ -2575,7 +2568,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-08.png",
               "alt": "Uploaded image"
             }
@@ -2589,14 +2581,14 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/zafin-dashboard/img-09.png",
               "alt": "Uploaded image"
             }
           ]
         }
       ],
-      "group": "think-design"
+      "group": "think-design",
+      "coverImage": "../assets/img/case-studies/zafin-dashboard/cover-mu3vj402ll31.png"
     }
   ]
 }
