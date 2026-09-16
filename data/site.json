@@ -651,9 +651,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-01.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -669,9 +669,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-02.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -683,9 +683,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-03.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -701,9 +701,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-04.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -719,9 +719,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-05.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -737,9 +737,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-06.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -779,15 +779,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-07.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Outcome: AS-IS Guest journey map"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Outcome: AS-IS Guest journey map"
         },
         {
           "type": "subheading",
@@ -801,9 +797,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-08.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -815,9 +811,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-09.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -839,9 +835,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-journey/img-10.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         }
