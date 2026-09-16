@@ -286,7 +286,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\n\n"
+          "text": ""
         },
         {
           "type": "paragraph",
@@ -298,19 +298,11 @@
         },
         {
           "type": "paragraph",
-          "text": "Stage 1 : Launch AFOL Day tickets Test Hero/Core Flow"
+          "text": "Stage 1 : Launch AFOL Day tickets Test Hero/Core, Flow Purchase ticket - Redeem wrist bands - Enter LH Gates - Experience zones - Exit"
         },
         {
           "type": "paragraph",
-          "text": "Purchase ticket - Redeem wrist bands - Enter LH Gates - Experience zones - Exit"
-        },
-        {
-          "type": "paragraph",
-          "text": "Stage 2 : Fix all bells & whistles Test Peripherals"
-        },
-        {
-          "type": "paragraph",
-          "text": "Partner Integrations - API’s - Kiosks - Gates - Help desk - exit - Memories"
+          "text": "Stage 2 : Fix all bells & whistles Test Peripherals, Partner Integrations - API’s - Kiosks - Gates - Help desk - exit - Memories"
         },
         {
           "type": "paragraph",
@@ -878,9 +870,9 @@
           "type": "image-row",
           "images": [
             {
+              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-01.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -896,9 +888,9 @@
           "type": "image-row",
           "images": [
             {
+              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-02.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -926,9 +918,9 @@
           "type": "image-row",
           "images": [
             {
+              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-03.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         },
@@ -944,21 +936,29 @@
           "type": "image-row",
           "images": [
             {
+              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-04.png",
-              "alt": "Uploaded image",
-              "caption": "Before"
+              "alt": "Uploaded image"
             }
           ]
+        },
+        {
+          "type": "subheading",
+          "text": "Before"
         },
         {
           "type": "image-row",
           "images": [
             {
+              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-05.gif",
-              "alt": "Uploaded image",
-              "caption": "After"
+              "alt": "Uploaded image"
             }
           ]
+        },
+        {
+          "type": "subheading",
+          "text": "After"
         },
         {
           "type": "subheading",
@@ -1000,9 +1000,9 @@
           "type": "image-row",
           "images": [
             {
+              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-06.png",
-              "alt": "Uploaded image",
-              "caption": null
+              "alt": "Uploaded image"
             }
           ]
         }
@@ -1654,15 +1654,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-01.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Research process"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Research process"
         },
         {
           "type": "subheading",
@@ -1676,9 +1672,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-02.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -1698,15 +1694,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-03.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Areas of inquiry"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Areas of inquiry"
         },
         {
           "type": "subheading",
@@ -1720,15 +1712,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-04.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
-        },
-        {
-          "type": "subheading",
-          "text": "Planning & logistics"
         },
         {
           "type": "paragraph",
@@ -1738,20 +1726,16 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-05.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Plan Logistics"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-06.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Questionnaire"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Plan & questionnaire"
         },
         {
           "type": "paragraph",
@@ -1769,14 +1753,14 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-07.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-08.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -1796,15 +1780,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-09.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Insights"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Insights"
         },
         {
           "type": "heading",
@@ -1814,9 +1794,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-10.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -1869,29 +1849,21 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-11.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Perception map created along with the stakeholders"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Perception map created along with the stakeholders"
         },
         {
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-12.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "User persona's"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "User persona's"
         },
         {
           "type": "heading",
@@ -1901,15 +1873,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-13.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Concept sketches"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Concept sketches"
         },
         {
           "type": "paragraph",
@@ -1939,29 +1907,21 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-14.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Concept round 1"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Concept round 1"
         },
         {
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-15.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Concept round 2"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Concept round 2"
         },
         {
           "type": "heading",
@@ -1971,14 +1931,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-16.png",
-              "alt": "Uploaded image"
-            },
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-17.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -1986,83 +1941,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-18.png",
-              "alt": "Uploaded image"
-            },
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-19.png",
-              "alt": "Uploaded image"
-            }
-          ]
-        },
-        {
-          "type": "image-row",
-          "images": [
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-20.png",
-              "alt": "Uploaded image"
-            },
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-21.png",
-              "alt": "Uploaded image"
-            }
-          ]
-        },
-        {
-          "type": "image-row",
-          "images": [
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-22.png",
-              "alt": "Uploaded image"
-            },
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-23.png",
-              "alt": "Uploaded image"
-            }
-          ]
-        },
-        {
-          "type": "image-row",
-          "images": [
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-24.png",
-              "alt": "Uploaded image"
-            },
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-25.png",
-              "alt": "Uploaded image"
-            }
-          ]
-        },
-        {
-          "type": "image-row",
-          "images": [
-            {
-              "type": "image",
-              "src": "../assets/img/case-studies/deccan-herald/img-26.png",
-              "alt": "Uploaded image"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "text": "Features"
-        },
-        {
-          "type": "image-row",
-          "images": [
-            {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-27.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2085,9 +1966,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-28.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         }
