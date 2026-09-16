@@ -58,17 +58,21 @@ compromised, revoke the token on GitHub and issue a new one.
   Group dropdown, delete it, or add a new one.
 - **On a case study page:** *Edit this work* opens a block editor —
   set a cover image (used as its thumbnail in the group popover; falls back
-  to the first content image if left empty), add/remove/reorder headings,
-  sub-headings, paragraphs, lists, and image blocks (upload images directly;
-  they're committed into `assets/img/case-studies/<slug>/`), and edit the
-  title/subtitle.
+  to the first content image if left empty) and edit the title/subtitle.
+  Hover between any two blocks (or before the first / after the last) to
+  reveal a **+** button; click it for a menu of block types to insert right
+  there — Heading, Sub-heading, Paragraph, List, Images (upload directly;
+  they're committed into `assets/img/case-studies/<slug>/`), or Embed (a
+  responsive video player from any embeddable URL, e.g. a YouTube "Embed"
+  link). Each existing block still has its own reorder/delete controls.
 
 **Groups**: a case study can belong to a named group (e.g. "LEGO Group").
 Grouped work shows as a single tile on the home page; clicking it opens a
 popover with a fanned, animated card deck — one card per case study in that
-group, tap the stack to cycle through, "Read case study" opens the one
-currently in front. A case study left ungrouped just shows as its own tile,
-same as before groups existed.
+group. Click the right side of the stack to go to the next case study, the
+left side to go back; "Read case study" opens the one currently in front.
+A case study left ungrouped just shows as its own tile, same as before
+groups existed.
 
 **Adding a link inside any text**: Role, About, a case study's Subtitle,
 and every heading/sub-heading/paragraph/list block have a **+ Link**
