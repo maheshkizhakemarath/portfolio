@@ -690,6 +690,10 @@
           ]
         },
         {
+          "type": "subheading",
+          "text": ""
+        },
+        {
           "type": "paragraph",
           "text": "IMMERSIVE FIELDWORK"
         },
@@ -708,6 +712,10 @@
           ]
         },
         {
+          "type": "subheading",
+          "text": ""
+        },
+        {
           "type": "paragraph",
           "text": "PATTEN CLUSTERING"
         },
@@ -724,6 +732,10 @@
               "caption": null
             }
           ]
+        },
+        {
+          "type": "subheading",
+          "text": ""
         },
         {
           "type": "paragraph",
