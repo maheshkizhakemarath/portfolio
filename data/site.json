@@ -502,7 +502,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/skyfish/img-01.png",
               "alt": "Uploaded image"
             }
@@ -528,7 +527,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/skyfish/img-02.png",
               "alt": "Uploaded image"
             }
@@ -554,7 +552,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/skyfish/img-03.png",
               "alt": "Uploaded image"
             }
@@ -576,7 +573,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/skyfish/img-04.png",
               "alt": "Uploaded image"
             }
@@ -594,12 +590,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/skyfish/img-05.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/skyfish/img-06.png",
               "alt": "Uploaded image"
             }
@@ -613,7 +607,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/skyfish/img-07.png",
               "alt": "Uploaded image"
             }
@@ -628,6 +621,10 @@
           "text": "Impact"
         },
         {
+          "type": "paragraph",
+          "text": "https://www.youtube.com/embed/22vXVVbn4sM"
+        },
+        {
           "type": "list",
           "items": [
             "Reduced churn to almost zero.",
@@ -636,7 +633,8 @@
           ]
         }
       ],
-      "group": "colourbox"
+      "group": "colourbox",
+      "coverImage": "../assets/img/case-studies/skyfish/cover-mu3v76oo3dn5.png"
     },
     {
       "slug": "lego-house-journey",
