@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Work — Mahesh Marath</title>
   <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../assets/css/styles.css?v=8" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=9" />
   <script>
     // Synchronous, pre-paint: assume locked unless this exact case study
     // was already unlocked in this browser. render.js + gate.js reconcile
@@ -20,6 +20,19 @@
       if (!unlocked) {
         document.documentElement.classList.add("gate-locked");
       }
+    })();
+  </script>
+  <script>
+    // Synchronous, pre-paint: avoids a flash of the wrong theme. Mirrors
+    // the logic in assets/js/site.js — an explicit saved choice wins,
+    // otherwise follow the OS/browser preference.
+    (function () {
+      var stored = null;
+      try {
+        stored = localStorage.getItem("mkm-theme");
+      } catch (e) {}
+      var dark = stored ? stored === "dark" : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (dark) document.documentElement.setAttribute("data-theme", "dark");
     })();
   </script>
 </head>
@@ -80,10 +93,10 @@
     </div>
   </div>
 
-  <script src="../assets/js/render.js?v=8"></script>
-  <script src="../assets/js/gate.js?v=8"></script>
-  <script src="../assets/js/site.js?v=8"></script>
-  <script src="../assets/js/admin.js?v=8"></script>
+  <script src="../assets/js/render.js?v=9"></script>
+  <script src="../assets/js/gate.js?v=9"></script>
+  <script src="../assets/js/site.js?v=9"></script>
+  <script src="../assets/js/admin.js?v=9"></script>
   <script>
     MKM.renderCaseStudy().then(function (result) {
       if (result && result.caseStudy) {

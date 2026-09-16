@@ -20,7 +20,7 @@ assets/
   css/styles.css              All styles: design tokens, light/dark theme, admin UI
   js/render.js                Fetches data/site.json and renders the home page / a case study
   js/gate.js                  Per-case-study password gate (reads the password from site data)
-  js/site.js                  Theme toggle (persisted) + image-preview lightbox
+  js/site.js                  Theme toggle (follows the OS preference until explicitly overridden) + image-preview lightbox
   js/admin.js                 Long-press login, GitHub-backed save, the whole editing UI
   img/case-studies/<slug>/    Case study images, referenced by path from data/site.json
   fonts/                      Geist variable fonts (regular + italic)

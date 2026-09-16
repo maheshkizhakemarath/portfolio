@@ -1,25 +1,38 @@
-// Theme toggle (Light / Dark) with persistence
+// Theme toggle (Light / Dark) with persistence, defaulting to the browser/
+// OS preference when the visitor hasn't explicitly chosen one. Until the
+// Light/Dark buttons are clicked, the theme follows prefers-color-scheme
+// live, including changes made while the tab is open; a click stores an
+// explicit override that sticks (mirrors the pre-paint script in <head>,
+// which avoids a flash of the wrong theme on load).
 (function () {
   var root = document.documentElement;
-  var stored = null;
-  try {
-    stored = localStorage.getItem("mkm-theme");
-  } catch (e) {}
+  var STORAGE_KEY = "mkm-theme";
+  var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
 
-  if (stored === "dark") {
-    root.setAttribute("data-theme", "dark");
+  function storedTheme() {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+      return null;
+    }
   }
 
-  function setTheme(theme) {
+  function applyTheme(theme) {
     if (theme === "dark") {
       root.setAttribute("data-theme", "dark");
     } else {
       root.removeAttribute("data-theme");
     }
-    try {
-      localStorage.setItem("mkm-theme", theme);
-    } catch (e) {}
     syncButtons();
+  }
+
+  // An explicit choice (from a click) persists and overrides the system
+  // preference from then on; no stored choice means "follow the system".
+  function setTheme(theme) {
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch (e) {}
+    applyTheme(theme);
   }
 
   function currentTheme() {
@@ -32,6 +45,17 @@
       var pressed = btn.getAttribute("data-theme-btn") === theme;
       btn.setAttribute("aria-pressed", pressed ? "true" : "false");
     });
+  }
+
+  applyTheme(storedTheme() || (media && media.matches ? "dark" : "light"));
+
+  if (media) {
+    var onSystemChange = function (e) {
+      if (storedTheme()) return; // an explicit choice overrides the system
+      applyTheme(e.matches ? "dark" : "light");
+    };
+    if (media.addEventListener) media.addEventListener("change", onSystemChange);
+    else if (media.addListener) media.addListener(onSystemChange); // older Safari
   }
 
   document.addEventListener("click", function (e) {
