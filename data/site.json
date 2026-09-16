@@ -16,17 +16,17 @@
   "groups": [
     {
       "id": "lego-group",
-      "name": "At the LEGO Group",
+      "name": "Experience design @ the LEGO group",
       "order": 0
     },
     {
       "id": "colourbox",
-      "name": "Colourbox & Skyfish",
+      "name": "UX design & strategy for enterprise digital asset management",
       "order": 1
     },
     {
       "id": "think-design",
-      "name": "Think Design Collaborative",
+      "name": "End-to-end design transformations for Fortune 500 clients",
       "order": 2
     }
   ],
