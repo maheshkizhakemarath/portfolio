@@ -1172,7 +1172,8 @@ body.admin-modal-open {
   margin-top: 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  /* No gap — each .admin-insert-point between blocks provides the spacing
+     (and doubles as the hover target for inserting a new block there). */
 }
 
 .admin-block {
@@ -1209,11 +1210,84 @@ body.admin-modal-open {
   gap: 2px;
 }
 
-.admin-add-block-row {
+/* ---------- inline block-insertion points ---------- */
+.admin-insert-point {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-insert-point::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--border);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.admin-insert-point:hover::before,
+.admin-insert-point.is-open::before {
+  opacity: 1;
+}
+
+.admin-insert-btn {
+  position: relative;
+  z-index: 1;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.15s ease, transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.admin-insert-point:hover .admin-insert-btn,
+.admin-insert-point.is-open .admin-insert-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.admin-insert-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg);
+  border-color: var(--text-primary);
+}
+
+.admin-insert-menu {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
+  gap: 6px;
+  justify-content: center;
+  width: max-content;
+  max-width: 260px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.admin-insert-menu[hidden] {
+  display: none;
 }
 
 .admin-image-row {

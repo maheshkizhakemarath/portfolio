@@ -865,6 +865,26 @@
       </span>`;
   }
 
+  // A thin hover strip between blocks (and before the first / after the
+  // last) that reveals a "+" button, which opens a small menu of block
+  // types to insert right at that position — replaces always-visible
+  // "+ Heading / + Paragraph / …" buttons with an inline, position-aware
+  // equivalent.
+  function insertPointHTML(pos) {
+    return `
+      <div class="admin-insert-point" data-insert-at="${pos}">
+        <button type="button" class="admin-insert-btn" data-insert-toggle aria-label="Add a block here">+</button>
+        <div class="admin-insert-menu" data-insert-menu hidden>
+          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-insert-type="heading">+ Heading</button>
+          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-insert-type="subheading">+ Sub-heading</button>
+          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-insert-type="paragraph">+ Paragraph</button>
+          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-insert-type="list">+ List</button>
+          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-insert-type="image-row">+ Images</button>
+          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-insert-type="embed">+ Embed</button>
+        </div>
+      </div>`;
+  }
+
   function resolveImgSrc(src) {
     if (!src) return "";
     if (src.startsWith("http") || src.startsWith("../") || src.startsWith("blob:")) return src;
@@ -905,16 +925,8 @@
         <p class="admin-modal-hint">Shown as the thumbnail when this work appears in a group's popover. If left empty, the first image in the content below is used instead.</p>
 
         <div class="admin-blocks" data-blocks>
-          ${draft.blocks.map((b, i) => blockEditorRowHTML(b, i)).join("")}
-        </div>
-
-        <div class="admin-add-block-row">
-          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="heading">+ Heading</button>
-          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="subheading">+ Sub-heading</button>
-          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="paragraph">+ Paragraph</button>
-          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="list">+ List</button>
-          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="image-row">+ Images</button>
-          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="embed">+ Embed</button>
+          ${insertPointHTML(0)}
+          ${draft.blocks.map((b, i) => blockEditorRowHTML(b, i) + insertPointHTML(i + 1)).join("")}
         </div>
 
         <p class="admin-form-error" data-editor-error></p>
@@ -925,6 +937,49 @@
       `;
       wireCoverEvents();
       wireBlockEvents();
+      wireInsertPoints();
+    }
+
+    function insertBlockAt(position, type) {
+      syncTextFieldsToDraft();
+      const blank =
+        type === "list"
+          ? { type, items: [] }
+          : type === "image-row"
+          ? { type, images: [] }
+          : type === "embed"
+          ? { type, url: "" }
+          : { type, text: "" };
+      draft.blocks.splice(position, 0, blank);
+      render();
+    }
+
+    function closeInsertMenus() {
+      body.querySelectorAll("[data-insert-at]").forEach((point) => {
+        point.classList.remove("is-open");
+        point.querySelector("[data-insert-menu]").hidden = true;
+      });
+    }
+
+    function wireInsertPoints() {
+      body.querySelectorAll("[data-insert-at]").forEach((point) => {
+        const menu = point.querySelector("[data-insert-menu]");
+        point.querySelector("[data-insert-toggle]").addEventListener("click", (e) => {
+          e.stopPropagation();
+          const wasOpen = point.classList.contains("is-open");
+          closeInsertMenus();
+          if (!wasOpen) {
+            point.classList.add("is-open");
+            menu.hidden = false;
+          }
+        });
+        menu.querySelectorAll("[data-insert-type]").forEach((btn) =>
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            insertBlockAt(Number(point.getAttribute("data-insert-at")), btn.getAttribute("data-insert-type"));
+          })
+        );
+      });
     }
 
     function wireCoverEvents() {
@@ -989,22 +1044,6 @@
           render();
         })
       );
-      body.querySelectorAll("[data-add]").forEach((btn) =>
-        btn.addEventListener("click", () => {
-          syncTextFieldsToDraft();
-          const type = btn.getAttribute("data-add");
-          const blank =
-            type === "list"
-              ? { type, items: [] }
-              : type === "image-row"
-              ? { type, images: [] }
-              : type === "embed"
-              ? { type, url: "" }
-              : { type, text: "" };
-          draft.blocks.push(blank);
-          render();
-        })
-      );
       body.querySelectorAll("[data-remove-image]").forEach((btn) =>
         btn.addEventListener("click", () => {
           syncTextFieldsToDraft();
@@ -1041,6 +1080,11 @@
 
     const { overlay, close } = openModal("", { wide: true, onClose: () => {} });
     const body = overlay.querySelector(".admin-modal");
+    // Attached once (unlike the block-specific listeners in wireBlockEvents/
+    // wireInsertPoints, which are re-wired on every render() since innerHTML
+    // replacement destroys them) — closes any open insert-point menu when
+    // clicking anywhere else in the editor.
+    body.addEventListener("click", () => closeInsertMenus());
     render();
 
     overlay.querySelector(".admin-modal").addEventListener("click", async (e) => {
