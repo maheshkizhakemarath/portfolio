@@ -1273,9 +1273,13 @@
             {
               "src": "../assets/img/case-studies/manorama-yearbook/img-01.png",
               "alt": "Uploaded image",
-              "caption": "Yearly editions of Manorama Yearbook"
+              "caption": null
             }
           ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Yearly editions of Manorama Yearbook"
         },
         {
           "type": "heading",
@@ -2008,7 +2012,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-01.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2041,13 +2046,10 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-02.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Business model canvas : From design perspective"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Business model canvas : From design perspective"
         },
         {
           "type": "subheading",
@@ -2070,7 +2072,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-03.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2087,7 +2090,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-04.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2100,7 +2104,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-05.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2117,7 +2122,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-06.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -2130,7 +2136,8 @@
           "images": [
             {
               "src": "../assets/img/case-studies/figo/img-07.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
