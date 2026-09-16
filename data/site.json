@@ -1674,13 +1674,9 @@
             {
               "src": "../assets/img/case-studies/deccan-herald/img-02.png",
               "alt": "Uploaded image",
-              "caption": null
+              "caption": "Research objectives"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Research objectives"
         },
         {
           "type": "subheading",
