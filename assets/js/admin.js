@@ -443,22 +443,56 @@
   }
 
   // ---------------------------------------------------------------------
-  // Manage case studies (visibility, password, add, delete)
+  // Manage case studies: groups (create/rename/delete/reorder) and, within
+  // each group or standalone, the same per-study controls as before
+  // (visibility, password, add, delete) plus a "Group" selector.
+  //
+  // Ordering model: every group and every *ungrouped* case study shares one
+  // "top-level" order space (site.groups[].order / cs.order). A case study
+  // that belongs to a group instead uses cs.order for its position *within*
+  // that group. Moving a study between groups just re-appends it at the
+  // end of its new scope.
   // ---------------------------------------------------------------------
   function openManageStudies() {
     const site = state.site;
-    // Local working copy of the display order. Entries are the SAME object
-    // references as in site.caseStudies, so mutating cs.order here already
-    // updates the underlying data — reordering doesn't need to wait for Save.
-    let studies = site.caseStudies.slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+    if (!site.groups) site.groups = [];
 
-    function rowHTML(cs, i) {
+    function topLevelEntries() {
+      const groupEntries = site.groups
+        .slice()
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
+        .map((g) => ({ type: "group", ref: g }));
+      const studyEntries = site.caseStudies
+        .filter((cs) => !cs.group)
+        .map((cs) => ({ type: "study", ref: cs }));
+      return groupEntries.concat(studyEntries).sort((a, b) => (a.ref.order ?? 0) - (b.ref.order ?? 0));
+    }
+
+    function groupMembers(groupId) {
+      return site.caseStudies
+        .filter((cs) => cs.group === groupId)
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+    }
+
+    function groupOptionsHTML(selectedId) {
+      return (
+        `<option value="">— Ungrouped —</option>` +
+        site.groups
+          .map(
+            (g) =>
+              `<option value="${window.MKM.esc(g.id)}" ${g.id === (selectedId || "") ? "selected" : ""}>${window.MKM.esc(g.name)}</option>`
+          )
+          .join("")
+      );
+    }
+
+    function studyRowHTML(cs, i, total) {
       return `
-        <div class="admin-study-card" data-row data-slug="${window.MKM.esc(cs.slug)}">
+        <div class="admin-study-card" data-row data-entry-type="study" data-slug="${window.MKM.esc(cs.slug)}">
           <div class="admin-study-card-title">
             <span class="admin-reorder-controls">
               <button type="button" class="admin-icon-btn" data-move="-1" title="Move up" ${i === 0 ? "disabled" : ""}>↑</button>
-              <button type="button" class="admin-icon-btn" data-move="1" title="Move down" ${i === studies.length - 1 ? "disabled" : ""}>↓</button>
+              <button type="button" class="admin-icon-btn" data-move="1" title="Move down" ${i === total - 1 ? "disabled" : ""}>↓</button>
             </span>
             ${window.MKM.esc(cs.title)}
           </div>
@@ -474,6 +508,10 @@
               <span>Password</span>
               <input class="admin-input admin-input--sm" type="text" data-f-password value="${window.MKM.esc(cs.password || "")}" placeholder="(none)" />
             </label>
+            <label class="admin-study-field">
+              <span>Group</span>
+              <select class="admin-input admin-input--sm" data-f-group>${groupOptionsHTML(cs.group)}</select>
+            </label>
           </div>
           <div class="admin-row-actions">
             <a class="admin-link" href="${csUrl(cs.slug)}" target="_blank">View</a>
@@ -483,11 +521,37 @@
         </div>`;
     }
 
+    function groupCardHTML(g, i, total) {
+      const members = groupMembers(g.id);
+      return `
+        <div class="admin-group-card" data-row data-entry-type="group" data-group-id="${window.MKM.esc(g.id)}">
+          <div class="admin-study-card-title">
+            <span class="admin-reorder-controls">
+              <button type="button" class="admin-icon-btn" data-move="-1" title="Move up" ${i === 0 ? "disabled" : ""}>↑</button>
+              <button type="button" class="admin-icon-btn" data-move="1" title="Move down" ${i === total - 1 ? "disabled" : ""}>↓</button>
+            </span>
+            <input class="admin-input admin-input--sm" type="text" data-group-name value="${window.MKM.esc(g.name)}" />
+            <button type="button" class="admin-btn admin-btn--sm admin-btn--danger" data-delete-group="${window.MKM.esc(g.id)}">Delete group</button>
+          </div>
+          <div class="admin-group-members" data-group-members>
+            ${
+              members.length
+                ? members.map((cs, j) => studyRowHTML(cs, j, members.length)).join("")
+                : '<p class="admin-modal-hint">No case studies in this group yet — use the Group dropdown on a study below to add one.</p>'
+            }
+          </div>
+        </div>`;
+    }
+
     const { overlay, close } = openModal(
       `
       <h2>Manage Past Work</h2>
-      <p class="admin-modal-hint">Use ↑ / ↓ to change the order your past work appears in on the home page.</p>
+      <p class="admin-modal-hint">Use ↑ / ↓ to reorder groups and standalone work on the home page, and within a group. Give a case study a Group to move it into that group's popover.</p>
       <div class="admin-study-list" data-rows></div>
+      <div class="admin-new-study">
+        <input class="admin-input" type="text" placeholder="New group name…" data-new-group-name />
+        <button type="button" class="admin-btn admin-btn--ghost" data-new-group>+ New group</button>
+      </div>
       <div class="admin-new-study">
         <input class="admin-input" type="text" placeholder="New work title…" data-new-title />
         <button type="button" class="admin-btn" data-new-study>+ New work</button>
@@ -503,65 +567,149 @@
 
     const rowsEl = overlay.querySelector("[data-rows]");
 
-    // Read whatever the admin has typed/toggled in each visible row back
-    // into the study objects, so re-rendering after a move/delete doesn't
-    // discard in-progress (unsaved) edits.
-    function syncRowFieldsToStudies() {
-      rowsEl.querySelectorAll("[data-row]").forEach((row) => {
+    // Read whatever the admin has typed/toggled back into the underlying
+    // objects, so re-rendering after a move/delete/assign doesn't discard
+    // in-progress (unsaved) edits elsewhere in the list.
+    function syncFieldsToModel() {
+      rowsEl.querySelectorAll("[data-entry-type='study']").forEach((row) => {
         const slug = row.getAttribute("data-slug");
-        const cs = studies.find((c) => c.slug === slug);
+        const cs = site.caseStudies.find((c) => c.slug === slug);
         if (!cs) return;
         cs.visible = row.querySelector("[data-f-visible]").checked;
         cs.password = row.querySelector("[data-f-password]").value.trim();
       });
+      rowsEl.querySelectorAll("[data-entry-type='group']").forEach((row) => {
+        const g = site.groups.find((x) => x.id === row.getAttribute("data-group-id"));
+        if (!g) return;
+        const name = row.querySelector("[data-group-name]").value.trim();
+        if (name) g.name = name;
+      });
     }
 
-    function renderRows() {
-      rowsEl.innerHTML = studies.map(rowHTML).join("");
-
-      rowsEl.querySelectorAll("[data-move]").forEach((btn) =>
-        btn.addEventListener("click", () => {
-          syncRowFieldsToStudies();
-          const i = studies.indexOf(
-            studies.find((c) => c.slug === btn.closest("[data-row]").getAttribute("data-slug"))
-          );
-          const j = i + Number(btn.getAttribute("data-move"));
-          if (j < 0 || j >= studies.length) return;
-          const tmp = studies[i];
-          studies[i] = studies[j];
-          studies[j] = tmp;
-          studies.forEach((cs, k) => (cs.order = k));
-          renderRows();
-        })
-      );
-
-      rowsEl.querySelectorAll("[data-delete]").forEach((btn) =>
-        btn.addEventListener("click", () => {
-          const slug = btn.getAttribute("data-delete");
-          const cs = studies.find((c) => c.slug === slug);
-          if (!cs) return;
-          if (!confirm(`Delete "${cs.title}"? This removes it from site.json (images stay in the repo). This can't be undone here.`)) return;
-          syncRowFieldsToStudies();
-          studies = studies.filter((c) => c.slug !== slug);
-          studies.forEach((c, k) => (c.order = k));
-          site.caseStudies = site.caseStudies.filter((c) => c.slug !== slug);
-          renderRows();
-        })
-      );
-
-      rowsEl.querySelectorAll("[data-open-editor]").forEach((btn) =>
-        btn.addEventListener("click", () => {
-          syncRowFieldsToStudies();
-          const slug = btn.getAttribute("data-open-editor");
-          location.href = csUrl(slug, "&edit=1");
-        })
-      );
+    function render() {
+      const entries = topLevelEntries();
+      rowsEl.innerHTML = entries
+        .map((e, i) =>
+          e.type === "group" ? groupCardHTML(e.ref, i, entries.length) : studyRowHTML(e.ref, i, entries.length)
+        )
+        .join("");
     }
 
-    renderRows();
+    render();
+
+    rowsEl.addEventListener("change", (e) => {
+      const sel = e.target.closest("[data-f-group]");
+      if (!sel) return;
+      syncFieldsToModel();
+      const slug = sel.closest("[data-slug]").getAttribute("data-slug");
+      const cs = site.caseStudies.find((c) => c.slug === slug);
+      const newGroupId = sel.value || null;
+      if (cs.group === newGroupId) return;
+      cs.group = newGroupId;
+      if (newGroupId) {
+        const members = groupMembers(newGroupId);
+        cs.order = members.length ? Math.max(...members.map((m) => m.order ?? 0)) + 1 : 0;
+      } else {
+        const top = topLevelEntries();
+        cs.order = top.length ? Math.max(...top.map((t) => t.ref.order ?? 0)) + 1 : 0;
+      }
+      render();
+    });
+
+    rowsEl.addEventListener("click", (e) => {
+      const moveBtn = e.target.closest("[data-move]");
+      if (moveBtn) {
+        syncFieldsToModel();
+        const dir = Number(moveBtn.getAttribute("data-move"));
+        const withinGroupEl = moveBtn.closest("[data-group-members]");
+        if (withinGroupEl) {
+          const gid = moveBtn.closest("[data-entry-type='group']").getAttribute("data-group-id");
+          const members = groupMembers(gid);
+          const slug = moveBtn.closest("[data-slug]").getAttribute("data-slug");
+          const i = members.findIndex((c) => c.slug === slug);
+          const j = i + dir;
+          if (j < 0 || j >= members.length) return;
+          const tmp = members[i];
+          members[i] = members[j];
+          members[j] = tmp;
+          members.forEach((c, k) => (c.order = k));
+        } else {
+          const entries = topLevelEntries();
+          const row = moveBtn.closest("[data-row]");
+          const ref =
+            row.getAttribute("data-entry-type") === "group"
+              ? site.groups.find((g) => g.id === row.getAttribute("data-group-id"))
+              : site.caseStudies.find((c) => c.slug === row.getAttribute("data-slug"));
+          const i = entries.findIndex((en) => en.ref === ref);
+          const j = i + dir;
+          if (j < 0 || j >= entries.length) return;
+          const tmp = entries[i];
+          entries[i] = entries[j];
+          entries[j] = tmp;
+          entries.forEach((en, k) => (en.ref.order = k));
+        }
+        render();
+        return;
+      }
+
+      const delGroupBtn = e.target.closest("[data-delete-group]");
+      if (delGroupBtn) {
+        syncFieldsToModel();
+        const gid = delGroupBtn.getAttribute("data-delete-group");
+        const g = site.groups.find((x) => x.id === gid);
+        if (!g) return;
+        const members = groupMembers(gid);
+        if (
+          !confirm(
+            `Delete "${g.name}"? Its ${members.length} case ${members.length === 1 ? "study" : "studies"} will become standalone (not deleted) — they'll still appear individually on the home page.`
+          )
+        )
+          return;
+        site.groups = site.groups.filter((x) => x.id !== gid);
+        const remainingTop = topLevelEntries().map((en) => en.ref);
+        members.forEach((cs) => (cs.group = null));
+        const combined = remainingTop.concat(members);
+        combined.forEach((ref, i) => (ref.order = i));
+        render();
+        return;
+      }
+
+      const delBtn = e.target.closest("[data-delete]");
+      if (delBtn) {
+        const slug = delBtn.getAttribute("data-delete");
+        const cs = site.caseStudies.find((c) => c.slug === slug);
+        if (!cs) return;
+        if (!confirm(`Delete "${cs.title}"? This removes it from site.json (images stay in the repo). This can't be undone here.`)) return;
+        syncFieldsToModel();
+        site.caseStudies = site.caseStudies.filter((c) => c.slug !== slug);
+        render();
+        return;
+      }
+
+      const openBtn = e.target.closest("[data-open-editor]");
+      if (openBtn) {
+        syncFieldsToModel();
+        location.href = csUrl(openBtn.getAttribute("data-open-editor"), "&edit=1");
+      }
+    });
+
+    overlay.querySelector("[data-new-group]").addEventListener("click", () => {
+      syncFieldsToModel();
+      const input = overlay.querySelector("[data-new-group-name]");
+      const name = input.value.trim();
+      if (!name) return;
+      const id = uniqueSlug(
+        slugify(name),
+        site.groups.map((g) => g.id)
+      );
+      const top = topLevelEntries();
+      site.groups.push({ id, name, order: top.length ? Math.max(...top.map((t) => t.ref.order ?? 0)) + 1 : 0 });
+      input.value = "";
+      render();
+    });
 
     overlay.querySelector("[data-new-study]").addEventListener("click", () => {
-      syncRowFieldsToStudies();
+      syncFieldsToModel();
       const input = overlay.querySelector("[data-new-title]");
       const title = input.value.trim();
       if (!title) return;
@@ -569,6 +717,7 @@
         slugify(title),
         site.caseStudies.map((c) => c.slug)
       );
+      const top = topLevelEntries();
       const cs = {
         slug,
         navTitle: title,
@@ -576,7 +725,9 @@
         subtitle: "",
         visible: false,
         password: "public",
-        order: studies.length,
+        group: null,
+        coverImage: null,
+        order: top.length ? Math.max(...top.map((t) => t.ref.order ?? 0)) + 1 : 0,
         blocks: [],
       };
       site.caseStudies.push(cs);
@@ -587,7 +738,7 @@
     overlay.querySelector("[data-manage-save]").addEventListener("click", async (e) => {
       const btn = e.currentTarget;
       const errorEl = overlay.querySelector("[data-manage-error]");
-      syncRowFieldsToStudies();
+      syncFieldsToModel();
       btn.disabled = true;
       btn.textContent = "Saving…";
       try {
@@ -697,6 +848,7 @@
     // Work on a deep clone so Cancel doesn't mutate state.site.
     const draft = JSON.parse(JSON.stringify(cs));
     const pendingUploads = new Map(); // blockIndex -> [{imageIndex, file}]
+    let pendingCoverUpload = null; // File, if a new cover image was picked
 
     function render() {
       body.innerHTML = `
@@ -707,6 +859,23 @@
         <input class="admin-input" type="text" data-f-subtitle value="${window.MKM.esc(draft.subtitle || "")}" />
         <label class="admin-label">Home-page link text</label>
         <input class="admin-input" type="text" data-f-navtitle value="${window.MKM.esc(draft.navTitle || draft.title || "")}" />
+
+        <label class="admin-label">Cover image</label>
+        <div class="admin-cover-row" data-cover-row>
+          ${
+            draft.coverImage
+              ? `<div class="admin-image-item" data-cover-preview>
+                   <img src="${window.MKM.esc(resolveImgSrc(draft.coverImage))}" alt="" />
+                   <button type="button" class="admin-btn admin-btn--sm admin-btn--danger" data-remove-cover>Remove</button>
+                 </div>`
+              : ""
+          }
+          <label class="admin-btn admin-btn--sm admin-btn--ghost admin-file-btn">
+            ${draft.coverImage ? "Replace image" : "+ Add cover image"}
+            <input type="file" accept="image/*" data-cover-file hidden />
+          </label>
+        </div>
+        <p class="admin-modal-hint">Shown as the thumbnail when this work appears in a group's popover. If left empty, the first image in the content below is used instead.</p>
 
         <div class="admin-blocks" data-blocks>
           ${draft.blocks.map((b, i) => blockEditorRowHTML(b, i)).join("")}
@@ -726,7 +895,29 @@
           <button type="button" class="admin-btn" data-editor-save>Save work</button>
         </div>
       `;
+      wireCoverEvents();
       wireBlockEvents();
+    }
+
+    function wireCoverEvents() {
+      const fileInput = body.querySelector("[data-cover-file]");
+      if (fileInput) {
+        fileInput.addEventListener("change", () => {
+          const file = fileInput.files && fileInput.files[0];
+          if (!file) return;
+          draft.coverImage = URL.createObjectURL(file);
+          pendingCoverUpload = file;
+          render();
+        });
+      }
+      const removeBtn = body.querySelector("[data-remove-cover]");
+      if (removeBtn) {
+        removeBtn.addEventListener("click", () => {
+          draft.coverImage = null;
+          pendingCoverUpload = null;
+          render();
+        });
+      }
     }
 
     function syncTextFieldsToDraft() {
@@ -832,6 +1023,18 @@
       saveBtn.disabled = true;
       saveBtn.textContent = "Saving…";
       try {
+        // Upload a newly-picked cover image first, if any.
+        if (pendingCoverUpload) {
+          const ext = (pendingCoverUpload.name.split(".").pop() || "jpg").toLowerCase();
+          const stamp = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+          const filename = `cover-${stamp}.${ext}`;
+          const path = `assets/img/case-studies/${draft.slug}/${filename}`;
+          const base64 = await fileToBase64(pendingCoverUpload);
+          await ghPutFile(path, base64, `Admin: set cover image for ${draft.slug}`);
+          draft.coverImage = `../assets/img/case-studies/${draft.slug}/${filename}`;
+          pendingCoverUpload = null;
+        }
+
         // Upload any newly-added images first.
         for (const [blockIndex, uploads] of pendingUploads.entries()) {
           const block = draft.blocks[blockIndex];

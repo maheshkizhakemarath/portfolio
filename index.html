@@ -6,7 +6,7 @@
   <title>Mahesh Marath — VP of Design at Qualitia</title>
   <meta name="description" content="Mahesh Marath, VP of Design at Qualitia. I design calm, useful tools for complex work." />
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=2" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
 </head>
 <body data-data-url="data/site.json">
   <div class="page">
@@ -60,9 +60,24 @@
     </div>
   </div>
 
-  <script src="assets/js/render.js?v=2"></script>
-  <script src="assets/js/site.js?v=2"></script>
-  <script src="assets/js/admin.js?v=2"></script>
+  <div class="group-popover" data-group-popover>
+    <button type="button" class="group-popover-close" data-group-popover-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <div class="group-popover-card">
+      <p class="group-popover-label" data-group-popover-label></p>
+      <div class="group-popover-stack" data-group-popover-stack></div>
+      <div class="group-popover-text" data-group-popover-text>
+        <p class="group-popover-count" data-group-popover-count></p>
+        <p class="group-popover-title" data-group-popover-title></p>
+      </div>
+      <a class="group-popover-cta" data-group-popover-cta href="#">Read case study →</a>
+    </div>
+  </div>
+
+  <script src="assets/js/render.js?v=6"></script>
+  <script src="assets/js/site.js?v=6"></script>
+  <script src="assets/js/admin.js?v=6"></script>
   <script>
     MKM.renderHome().then(function (site) {
       if (window.MKM.onDataLoaded) window.MKM.onDataLoaded(site);
