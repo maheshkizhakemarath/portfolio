@@ -14,7 +14,7 @@
   <title>Mahesh Marath — VP of Design at Qualitia</title>
   <meta name="description" content="Mahesh Marath, VP of Design at Qualitia. I design calm, useful tools for complex work." />
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=26" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=27" />
   <script>
     // Synchronous, pre-paint: avoids a flash of the wrong theme. Mirrors
     // the logic in assets/js/site.js — an explicit saved choice wins,
@@ -42,11 +42,13 @@
 
       <main class="column" data-home-root>
         <div class="hero-block">
-          <div class="name-trigger">
-            <h1 class="name" data-name></h1>
+          <div class="hero-text">
+            <div class="name-trigger">
+              <h1 class="name" data-name></h1>
+            </div>
+            <p class="role" data-role></p>
             <img class="name-portrait" src="assets/img/mahesh-sketch.png" alt="" aria-hidden="true" />
           </div>
-          <p class="role" data-role></p>
         </div>
 
         <section class="section">
@@ -104,9 +106,9 @@
     </div>
   </div>
 
-  <script src="assets/js/render.js?v=26"></script>
-  <script src="assets/js/site.js?v=26"></script>
-  <script src="assets/js/admin.js?v=26"></script>
+  <script src="assets/js/render.js?v=27"></script>
+  <script src="assets/js/site.js?v=27"></script>
+  <script src="assets/js/admin.js?v=27"></script>
   <script>
     MKM.renderHome().then(function (site) {
       if (window.MKM.onDataLoaded) window.MKM.onDataLoaded(site);

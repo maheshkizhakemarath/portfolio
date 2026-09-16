@@ -158,8 +158,15 @@ button {
 }
 
 /* ---------- Typography ---------- */
-.name-trigger {
+/* Shrink-wraps to whichever line (name or role) renders wider, so the
+   portrait's gap below is measured from the true edge of the text block
+   rather than just the (usually shorter) name line. */
+.hero-text {
   position: relative;
+  display: inline-block;
+}
+
+.name-trigger {
   display: inline-block;
 }
 
@@ -181,8 +188,8 @@ button {
   .name-portrait {
     display: block;
     position: absolute;
-    top: 50%;
-    left: calc(100% + 116px);
+    top: 12px;
+    left: calc(100% + 130px);
     width: 140px;
     height: 140px;
     max-width: none;
@@ -195,7 +202,10 @@ button {
     z-index: 5;
   }
 
-  .name-trigger:hover .name-portrait {
+  /* Sibling combinator (not a descendant selector) so hovering .role,
+     which sits between the trigger and the portrait in the markup,
+     can never match — only .name-trigger itself can. */
+  .name-trigger:hover ~ .name-portrait {
     opacity: 1;
     transform: translateY(-50%) scale(1);
   }
