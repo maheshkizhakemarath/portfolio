@@ -189,7 +189,8 @@
           ]
         }
       ],
-      "group": "lego-group"
+      "group": "lego-group",
+      "coverImage": "../assets/img/case-studies/lego-house-pre-post/cover.png"
     },
     {
       "slug": "lego-house-ticketing-migration",
@@ -415,7 +416,8 @@
           ]
         }
       ],
-      "group": "lego-group"
+      "group": "lego-group",
+      "coverImage": "../assets/img/case-studies/lego-house-ticketing-migration/cover.png"
     },
     {
       "slug": "skyfish",
@@ -852,7 +854,8 @@
           ]
         }
       ],
-      "group": "lego-group"
+      "group": "lego-group",
+      "coverImage": "../assets/img/case-studies/lego-house-journey/cover.png"
     },
     {
       "slug": "lego-house-access",
@@ -1032,7 +1035,8 @@
           ]
         }
       ],
-      "group": "lego-group"
+      "group": "lego-group",
+      "coverImage": "../assets/img/case-studies/lego-house-access/cover.png"
     },
     {
       "slug": "at-t",
