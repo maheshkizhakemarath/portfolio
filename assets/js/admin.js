@@ -65,7 +65,10 @@
 
   async function ghPutFile(path, base64Content, message) {
     async function attempt() {
-      const existing = await ghGetFile(path).catch(() => null);
+      // Let a failed read propagate instead of silently treating it as
+      // "this file doesn't exist" — swallowing it would send an sha-less
+      // PUT against a file that does exist, which GitHub always rejects.
+      const existing = await ghGetFile(path);
       const body = {
         message,
         content: base64Content,
@@ -79,24 +82,37 @@
       });
     }
 
-    let res = await attempt();
-    if (res.status === 409) {
-      // Stale sha (usually a caching artifact, occasionally a genuine
-      // concurrent edit) — re-read the real current version and retry once
-      // before giving up.
-      res = await attempt();
+    // GitHub's contents API can briefly lag behind the latest commit right
+    // after a write (its own or someone else's) — the sha we just read can
+    // already be stale by the time the PUT lands. That's what makes a save
+    // fail on the first try and then succeed moments later when the admin
+    // retries by hand. Retry a few times with a short, growing delay so the
+    // read has a chance to catch up, instead of making them do it.
+    const MAX_ATTEMPTS = 3;
+    let res = null;
+    let networkErr = null;
+    for (let n = 1; n <= MAX_ATTEMPTS; n++) {
+      try {
+        res = await attempt();
+        networkErr = null;
+      } catch (err) {
+        networkErr = err;
+        res = null;
+      }
+      if (res && res.ok) return res.json();
+      if (res && res.status !== 409 && res.status !== 422) break; // not a stale-sha style conflict
+      if (n < MAX_ATTEMPTS) await new Promise((resolve) => setTimeout(resolve, 400 * n));
     }
-    if (!res.ok) {
-      const detail = await res.json().catch(() => ({}));
-      const suffix =
-        res.status === 409
-          ? " Someone or something else changed this file — reload the page to get the latest version, then try your edit again."
-          : "";
-      throw new Error(
-        `GitHub error (${res.status}) saving ${path}: ${detail.message || "unknown error"}.${suffix}`
-      );
-    }
-    return res.json();
+
+    if (!res) throw networkErr || new Error(`Could not reach GitHub while saving ${path}.`);
+    const detail = await res.json().catch(() => ({}));
+    const suffix =
+      res.status === 409 || res.status === 422
+        ? " Someone or something else changed this file — reload the page to get the latest version, then try your edit again."
+        : "";
+    throw new Error(
+      `GitHub error (${res.status}) saving ${path}: ${detail.message || "unknown error"}.${suffix}`
+    );
   }
 
   function utf8ToBase64(str) {
