@@ -390,9 +390,10 @@ button {
 }
 
 .case-shot-caption {
-  margin-top: 8px;
+  margin-top: 12px;
   font-size: 13px;
   color: var(--text-secondary);
+  text-align: center;
 }
 
 /* ---------- Mock browser screenshot card (placeholder + real) ---------- */
