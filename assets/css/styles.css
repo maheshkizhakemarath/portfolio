@@ -188,7 +188,9 @@ button {
   .name-portrait {
     display: block;
     position: absolute;
-    top: 12px;
+    /* Aligns the portrait's top edge with the logo's top edge, rather
+       than centering it on the name line. */
+    top: -60.5px;
     left: calc(100% + 130px);
     width: 140px;
     height: 140px;
@@ -197,7 +199,7 @@ button {
     border-radius: 10px;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-50%) scale(0.96);
+    transform: scale(0.96);
     transition: opacity 0.18s ease, transform 0.18s ease;
     z-index: 5;
   }
@@ -207,7 +209,7 @@ button {
      can never match — only .name-trigger itself can. */
   .name-trigger:hover ~ .name-portrait {
     opacity: 1;
-    transform: translateY(-50%) scale(1);
+    transform: scale(1);
   }
 }
 
