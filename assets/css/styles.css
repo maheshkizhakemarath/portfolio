@@ -158,11 +158,49 @@ button {
 }
 
 /* ---------- Typography ---------- */
+.name-trigger {
+  position: relative;
+  display: inline-block;
+}
+
 .name {
   font-size: 16px;
   font-weight: 500;
   margin: 0;
   color: var(--text-primary);
+}
+
+/* Hidden entirely by default — only devices with real mouse hover (not
+   touch) get the reveal-on-hover portrait, per the "disable on mobile"
+   requirement, rather than just suppressing the hover effect there. */
+.name-portrait {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .name-portrait {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 16px);
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--photo-card-bg);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) scale(0.96);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 5;
+  }
+
+  .name-trigger:hover .name-portrait {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
 }
 
 .role {
