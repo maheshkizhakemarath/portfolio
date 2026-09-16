@@ -185,6 +185,7 @@ button {
     left: calc(100% + 116px);
     width: 140px;
     height: 140px;
+    max-width: none;
     object-fit: cover;
     border-radius: 10px;
     opacity: 0;
