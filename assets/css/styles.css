@@ -182,7 +182,7 @@ button {
     display: block;
     position: absolute;
     top: 50%;
-    left: calc(100% + 16px);
+    left: calc(100% + 116px);
     width: 140px;
     height: 140px;
     object-fit: cover;
