@@ -180,7 +180,7 @@ button {
 }
 
 .section-body {
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .section-body p + p {
@@ -192,7 +192,7 @@ button {
 }
 
 .link-list {
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .link-list li + li {
@@ -284,7 +284,7 @@ button {
 .case-section h2 {
   font-size: 16px;
   font-weight: 500;
-  margin: 0 0 12px 0;
+  margin: 0;
   color: var(--text-primary);
 }
 
@@ -308,7 +308,7 @@ button {
 .case-section h3 {
   font-size: 14px;
   font-weight: 600;
-  margin: 24px 0 10px 0;
+  margin: 24px 0 0 0;
   color: var(--text-primary);
 }
 
@@ -323,9 +323,12 @@ button {
 }
 
 .case-section ul + p,
-.case-section p + ul,
-.case-section h3 + ul {
+.case-section p + ul {
   margin-top: 10px;
+}
+
+.case-section h3 + ul {
+  margin-top: 0;
 }
 
 .case-section li {
@@ -703,7 +706,7 @@ html.gate-locked .password-gate {
 .password-gate-card h2 {
   font-size: 16px;
   font-weight: 500;
-  margin: 0 0 6px 0;
+  margin: 0;
   color: var(--text-primary);
 }
 
