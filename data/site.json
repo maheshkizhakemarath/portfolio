@@ -36,7 +36,7 @@
       "navTitle": "LEGO House Pre & Post Experience",
       "title": "LEGO House",
       "subtitle": "Improving the pre & post experience of world's best pay date",
-      "visible": false,
+      "visible": true,
       "password": "public",
       "order": 0,
       "blocks": [
@@ -198,7 +198,7 @@
       "subtitle": "Rebuilding the foundation to enable future growth and flexibility",
       "visible": true,
       "password": "public",
-      "order": 1,
+      "order": 2,
       "blocks": [
         {
           "type": "subheading",
@@ -645,7 +645,7 @@
       "subtitle": "Guest journey experience mapping",
       "visible": true,
       "password": "public",
-      "order": 2,
+      "order": 1,
       "blocks": [
         {
           "type": "subheading",
@@ -861,7 +861,7 @@
       "navTitle": "LEGO House Access",
       "title": "LEGO House Access",
       "subtitle": "From Entry to Exit: Rethinking Access at LEGO House",
-      "visible": false,
+      "visible": true,
       "password": "public",
       "order": 3,
       "blocks": [
@@ -1043,7 +1043,7 @@
       "subtitle": "IoT connectivity management platform",
       "visible": true,
       "password": "public",
-      "order": 3,
+      "order": 0,
       "blocks": [
         {
           "type": "subheading",
@@ -1239,7 +1239,7 @@
           "text": "Co-create system flows with engineering right from the discovery phase, which I later started to do."
         }
       ],
-      "group": null
+      "group": "think-design"
     },
     {
       "slug": "manorama-yearbook",
@@ -1248,7 +1248,7 @@
       "subtitle": "Digitising a 53 year old legacy ...",
       "visible": true,
       "password": "public",
-      "order": 0,
+      "order": 1,
       "blocks": [
         {
           "type": "subheading",
@@ -1627,9 +1627,9 @@
       "navTitle": "Deccan Herald",
       "title": "Deccan Herald",
       "subtitle": "Helping a legacy a media brand get on the digital bandwagon.",
-      "visible": false,
+      "visible": true,
       "password": "public",
-      "order": 1,
+      "order": 2,
       "blocks": [
         {
           "type": "subheading",
@@ -2126,9 +2126,9 @@
       "navTitle": "Figo",
       "title": "Figo",
       "subtitle": "Market place for roaming plans",
-      "visible": false,
+      "visible": true,
       "password": "public",
-      "order": 2,
+      "order": 4,
       "blocks": [
         {
           "type": "subheading",
@@ -2342,9 +2342,9 @@
       "navTitle": "Zafin",
       "title": "Zafin",
       "subtitle": "Analytical executive dashboard redesign: Data design",
-      "visible": false,
+      "visible": true,
       "password": "public",
-      "order": 4,
+      "order": 3,
       "blocks": [
         {
           "type": "subheading",
@@ -2600,7 +2600,7 @@
           ]
         }
       ],
-      "group": null
+      "group": "think-design"
     }
   ]
 }
