@@ -1544,20 +1544,20 @@
           "text": "The numbers of subscribers increased to over 30,000 aspirants who use the platform not only as a source for knowledge but a learning tool."
         },
         {
-          "type": "paragraph",
-          "text": "Web app: https://www.manoramayearbook.in/home.html"
+          "type": "subheading",
+          "text": "Application Links"
         },
         {
-          "type": "paragraph",
-          "text": "Android: https://play.google.com/store/apps/details?id=com.manorama.yearbook"
+          "type": "list",
+          "items": [
+            "[Web App](https://www.manoramayearbook.in/home.html)",
+            "[IOS App](https://apps.apple.com/in/app/manorama-yearbook/id1475394103)",
+            "[Android App](https://play.google.com/store/apps/details?id=com.manorama.yearbook)"
+          ]
         },
         {
-          "type": "paragraph",
-          "text": "IOS: https://apps.apple.com/in/app/manorama-yearbook/id1475394103"
-        },
-        {
-          "type": "paragraph",
-          "text": "Manorama yearbook also won CII Design excellence award : https://www.ciidesign.in/index.php/ciidesign/excellence_awards_winners_2019"
+          "type": "subheading",
+          "text": "[Manorama Yearbook also won CII design excellence award](https://www.ciidesign.in/index.php/ciidesign/excellence_awards_winners_2019)"
         }
       ],
       "group": "think-design",
