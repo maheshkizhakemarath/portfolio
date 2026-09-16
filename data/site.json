@@ -1677,7 +1677,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-01.png",
               "alt": "Uploaded image"
             }
@@ -1699,7 +1698,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-02.png",
               "alt": "Uploaded image"
             }
@@ -1721,7 +1719,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-03.png",
               "alt": "Uploaded image"
             }
@@ -1743,7 +1740,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-04.png",
               "alt": "Uploaded image"
             }
@@ -1761,12 +1757,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-05.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-06.png",
               "alt": "Uploaded image"
             }
@@ -1792,12 +1786,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-07.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-08.png",
               "alt": "Uploaded image"
             }
@@ -1819,7 +1811,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-09.png",
               "alt": "Uploaded image"
             }
@@ -1837,7 +1828,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-10.png",
               "alt": "Uploaded image"
             }
@@ -1892,7 +1882,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-11.png",
               "alt": "Uploaded image"
             }
@@ -1906,7 +1895,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-12.png",
               "alt": "Uploaded image"
             }
@@ -1924,7 +1912,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-13.png",
               "alt": "Uploaded image"
             }
@@ -1962,7 +1949,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-14.png",
               "alt": "Uploaded image"
             }
@@ -1976,7 +1962,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-15.png",
               "alt": "Uploaded image"
             }
@@ -1994,12 +1979,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-16.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-17.png",
               "alt": "Uploaded image"
             }
@@ -2009,12 +1992,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-18.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-19.png",
               "alt": "Uploaded image"
             }
@@ -2024,12 +2005,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-20.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-21.png",
               "alt": "Uploaded image"
             }
@@ -2039,12 +2018,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-22.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-23.png",
               "alt": "Uploaded image"
             }
@@ -2054,12 +2031,10 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-24.png",
               "alt": "Uploaded image"
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-25.png",
               "alt": "Uploaded image"
             }
@@ -2069,7 +2044,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-26.png",
               "alt": "Uploaded image"
             }
@@ -2083,7 +2057,6 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-27.png",
               "alt": "Uploaded image"
             }
@@ -2108,14 +2081,14 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/deccan-herald/img-28.png",
               "alt": "Uploaded image"
             }
           ]
         }
       ],
-      "group": "think-design"
+      "group": "think-design",
+      "coverImage": "../assets/img/case-studies/deccan-herald/cover-mu3vnul66jhq.png"
     },
     {
       "slug": "figo",
@@ -2331,8 +2304,7 @@
           ]
         }
       ],
-      "group": "think-design",
-      "coverImage": "../assets/img/case-studies/figo/cover-mu3vl62o0poe.png"
+      "group": "think-design"
     },
     {
       "slug": "zafin-dashboard",
