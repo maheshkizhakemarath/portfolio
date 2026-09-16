@@ -25,7 +25,14 @@
   }
 
   async function loadSite() {
-    const res = await fetch(DATA_URL, { cache: "no-store" });
+    // cache: "no-store" only stops THIS BROWSER from reusing a stale copy —
+    // it does nothing about GitHub Pages' own CDN, which caches the file at
+    // the edge for several minutes regardless of that header, since the
+    // request URL never changes. Appending a unique query string on every
+    // load makes each request a genuinely new URL, so the CDN can't serve a
+    // cached response for it and always fetches the current file.
+    const bustUrl = DATA_URL + (DATA_URL.includes("?") ? "&" : "?") + "t=" + Date.now();
+    const res = await fetch(bustUrl, { cache: "no-store" });
     if (!res.ok) throw new Error("Could not load site data (" + res.status + ")");
     return res.json();
   }
