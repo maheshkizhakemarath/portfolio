@@ -1438,7 +1438,9 @@ body.admin-modal-open {
 }
 
 .group-popover-cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 14px;
   color: var(--link);
   text-decoration: underline;
@@ -1449,4 +1451,11 @@ body.admin-modal-open {
 .group-popover-cta:hover {
   color: var(--link-hover);
   text-decoration-color: var(--link-hover);
+}
+
+.group-popover-cta-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  color: inherit;
 }
