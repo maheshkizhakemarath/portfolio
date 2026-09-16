@@ -1324,7 +1324,11 @@ body.admin-modal-open {
 /* ---------- fanned card deck ---------- */
 .group-popover-stack {
   position: relative;
-  width: 100%;
+  /* No explicit width: a block element left at its default width:auto
+     shrinks to fill the available space minus its margins, which is what
+     actually centers it. width: 100% here would size the box to the full
+     content area *and then add* the side margins on top of that, pushing
+     the whole stack (and the center card inside it) off-center. */
   aspect-ratio: 1.35 / 1;
   /* Extra side margin (beyond the card's own padding) guarantees the fan
      never crowds the popover's edges, whatever the exact transform math
