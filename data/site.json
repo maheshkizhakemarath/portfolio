@@ -286,7 +286,7 @@
         },
         {
           "type": "paragraph",
-          "text": ""
+          "text": "\n\n"
         },
         {
           "type": "paragraph",
@@ -298,11 +298,19 @@
         },
         {
           "type": "paragraph",
-          "text": "Stage 1 : Launch AFOL Day tickets Test Hero/Core, Flow Purchase ticket - Redeem wrist bands - Enter LH Gates - Experience zones - Exit"
+          "text": "Stage 1 : Launch AFOL Day tickets Test Hero/Core Flow"
         },
         {
           "type": "paragraph",
-          "text": "Stage 2 : Fix all bells & whistles Test Peripherals, Partner Integrations - API’s - Kiosks - Gates - Help desk - exit - Memories"
+          "text": "Purchase ticket - Redeem wrist bands - Enter LH Gates - Experience zones - Exit"
+        },
+        {
+          "type": "paragraph",
+          "text": "Stage 2 : Fix all bells & whistles Test Peripherals"
+        },
+        {
+          "type": "paragraph",
+          "text": "Partner Integrations - API’s - Kiosks - Gates - Help desk - exit - Memories"
         },
         {
           "type": "paragraph",
@@ -870,9 +878,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-01.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -888,9 +896,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-02.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -918,9 +926,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-03.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -936,9 +944,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-04.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Before"
             }
           ]
         },
@@ -950,15 +958,11 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-05.gif",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "After"
             }
           ]
-        },
-        {
-          "type": "subheading",
-          "text": "After"
         },
         {
           "type": "subheading",
@@ -1000,9 +1004,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-access/img-06.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         }
