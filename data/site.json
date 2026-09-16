@@ -1616,7 +1616,8 @@
           "text": "Manorama yearbook also won CII Design excellence award : https://www.ciidesign.in/index.php/ciidesign/excellence_awards_winners_2019"
         }
       ],
-      "group": "think-design"
+      "group": "think-design",
+      "coverImage": "../assets/img/case-studies/manorama-yearbook/cover.png"
     },
     {
       "slug": "deccan-herald",
@@ -2115,7 +2116,8 @@
           ]
         }
       ],
-      "group": "think-design"
+      "group": "think-design",
+      "coverImage": "../assets/img/case-studies/deccan-herald/cover.png"
     },
     {
       "slug": "figo",
