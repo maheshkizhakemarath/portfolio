@@ -189,17 +189,59 @@
     const start = field.selectionStart ?? field.value.length;
     const end = field.selectionEnd ?? field.value.length;
     const selected = field.value.slice(start, end);
-    const label = window.prompt("Link text:", selected || "");
-    if (label === null) return;
-    const url = window.prompt("URL (https://…):", "https://");
-    if (url === null) return;
-    const trimmedUrl = url.trim();
-    if (!trimmedUrl) return;
-    const snippet = `[${label.trim() || trimmedUrl}](${trimmedUrl})`;
-    field.value = field.value.slice(0, start) + snippet + field.value.slice(end);
-    field.focus();
-    const pos = start + snippet.length;
-    field.setSelectionRange(pos, pos);
+
+    const { overlay, close } = openModal(
+      `
+      <h2>Add link</h2>
+      <label class="admin-label">Link text</label>
+      <input class="admin-input" type="text" data-link-text value="${window.MKM.esc(selected)}" placeholder="Link text" />
+      <label class="admin-label">URL</label>
+      <input class="admin-input" type="url" data-link-url value="https://" placeholder="https://example.com" />
+      <p class="admin-form-error" data-link-error></p>
+      <div class="admin-modal-actions">
+        <button type="button" class="admin-btn admin-btn--ghost" data-modal-close>Cancel</button>
+        <button type="button" class="admin-btn" data-link-insert>Insert</button>
+      </div>
+    `,
+      { onClose: () => field.focus() }
+    );
+
+    const textInput = overlay.querySelector("[data-link-text]");
+    const urlInput = overlay.querySelector("[data-link-url]");
+    const errorEl = overlay.querySelector("[data-link-error]");
+
+    if (selected) {
+      urlInput.focus();
+      urlInput.select();
+    } else {
+      textInput.focus();
+    }
+
+    function doInsert() {
+      const label = textInput.value.trim();
+      const url = urlInput.value.trim();
+      if (!url || url === "https://") {
+        errorEl.textContent = "Enter a URL.";
+        urlInput.focus();
+        return;
+      }
+      const snippet = `[${label || url}](${url})`;
+      const pos = start + snippet.length;
+      field.value = field.value.slice(0, start) + snippet + field.value.slice(end);
+      close();
+      field.focus();
+      field.setSelectionRange(pos, pos);
+    }
+
+    overlay.querySelector("[data-link-insert]").addEventListener("click", doInsert);
+    [textInput, urlInput].forEach((input) =>
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          doInsert();
+        }
+      })
+    );
   }
 
   // Wires every "+ Link" button within `container`. `data-insert-link` is a
