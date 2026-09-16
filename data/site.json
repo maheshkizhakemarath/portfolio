@@ -213,9 +213,9 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-01.jpg",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -273,20 +273,16 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-02.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-03.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Guest Touch points impacted in the migration"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Guest Touch points impacted in the migration"
         },
         {
           "type": "paragraph",
@@ -320,14 +316,14 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-04.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             },
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-05.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": null
             }
           ]
         },
@@ -367,29 +363,21 @@
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-06.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "Before"
             }
           ]
-        },
-        {
-          "type": "subheading",
-          "text": "Before"
         },
         {
           "type": "image-row",
           "images": [
             {
-              "type": "image",
               "src": "../assets/img/case-studies/lego-house-ticketing-migration/img-07.png",
-              "alt": "Uploaded image"
+              "alt": "Uploaded image",
+              "caption": "After"
             }
           ]
-        },
-        {
-          "type": "subheading",
-          "text": "After"
         },
         {
           "type": "subheading",
@@ -799,7 +787,7 @@
             {
               "src": "../assets/img/case-studies/lego-house-journey/img-08.png",
               "alt": "Uploaded image",
-              "caption": "A light moment, when kids were enjoying the facility."
+              "caption": null
             }
           ]
         },
