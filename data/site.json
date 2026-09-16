@@ -1188,8 +1188,8 @@
           "text": "Outcome"
         },
         {
-          "type": "paragraph",
-          "text": "https://www.youtube.com/embed/22vXVVbn4sM\n"
+          "type": "embed",
+          "url": "https://www.youtube.com/embed/22vXVVbn4sM"
         },
         {
           "type": "subheading",

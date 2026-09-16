@@ -75,6 +75,12 @@
           );
         }
         out.push("</div>");
+      } else if (b.type === "embed") {
+        openSection();
+        if (!b.url) continue;
+        out.push(
+          `<div class="case-embed"><iframe src="${esc(b.url)}" title="Embedded video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+        );
       }
     }
     if (inSection) out.push("</section>");

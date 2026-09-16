@@ -842,6 +842,17 @@
           </label>
         </div>`;
     }
+    if (t === "embed") {
+      return `
+        <div class="admin-block" data-block-index="${i}" data-block-type="${t}">
+          <div class="admin-block-head">
+            <span class="admin-block-type">Embedded video</span>
+            ${blockControls(i)}
+          </div>
+          <input class="admin-input" type="url" placeholder="https://www.youtube.com/embed/…" data-b-url value="${window.MKM.esc(block.url || "")}" />
+          <p class="admin-modal-hint">Paste an embeddable player URL — e.g. YouTube's "Embed" link, which looks like https://www.youtube.com/embed/VIDEO_ID.</p>
+        </div>`;
+    }
     return "";
   }
 
@@ -903,6 +914,7 @@
           <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="paragraph">+ Paragraph</button>
           <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="list">+ List</button>
           <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="image-row">+ Images</button>
+          <button type="button" class="admin-btn admin-btn--sm admin-btn--ghost" data-add="embed">+ Embed</button>
         </div>
 
         <p class="admin-form-error" data-editor-error></p>
@@ -948,6 +960,8 @@
             .value.split("\n")
             .map((s) => s.trim())
             .filter(Boolean);
+        } else if (b.type === "embed") {
+          b.url = el.querySelector("[data-b-url]").value.trim();
         }
       });
     }
@@ -984,6 +998,8 @@
               ? { type, items: [] }
               : type === "image-row"
               ? { type, images: [] }
+              : type === "embed"
+              ? { type, url: "" }
               : { type, text: "" };
           draft.blocks.push(blank);
           render();
