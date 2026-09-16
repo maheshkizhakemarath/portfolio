@@ -1382,18 +1382,33 @@ body.admin-modal-open {
   z-index: 1;
 }
 
-/* Outgoing left card: swipes further left and fades, as if peeled off the
-   front of the deck. */
+/* Outgoing card, forward (right-side click): swipes further left and
+   fades, as if peeled off the front of the deck. */
 .group-popover-layer.is-leaving {
   transform: translate(-115%, 16%) rotate(-16deg) scale(0.78) !important;
   opacity: 0 !important;
   z-index: 4 !important;
 }
 
+/* Outgoing card, backward (left-side click): the mirror image of
+   is-leaving, peeling off toward the right instead. */
+.group-popover-layer.is-leaving-right {
+  transform: translate(115%, 16%) rotate(16deg) scale(0.78) !important;
+  opacity: 0 !important;
+  z-index: 4 !important;
+}
+
 /* Recycled card's starting point just before it grows into the new right
-   slot, so it eases into view from off to the side instead of popping in. */
+   slot (forward), so it eases into view from off to the side instead of
+   popping in. */
 .group-popover-layer.pre-enter-right {
   transform: translate(120%, 16%) rotate(16deg) scale(0.62) !important;
+  opacity: 0 !important;
+}
+
+/* Mirror of pre-enter-right, for the new left slot (backward). */
+.group-popover-layer.pre-enter-left {
+  transform: translate(-120%, 16%) rotate(-16deg) scale(0.62) !important;
   opacity: 0 !important;
 }
 

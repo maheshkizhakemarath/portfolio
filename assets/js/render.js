@@ -242,15 +242,17 @@
       setTimeout(() => textEl.classList.remove("is-fading"), ADVANCE_MS * 0.55);
     }
 
-    // A modern "swipe + settle" transition. With 2 cards, the two visible
-    // layers simply swap slots. With 3+, the old left card swipes off, the
-    // center and right cards promote one slot to the left, and the
-    // recycled card grows in as the new right card from a small, faded
-    // starting point off to the side.
-    function advance() {
+    // A modern "swipe + settle" transition, driven by which side of the
+    // stack was clicked: the right side advances (dir 1), the left side
+    // goes back (dir -1). With 2 cards, the two visible layers simply swap
+    // slots either way. With 3+, the trailing card on the side being
+    // vacated swipes off, the other two promote one slot toward it, and
+    // the recycled card grows in on the opposite side from a small, faded
+    // starting point.
+    function move(dir) {
       if (busy || total < 2) return;
       busy = true;
-      current = (current + 1) % total;
+      current = (current + dir + total) % total;
 
       if (total === 2) {
         const leftEl = layers.find((l) => l.dataset.role === "left");
@@ -264,26 +266,36 @@
         return;
       }
 
-      const leaving = layers.find((l) => l.dataset.role === "left");
+      const leavingRole = dir > 0 ? "left" : "right";
+      const enterRole = dir > 0 ? "right" : "left";
+      const leavingClass = dir > 0 ? "is-leaving" : "is-leaving-right";
+      const preEnterClass = dir > 0 ? "pre-enter-right" : "pre-enter-left";
+      const fillOffset = dir > 0 ? 1 : -1;
+
+      const leaving = layers.find((l) => l.dataset.role === leavingRole);
       const wasCenter = layers.find((l) => l.dataset.role === "center");
-      const wasRight = layers.find((l) => l.dataset.role === "right");
-      leaving.classList.add("is-leaving");
-      wasCenter.dataset.role = "left";
-      wasRight.dataset.role = "center";
+      const wasOther = layers.find((l) => l.dataset.role === enterRole);
+      leaving.classList.add(leavingClass);
+      wasCenter.dataset.role = leavingRole;
+      wasOther.dataset.role = "center";
       fadeText();
       setTimeout(() => {
-        leaving.classList.remove("is-leaving");
-        leaving.classList.add("no-anim", "pre-enter-right");
-        fillLayer(leaving, current + 1);
+        leaving.classList.remove(leavingClass);
+        leaving.classList.add("no-anim", preEnterClass);
+        fillLayer(leaving, current + fillOffset);
         // eslint-disable-next-line no-unused-expressions
         leaving.offsetHeight; // force reflow so the grow-in below actually transitions
-        leaving.dataset.role = "right";
-        leaving.classList.remove("no-anim", "pre-enter-right");
+        leaving.dataset.role = enterRole;
+        leaving.classList.remove("no-anim", preEnterClass);
         busy = false;
       }, ADVANCE_MS);
     }
 
-    stackEl.onclick = advance;
+    stackEl.addEventListener("click", (e) => {
+      const rect = stackEl.getBoundingClientRect();
+      const clickedLeftHalf = e.clientX - rect.left < rect.width / 2;
+      move(clickedLeftHalf ? -1 : 1);
+    });
     overlay.classList.add("is-open");
     document.body.classList.add("admin-modal-open");
   }
