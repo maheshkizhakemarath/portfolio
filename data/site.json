@@ -286,7 +286,7 @@
         },
         {
           "type": "paragraph",
-          "text": "\n\n"
+          "text": ""
         },
         {
           "type": "paragraph",
@@ -298,19 +298,11 @@
         },
         {
           "type": "paragraph",
-          "text": "Stage 1 : Launch AFOL Day tickets Test Hero/Core Flow"
+          "text": "Stage 1 : Launch AFOL Day tickets Test Hero/Core, Flow Purchase ticket - Redeem wrist bands - Enter LH Gates - Experience zones - Exit"
         },
         {
           "type": "paragraph",
-          "text": "Purchase ticket - Redeem wrist bands - Enter LH Gates - Experience zones - Exit"
-        },
-        {
-          "type": "paragraph",
-          "text": "Stage 2 : Fix all bells & whistles Test Peripherals"
-        },
-        {
-          "type": "paragraph",
-          "text": "Partner Integrations - API’s - Kiosks - Gates - Help desk - exit - Memories"
+          "text": "Stage 2 : Fix all bells & whistles Test Peripherals, Partner Integrations - API’s - Kiosks - Gates - Help desk - exit - Memories"
         },
         {
           "type": "paragraph",
