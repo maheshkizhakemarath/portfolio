@@ -70,9 +70,11 @@ body {
   background: var(--bg);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.6;
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  font-feature-settings: "ss02", "ss03", "ss06", "ss07", "ss08";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -150,15 +152,14 @@ button {
 
 /* ---------- Typography ---------- */
 .name {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: -0.01em;
   margin: 0;
   color: var(--text-primary);
 }
 
 .role {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-secondary);
   margin: 0;
 }
@@ -172,7 +173,7 @@ button {
 }
 
 .section-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--text-primary);
   margin: 0;
@@ -220,6 +221,7 @@ button {
   justify-content: space-between;
   width: 100%;
   font-size: 14px;
+  line-height: 20px;
   color: var(--text-tertiary);
 }
 
@@ -252,15 +254,14 @@ button {
    ========================================================= */
 
 .case-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: -0.01em;
   margin: 0;
   color: var(--text-primary);
 }
 
 .case-subtitle {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-secondary);
   margin: 0;
 }
@@ -274,14 +275,14 @@ button {
 }
 
 .case-caption {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-secondary);
   text-align: center;
   margin: 16px 0 0 0;
 }
 
 .case-section h2 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   margin: 0 0 12px 0;
   color: var(--text-primary);
@@ -700,7 +701,7 @@ html.gate-locked .password-gate {
 }
 
 .password-gate-card h2 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   margin: 0 0 6px 0;
   color: var(--text-primary);
@@ -1398,7 +1399,7 @@ body.admin-modal-open {
 }
 
 .group-popover-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--text-primary);
   margin: 0 0 14px 0;
