@@ -448,7 +448,7 @@
         close();
         toast("Profile saved.");
         if (window.MKM.renderHome && document.querySelector("[data-home-root]")) {
-          window.MKM.renderHome();
+          window.MKM.renderHome(site);
         }
       } catch (err) {
         errorEl.textContent = err.message;
@@ -762,7 +762,7 @@
         toast("Past work list saved.");
         close();
         if (window.MKM.renderHome && document.querySelector("[data-home-root]")) {
-          window.MKM.renderHome();
+          window.MKM.renderHome(site);
         }
       } catch (err) {
         errorEl.textContent = err.message;
@@ -1147,7 +1147,7 @@
         toast("Work saved.");
         close();
         if (window.MKM.renderCaseStudy && document.querySelector("[data-case-root]")) {
-          window.MKM.renderCaseStudy();
+          window.MKM.renderCaseStudy(site);
         }
       } catch (err) {
         errorEl.textContent = err.message;

@@ -111,10 +111,14 @@
   }
 
   // ---------- home page ----------
-  async function renderHome() {
+  // Pass `preloadedSite` to render from data already in hand (e.g. right
+  // after an admin save, where the just-saved object is the freshest
+  // possible copy) instead of re-fetching — skips both the network round
+  // trip and any wait for that save to actually finish deploying.
+  async function renderHome(preloadedSite) {
     const root = document.querySelector("[data-home-root]");
     if (!root) return null;
-    const site = await loadSite();
+    const site = preloadedSite || (await loadSite());
     const about = site.about || {};
     root.querySelector("[data-name]").textContent = about.name || "";
     root.querySelector("[data-role]").innerHTML = linkify(about.role || "");
@@ -339,10 +343,11 @@
     return params.get("slug");
   }
 
-  async function renderCaseStudy() {
+  // See renderHome's preloadedSite comment — same idea here.
+  async function renderCaseStudy(preloadedSite) {
     const root = document.querySelector("[data-case-root]");
     if (!root) return null;
-    const site = await loadSite();
+    const site = preloadedSite || (await loadSite());
     const slug = getSlugFromUrl();
     const cs = (site.caseStudies || []).find((c) => c.slug === slug);
 
