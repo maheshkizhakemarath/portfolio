@@ -1273,13 +1273,9 @@
             {
               "src": "../assets/img/case-studies/manorama-yearbook/img-01.png",
               "alt": "Uploaded image",
-              "caption": null
+              "caption": "Yearly editions of Manorama Yearbook"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "text": "Yearly editions of Manorama Yearbook"
         },
         {
           "type": "heading",
