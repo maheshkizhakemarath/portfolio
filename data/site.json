@@ -572,8 +572,8 @@
           "type": "image-row",
           "images": [
             {
-              "src": "blob:https://www.maheshmarath.com/fcfc209e-708c-4502-821b-38d08ae85653",
-              "alt": null,
+              "src": "../assets/img/case-studies/skyfish/img-05.png",
+              "alt": "Uploaded image",
               "caption": null
             }
           ]
@@ -1922,8 +1922,8 @@
         {
           "type": "list",
           "items": [
-            "IOS: https://apps.apple.com/in/app/deccan-herald-news/id1511179557",
-            "Android: https://play.google.com/store/apps/details?id=com.tpml.dh"
+            "[IOS App](https://apps.apple.com/in/app/deccan-herald-news/id1511179557)",
+            "[Android App](https://play.google.com/store/apps/details?id=com.tpml.dh)"
           ]
         },
         {
