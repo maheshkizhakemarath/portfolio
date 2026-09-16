@@ -76,10 +76,14 @@
             ? img.src
             : (imgBase || "") + img.src;
           const alt = img.alt || "";
+          const caption = (img.caption || "").trim();
+          out.push(`<div class="case-shot-wrap">`);
           out.push(
             `<button type="button" class="case-shot case-photo" data-preview data-preview-alt="${esc(alt)}">` +
               `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy"></button>`
           );
+          if (caption) out.push(`<p class="case-shot-caption">${linkify(caption)}</p>`);
+          out.push(`</div>`);
         }
         out.push("</div>");
       } else if (b.type === "embed") {

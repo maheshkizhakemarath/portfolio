@@ -385,8 +385,14 @@ button {
   display: block;
 }
 
-.case-image-row .case-shot {
+.case-image-row .case-shot-wrap {
   min-width: 0;
+}
+
+.case-shot-caption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
 }
 
 /* ---------- Mock browser screenshot card (placeholder + real) ---------- */

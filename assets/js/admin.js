@@ -831,6 +831,7 @@
               <div class="admin-image-item" data-image-index="${j}">
                 <img src="${window.MKM.esc(resolveImgSrc(img.src))}" alt="" />
                 <input class="admin-input admin-input--sm" type="text" placeholder="Alt text" data-image-alt value="${window.MKM.esc(img.alt || "")}" />
+                <input class="admin-input admin-input--sm" type="text" placeholder="Caption (optional)" data-image-caption value="${window.MKM.esc(img.caption || "")}" />
                 <button type="button" class="admin-btn admin-btn--sm admin-btn--danger" data-remove-image>Remove</button>
               </div>`
               )
@@ -1017,6 +1018,16 @@
             .filter(Boolean);
         } else if (b.type === "embed") {
           b.url = el.querySelector("[data-b-url]").value.trim();
+        } else if (b.type === "image-row") {
+          el.querySelectorAll("[data-image-index]").forEach((imgEl) => {
+            const j = Number(imgEl.dataset.imageIndex);
+            const img = b.images[j];
+            if (!img) return;
+            const altInput = imgEl.querySelector("[data-image-alt]");
+            const captionInput = imgEl.querySelector("[data-image-caption]");
+            if (altInput) img.alt = altInput.value.trim();
+            if (captionInput) img.caption = captionInput.value.trim();
+          });
         }
       });
     }
@@ -1065,7 +1076,7 @@
           if (!draft.blocks[i].images) draft.blocks[i].images = [];
           files.forEach((file) => {
             const j = draft.blocks[i].images.length;
-            draft.blocks[i].images.push({ src: URL.createObjectURL(file), alt: "", _pendingFile: file });
+            draft.blocks[i].images.push({ src: URL.createObjectURL(file), alt: "", caption: "", _pendingFile: file });
             if (!pendingUploads.has(i)) pendingUploads.set(i, []);
             pendingUploads.get(i).push({ imageIndex: j, file });
           });
@@ -1135,7 +1146,10 @@
         const idx = site.caseStudies.findIndex((c) => c.slug === draft.slug);
         const cleanBlocks = draft.blocks.map((b) => {
           if (b.type === "image-row") {
-            return { type: b.type, images: b.images.map((im) => ({ src: im.src, alt: im.alt || null })) };
+            return {
+              type: b.type,
+              images: b.images.map((im) => ({ src: im.src, alt: im.alt || null, caption: im.caption || null })),
+            };
           }
           return b;
         });
