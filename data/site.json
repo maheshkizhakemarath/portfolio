@@ -1235,6 +1235,16 @@
           "text": "*UPSC Exams are the screening process for public services in India where successful candidates holds most powerful positions nationally like District collectors, Head of police, Foriegn Ambassadors etc. More than 500,000 aspirant each year compete for 980 vacancies in UPSC Civil Services."
         },
         {
+          "type": "image-row",
+          "images": [
+            {
+              "src": "../assets/img/case-studies/manorama-yearbook/img-01.png",
+              "alt": "Uploaded image",
+              "caption": "Yearly editions of Manorama Yearbook"
+            }
+          ]
+        },
+        {
           "type": "paragraph",
           "text": "The original remit of the Yearbook was to bridge the gap between knowledge divide that existed in the society. Over the years the Yearbook has proved to be a perfect guide for students by providing unique perspectives on general knowledge & current affairs."
         },
@@ -1266,16 +1276,6 @@
         {
           "type": "paragraph",
           "text": "Another major challenge is aspirants today has multiple silos that he/she has to access to get a comprehensive picture of current affairs."
-        },
-        {
-          "type": "image-row",
-          "images": [
-            {
-              "src": "../assets/img/case-studies/manorama-yearbook/img-01.png",
-              "alt": "Uploaded image",
-              "caption": "Yearly editions of Manorama Yearbook"
-            }
-          ]
         },
         {
           "type": "heading",
