@@ -336,19 +336,8 @@ button {
   margin: 0;
 }
 
-.case-hero {
-  margin: 48px 0 0 0;
-}
-
 .case-hero-inline {
   margin: 24px 0;
-}
-
-.case-caption {
-  font-size: 16px;
-  color: var(--text-secondary);
-  text-align: center;
-  margin: 16px 0 0 0;
 }
 
 .case-section h2 {
