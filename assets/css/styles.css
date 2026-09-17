@@ -204,6 +204,21 @@ button {
     z-index: 5;
   }
 
+  /* Two stacked images, same position — only one is ever shown, picked by
+     theme (the dark version has a black background painted into the
+     artwork itself, so it needs the dark page behind it, and vice versa). */
+  .name-portrait--dark {
+    display: none;
+  }
+
+  [data-theme="dark"] .name-portrait--light {
+    display: none;
+  }
+
+  [data-theme="dark"] .name-portrait--dark {
+    display: block;
+  }
+
   /* Sibling combinator (not a descendant selector) so hovering .role,
      which sits between the trigger and the portrait in the markup,
      can never match — only .name-trigger itself can. */
