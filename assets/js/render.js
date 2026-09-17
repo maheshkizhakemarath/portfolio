@@ -190,6 +190,16 @@
   // ---------- group popover (fanned, animated card deck) ----------
   const ADVANCE_MS = 460;
 
+  // Set by openGroupPopover to the current instance's move() closure. The
+  // stack's click listener is attached exactly once (in wireGroupPopover)
+  // and always calls whatever this currently points to — otherwise every
+  // reopen (same group or a different one) would pile another closure onto
+  // the never-removed old listeners, so a click would advance ALL of them
+  // at once, including stale ones from a previously opened group, and their
+  // renderText() calls (which write to the shared title/count/CTA elements)
+  // would stomp on the currently visible one.
+  let activeGroupMove = null;
+
   function openGroupPopover(group, studies) {
     if (!studies.length) return;
     let overlay = document.querySelector("[data-group-popover]");
@@ -312,11 +322,7 @@
       }, ADVANCE_MS);
     }
 
-    stackEl.addEventListener("click", (e) => {
-      const rect = stackEl.getBoundingClientRect();
-      const clickedLeftHalf = e.clientX - rect.left < rect.width / 2;
-      move(clickedLeftHalf ? -1 : 1);
-    });
+    activeGroupMove = move;
     overlay.classList.add("is-open");
     document.body.classList.add("admin-modal-open");
   }
@@ -338,6 +344,15 @@
     overlay.querySelectorAll("[data-group-popover-close]").forEach((btn) =>
       btn.addEventListener("click", closeGroupPopover)
     );
+    const stackEl = overlay.querySelector("[data-group-popover-stack]");
+    if (stackEl) {
+      stackEl.addEventListener("click", (e) => {
+        if (!activeGroupMove) return;
+        const rect = stackEl.getBoundingClientRect();
+        const clickedLeftHalf = e.clientX - rect.left < rect.width / 2;
+        activeGroupMove(clickedLeftHalf ? -1 : 1);
+      });
+    }
   }
   document.addEventListener("DOMContentLoaded", wireGroupPopover);
 
