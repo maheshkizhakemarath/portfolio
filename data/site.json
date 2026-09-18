@@ -16,17 +16,17 @@
   "groups": [
     {
       "id": "lego-group",
-      "name": "With the LEGO Group",
+      "name": "With the LEGO Group '24-'26",
       "order": 0
     },
     {
       "id": "colourbox",
-      "name": "Colourbox & Skyfish",
+      "name": "Colourbox & Skyfish '20- '24",
       "order": 1
     },
     {
       "id": "think-design",
-      "name": "Think Design Collaborative",
+      "name": "Think Design Collaborative '08 - '20",
       "order": 2
     }
   ],
