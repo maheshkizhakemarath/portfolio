@@ -1231,11 +1231,11 @@ body.admin-modal-open {
 
 .group-popover-card {
   width: 100%;
-  max-width: 340px;
+  max-width: 480px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 24px;
+  padding: 30px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
   text-align: center;
 }
@@ -1260,7 +1260,7 @@ body.admin-modal-open {
   /* Extra side margin (beyond the card's own padding) guarantees the fan
      never crowds the popover's edges, whatever the exact transform math
      works out to. */
-  margin: 20px 14px 16px;
+  margin: 20px 40px 16px;
   cursor: pointer;
 }
 
@@ -1269,9 +1269,9 @@ body.admin-modal-open {
    the transition below instead of relayout. */
 .group-popover-layer {
   position: absolute;
-  left: 21%;
-  top: 8%;
-  width: 58%;
+  left: 18%;
+  top: 5%;
+  width: 64%;
   aspect-ratio: 1 / 1;
   border-radius: 14px;
   overflow: hidden;
@@ -1298,13 +1298,13 @@ body.admin-modal-open {
 }
 
 .group-popover-layer[data-role="left"] {
-  transform: translate(-30%, 10%) rotate(-8deg) scale(0.88);
+  transform: translate(-48%, 10%) rotate(-8deg) scale(0.88);
   opacity: 0.9;
   z-index: 2;
 }
 
 .group-popover-layer[data-role="right"] {
-  transform: translate(30%, 10%) rotate(8deg) scale(0.88);
+  transform: translate(48%, 10%) rotate(8deg) scale(0.88);
   opacity: 0.9;
   z-index: 1;
 }
@@ -1312,7 +1312,7 @@ body.admin-modal-open {
 /* Outgoing card, forward (right-side click): swipes further left and
    fades, as if peeled off the front of the deck. */
 .group-popover-layer.is-leaving {
-  transform: translate(-115%, 16%) rotate(-16deg) scale(0.78) !important;
+  transform: translate(-180%, 16%) rotate(-16deg) scale(0.78) !important;
   opacity: 0 !important;
   z-index: 4 !important;
 }
@@ -1320,7 +1320,7 @@ body.admin-modal-open {
 /* Outgoing card, backward (left-side click): the mirror image of
    is-leaving, peeling off toward the right instead. */
 .group-popover-layer.is-leaving-right {
-  transform: translate(115%, 16%) rotate(16deg) scale(0.78) !important;
+  transform: translate(180%, 16%) rotate(16deg) scale(0.78) !important;
   opacity: 0 !important;
   z-index: 4 !important;
 }
@@ -1329,13 +1329,13 @@ body.admin-modal-open {
    slot (forward), so it eases into view from off to the side instead of
    popping in. */
 .group-popover-layer.pre-enter-right {
-  transform: translate(120%, 16%) rotate(16deg) scale(0.62) !important;
+  transform: translate(186%, 16%) rotate(16deg) scale(0.62) !important;
   opacity: 0 !important;
 }
 
 /* Mirror of pre-enter-right, for the new left slot (backward). */
 .group-popover-layer.pre-enter-left {
-  transform: translate(-120%, 16%) rotate(-16deg) scale(0.62) !important;
+  transform: translate(-186%, 16%) rotate(-16deg) scale(0.62) !important;
   opacity: 0 !important;
 }
 
