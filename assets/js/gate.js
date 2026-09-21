@@ -13,22 +13,38 @@
     return "mkm-unlocked-" + slug;
   }
 
-  function setupGate(caseStudy) {
+  function normalizedPassword(cs) {
+    return String((cs && cs.password) || "").trim().toLowerCase();
+  }
+
+  // Other studies that share this exact password, unlocking one should
+  // unlock all of them (and typing that password once should count for
+  // any of them), since re-entering an identical password on the next
+  // study is just friction, not real extra protection.
+  function siblingSlugs(caseStudy, allCaseStudies) {
+    var expected = normalizedPassword(caseStudy);
+    if (!expected || !allCaseStudies) return [];
+    return allCaseStudies
+      .filter((cs) => cs.slug !== caseStudy.slug && normalizedPassword(cs) === expected)
+      .map((cs) => cs.slug);
+  }
+
+  function setupGate(caseStudy, allCaseStudies) {
     var root = document.documentElement;
-    var lightbox = document.querySelector("[data-lightbox]");
     var gate = document.querySelector("[data-password-gate]");
     if (!caseStudy) return;
 
     var slug = caseStudy.slug;
     var required = !!(caseStudy.password && String(caseStudy.password).trim());
+    var siblings = siblingSlugs(caseStudy, allCaseStudies);
 
     function unlock(persist) {
       root.classList.remove("gate-locked");
-      if (persist) {
-        try {
-          localStorage.setItem(storageKey(slug), "true");
-        } catch (e) {}
-      }
+      if (!persist) return;
+      try {
+        localStorage.setItem(storageKey(slug), "true");
+        siblings.forEach((s) => localStorage.setItem(storageKey(s), "true"));
+      } catch (e) {}
     }
 
     if (!required) {
@@ -38,10 +54,12 @@
 
     var already = false;
     try {
-      already = localStorage.getItem(storageKey(slug)) === "true";
+      already =
+        localStorage.getItem(storageKey(slug)) === "true" ||
+        siblings.some((s) => localStorage.getItem(storageKey(s)) === "true");
     } catch (e) {}
     if (already) {
-      unlock(false);
+      unlock(true);
       return;
     }
 
@@ -53,7 +71,7 @@
 
     function attempt() {
       var value = (input.value || "").trim().toLowerCase();
-      var expected = String(caseStudy.password || "").trim().toLowerCase();
+      var expected = normalizedPassword(caseStudy);
       if (value && value === expected) {
         if (errorEl) errorEl.textContent = "";
         unlock(true);
