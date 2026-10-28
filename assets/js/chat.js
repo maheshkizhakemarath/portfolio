@@ -38,6 +38,15 @@
   ];
 
 
+  var FIT_CHIP = "Check my fit for a job description";
+  var JD_MIN = 200;
+  var JD_MAX = 7900;
+  var JD_FILE_MAX = 5 * 1024 * 1024;
+  var PDFJS = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+  var PDFJS_WORKER = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  var MAMMOTH = "https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js";
+  var FIT_LABEL = { strong: "Strong", partial: "Partial", none: "No evidence", unknown: "Can't judge" };
+
   var history = loadHistory();
   var pending = false;
   var rendered = false;
@@ -103,8 +112,46 @@
     "AI can make mistakes. For anything important, please contact me directly."
   );
 
+  var fitLink = el("button", "chat-fit-link text-link", "Have a job description? Check my fit");
+  fitLink.type = "button";
+
+  var fitPanel = el("div", "chat-fit");
+  fitPanel.hidden = true;
+  fitPanel.setAttribute("role", "group");
+  fitPanel.setAttribute("aria-label", "Check my fit for a job description");
+  fitPanel.appendChild(el("p", "chat-fit-title", "Paste a job description, or upload it, and I'll estimate how well my background fits."));
+  var fitText = el("textarea", "chat-fit-text");
+  fitText.rows = 5;
+  fitText.placeholder = "Paste the job description here…";
+  fitText.setAttribute("aria-label", "Job description");
+  fitPanel.appendChild(fitText);
+  var fitFile = el("input", "chat-fit-file");
+  fitFile.type = "file";
+  fitFile.accept = ".pdf,.docx,.txt,.md,application/pdf,text/plain";
+  fitFile.hidden = true;
+  fitPanel.appendChild(fitFile);
+  var fitActions = el("div", "chat-fit-actions");
+  var fitUpload = el("button", "chat-fit-upload", "Upload PDF, Word or text");
+  fitUpload.type = "button";
+  var fitRun = el("button", "chat-fit-run", "Check fit");
+  fitRun.type = "button";
+  var fitCancel = el("button", "chat-fit-cancel text-link", "Cancel");
+  fitCancel.type = "button";
+  fitActions.appendChild(fitUpload);
+  fitActions.appendChild(fitRun);
+  fitActions.appendChild(fitCancel);
+  fitPanel.appendChild(fitActions);
+  var fitStatus = el("p", "chat-fit-status");
+  fitStatus.setAttribute("aria-live", "polite");
+  fitPanel.appendChild(fitStatus);
+  fitPanel.appendChild(
+    el("p", "chat-fit-privacy", "Your job description is not saved. It is sent to an AI model only to make this comparison.")
+  );
+
   composer.appendChild(suggestions);
+  composer.appendChild(fitPanel);
   composer.appendChild(form);
+  composer.appendChild(fitLink);
   composer.appendChild(note);
   view.appendChild(log);
   view.appendChild(composer);
@@ -138,6 +185,13 @@
         return m.content;
       });
     suggestions.textContent = "";
+    var fitChip = el("button", "chat-chip chat-chip--fit", FIT_CHIP);
+    fitChip.type = "button";
+    fitChip.disabled = pending;
+    fitChip.addEventListener("click", function () {
+      openFit();
+    });
+    suggestions.appendChild(fitChip);
     SUGGESTIONS.filter(function (q) {
       return asked.indexOf(q) === -1;
     }).forEach(function (q) {
@@ -151,7 +205,7 @@
     });
     // Suggestions are only for starting a conversation; once a question has been asked
     // (this visit or earlier in the session) they never come back.
-    suggestions.hidden = !suggestions.children.length || asked.length > 0;
+    suggestions.hidden = !suggestions.children.length || history.length > 0;
   }
 
   // While reading back up the conversation the chips step out of the way; they return
@@ -199,7 +253,10 @@
   });
   exitBtn.addEventListener("click", exit);
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && isOpen()) exit();
+    if (e.key === "Escape" && isOpen()) {
+      if (!fitPanel.hidden) closeFit();
+      else exit();
+    }
   });
   var logoLink = header.querySelector("a");
   if (logoLink) {
@@ -214,6 +271,9 @@
     pending = on;
     sendBtn.disabled = on;
     input.disabled = on;
+    fitLink.disabled = on;
+    fitRun.disabled = on;
+    fitUpload.disabled = on;
     Array.prototype.forEach.call(suggestions.children, function (chip) {
       chip.disabled = on;
     });
@@ -279,6 +339,201 @@
       bubble.classList.add("chat-msg--error");
       bubble.textContent =
         (err && err.userMessage) || "Sorry, I couldn't reach the assistant just now. Please try again.";
+    } finally {
+      setPending(false);
+      renderSuggestions();
+      scrollToEnd();
+    }
+  }
+
+  // ---------- Job description fit check ----------
+  function openFit() {
+    fitPanel.hidden = false;
+    fitStatus.textContent = "";
+    suggestions.classList.add("is-tucked");
+    fitText.focus({ preventScroll: true });
+    scrollToEnd();
+  }
+
+  function closeFit() {
+    fitPanel.hidden = true;
+    fitStatus.textContent = "";
+    syncSuggestionsToScroll();
+    input.focus({ preventScroll: true });
+  }
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var tag = document.createElement("script");
+      tag.src = src;
+      tag.onload = resolve;
+      tag.onerror = function () {
+        reject(new Error("load"));
+      };
+      document.head.appendChild(tag);
+    });
+  }
+
+  // PDF and Word readers are only downloaded when someone actually uploads one.
+  async function readFile(file) {
+    var name = file.name.toLowerCase();
+    if (file.size > JD_FILE_MAX) throw new Error("That file is over 5 MB. Please paste the text instead.");
+    if (/\.(txt|md|text)$/.test(name) || file.type === "text/plain") return file.text();
+    if (/\.pdf$/.test(name)) {
+      if (!window.pdfjsLib) await loadScript(PDFJS);
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+      var pdf = await window.pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+      var out = [];
+      for (var i = 1; i <= Math.min(pdf.numPages, 12); i++) {
+        var content = await (await pdf.getPage(i)).getTextContent();
+        out.push(
+          content.items
+            .map(function (it) {
+              return it.str + (it.hasEOL ? "\n" : " ");
+            })
+            .join("")
+        );
+      }
+      return out.join("\n");
+    }
+    if (/\.docx$/.test(name)) {
+      if (!window.mammoth) await loadScript(MAMMOTH);
+      return (await window.mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() })).value;
+    }
+    throw new Error("I can read PDF, Word (.docx) and text files. For anything else, please paste the text.");
+  }
+
+  fitUpload.addEventListener("click", function () {
+    fitFile.click();
+  });
+  fitFile.addEventListener("change", async function () {
+    var file = fitFile.files && fitFile.files[0];
+    fitFile.value = "";
+    if (!file) return;
+    fitStatus.textContent = "Reading " + file.name + "…";
+    try {
+      var text = (await readFile(file)).replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+      if (text.length < 40) throw new Error("I couldn't find any text in that file (a scanned image, perhaps). Please paste the text instead.");
+      fitText.value = text.slice(0, JD_MAX);
+      fitStatus.textContent =
+        text.length > JD_MAX ? "Loaded " + file.name + ". It was long, so I'll read the first part." : "Loaded " + file.name + ". Check it looks right, then press Check fit.";
+    } catch (err) {
+      fitStatus.textContent = (err && err.message) || "I couldn't read that file. Please paste the text instead.";
+    }
+  });
+  fitCancel.addEventListener("click", closeFit);
+  fitLink.addEventListener("click", function () {
+    if (fitPanel.hidden) openFit();
+    else closeFit();
+  });
+  fitRun.addEventListener("click", function () {
+    runFit(fitText.value);
+  });
+
+  function fitHistoryText(m) {
+    var lines = [
+      m.score == null
+        ? "Fit check for " + (m.role || "the role") + ": not enough information to put a number on it."
+        : "Fit check for " + (m.role || "the role") + ": about " + m.score + "% (" + m.band + ").",
+    ];
+    if (m.summary) lines.push(m.summary);
+    m.requirements.forEach(function (r) {
+      lines.push("- " + r.text + ": " + r.fit);
+    });
+    return lines.join("\n").slice(0, 2900);
+  }
+
+  function renderFit(bubble, m) {
+    bubble.textContent = "";
+    bubble.classList.add("chat-msg--fit");
+    var card = el("div", "fit-card");
+    var head = el("div", "fit-head");
+    if (m.score != null) {
+      head.appendChild(el("span", "fit-score", "≈ " + m.score + "%"));
+      head.appendChild(el("span", "fit-band", m.band));
+    } else {
+      head.appendChild(el("span", "fit-band", "Not enough to put a number on"));
+    }
+    card.appendChild(head);
+    if (m.role || m.company) card.appendChild(el("p", "fit-role", [m.role, m.company].filter(Boolean).join(" · ")));
+    if (m.score != null) {
+      var meter = el("div", "fit-meter");
+      var bar = el("div", "fit-meter-bar");
+      bar.style.width = m.score + "%";
+      meter.appendChild(bar);
+      meter.setAttribute("role", "img");
+      meter.setAttribute("aria-label", "Estimated fit " + m.score + " percent");
+      card.appendChild(meter);
+    }
+    if (m.summary) card.appendChild(el("p", "fit-summary", m.summary));
+    var list = el("ul", "fit-list");
+    m.requirements.forEach(function (r) {
+      var li = el("li", "fit-item");
+      li.appendChild(el("span", "fit-tag fit-tag--" + r.fit, FIT_LABEL[r.fit] || r.fit));
+      var body = el("span", "fit-item-body");
+      body.appendChild(el("span", "fit-item-text", r.text + (r.priority === "must" ? "" : " (nice to have)")));
+      if (r.evidence) body.appendChild(el("span", "fit-item-evidence", r.evidence));
+      li.appendChild(body);
+      list.appendChild(li);
+    });
+    card.appendChild(list);
+    card.appendChild(
+      el(
+        "p",
+        "fit-disclaimer",
+        "This is an estimate from my CV and portfolio, not a hiring decision. Strong or partial means I can point to related work; it doesn't capture everything. For anything important, please contact me directly."
+      )
+    );
+    bubble.appendChild(card);
+  }
+
+  async function runFit(raw) {
+    var jd = (raw || "").trim();
+    if (pending) return;
+    if (jd.length < JD_MIN) {
+      fitStatus.textContent = "That looks too short to be a job description. Please paste the full text.";
+      return;
+    }
+    jd = jd.slice(0, JD_MAX);
+    fitText.value = "";
+    closeFit();
+
+    var label = "Job description shared (" + jd.replace(/\s+/g, " ").slice(0, 70) + "…)";
+    addMessage("user", label);
+    history.push({ role: "user", content: label });
+    renderSuggestions();
+    setPending(true);
+
+    var bubble = addMessage("assistant", "Reading the job description against my background…");
+    bubble.classList.add("is-typing");
+    scrollToEnd();
+
+    try {
+      var res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ jd: jd }),
+      });
+      if (!res.ok) {
+        var failure = new Error("HTTP " + res.status);
+        if ([400, 413, 429, 502, 503].indexOf(res.status) !== -1) failure.userMessage = (await res.text()).slice(0, 300);
+        throw failure;
+      }
+      var match = await res.json();
+      bubble.classList.remove("is-typing");
+      if (match.notJobDescription) {
+        bubble.textContent = "That doesn't look like a job description. Paste the role's description and I'll compare it with my background.";
+        history.push({ role: "assistant", content: bubble.textContent });
+      } else {
+        renderFit(bubble, match);
+        history.push({ role: "assistant", content: fitHistoryText(match) });
+      }
+      saveHistory();
+    } catch (err) {
+      history.pop();
+      bubble.classList.remove("is-typing");
+      bubble.classList.add("chat-msg--error");
+      bubble.textContent = (err && err.userMessage) || "Sorry, I couldn't check that just now. Please try again.";
     } finally {
       setPending(false);
       renderSuggestions();

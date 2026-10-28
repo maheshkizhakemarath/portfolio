@@ -1652,3 +1652,254 @@ html.chat-mode .site-header::after {
     animation: none;
   }
 }
+
+/* ---------- Job description fit check ---------- */
+.chat-fit-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.chat-fit-link:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.chat-chip--fit {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.chat-fit {
+  margin-bottom: 12px;
+  padding: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.chat-fit[hidden] {
+  display: none;
+}
+
+.chat-fit-title {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-primary);
+}
+
+.chat-fit-text {
+  display: block;
+  width: 100%;
+  max-height: 180px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.45;
+  letter-spacing: inherit;
+  color: var(--text-primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  resize: vertical;
+}
+
+.chat-fit-text:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+
+.chat-fit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 10px;
+}
+
+.chat-fit-upload,
+.chat-fit-run {
+  padding: 7px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.chat-fit-upload:hover:not(:disabled) {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.chat-fit-run {
+  color: var(--bg);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.chat-fit-run:disabled,
+.chat-fit-upload:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.chat-fit-cancel {
+  margin-left: auto;
+  font-size: 14px;
+}
+
+.chat-fit-status {
+  min-height: 0;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.chat-fit-status:empty {
+  display: none;
+}
+
+.chat-fit-privacy {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.chat-fit-link:focus-visible,
+.chat-fit-upload:focus-visible,
+.chat-fit-run:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+/* The result card replaces the plain chat bubble look. */
+.chat-msg--fit {
+  width: 100%;
+  max-width: 100%;
+  padding: 16px;
+  white-space: normal;
+}
+
+.fit-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.fit-score {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.fit-band {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.fit-role {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.fit-meter {
+  height: 4px;
+  margin-top: 12px;
+  overflow: hidden;
+  background: var(--border);
+  border-radius: 999px;
+}
+
+.fit-meter-bar {
+  height: 100%;
+  background: var(--text-primary);
+  border-radius: 999px;
+}
+
+.fit-summary {
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+.fit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.fit-tag {
+  flex: 0 0 86px;
+  padding: 2px 0;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.fit-tag--strong {
+  color: var(--bg);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.fit-tag--partial {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.fit-tag--unknown {
+  border-style: dashed;
+}
+
+.fit-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.fit-item-text {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.fit-item-evidence {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.fit-disclaimer {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 480px) {
+  .fit-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .fit-tag {
+    flex-basis: auto;
+    padding: 2px 10px;
+  }
+}
