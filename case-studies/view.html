@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Work — Mahesh Marath</title>
   <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../assets/css/styles.css?v=32" />
+  <link rel="stylesheet" href="../assets/css/styles.css?v=39" />
   <script>
     // Synchronous, pre-paint: assume locked unless this exact case study
     // was already unlocked in this browser. render.js + gate.js reconcile
@@ -44,7 +44,7 @@
     })();
   </script>
 </head>
-<body data-data-url="../data/site.json">
+<body data-chat-endpoint="https://portfolio-assistant.maheshkizhakemarath.workers.dev" data-data-url="../data/site.json">
   <div class="password-gate" data-password-gate>
     <form class="password-gate-card" data-password-gate-form>
       <h2>This work is password protected</h2>
@@ -71,6 +71,7 @@
         <h1 class="case-title" data-cs-title></h1>
         <p class="case-subtitle" data-cs-subtitle></p>
         <div data-cs-body></div>
+        <p class="chat-cta-line" data-chat-cta hidden><button type="button" class="text-link" data-chat-open>or ask me anything</button></p>
       </main>
 
       <footer class="site-footer">
@@ -101,10 +102,11 @@
     </div>
   </div>
 
-  <script src="../assets/js/render.js?v=32"></script>
-  <script src="../assets/js/gate.js?v=32"></script>
-  <script src="../assets/js/site.js?v=32"></script>
-  <script src="../assets/js/admin.js?v=32"></script>
+  <script src="../assets/js/render.js?v=37"></script>
+  <script src="../assets/js/gate.js?v=37"></script>
+  <script src="../assets/js/site.js?v=37"></script>
+  <script src="../assets/js/admin.js?v=37"></script>
+  <script src="../assets/js/chat.js?v=39"></script>
   <script>
     MKM.renderCaseStudy().then(function (result) {
       if (result && result.caseStudy) {

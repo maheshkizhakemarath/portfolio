@@ -23,7 +23,7 @@
 
 /* ---------- Design tokens ---------- */
 :root {
-  --bg: oklch(0.958 0.004 85);
+  --bg: oklch(1 0 0);
   --bg-card: oklch(0.985 0.003 85);
   --text-primary: oklch(0.24 0.004 75);
   --text-secondary: oklch(0.58 0.006 80);
@@ -1385,4 +1385,270 @@ body.admin-modal-open {
   height: 13px;
   flex-shrink: 0;
   color: inherit;
+}
+
+/* ---------- "Or ask me anything" chat ---------- */
+.chat-cta-list {
+  margin-top: 8px;
+}
+
+.chat-cta-line {
+  margin-top: 56px;
+}
+
+/* The header stays exactly where it is; the Close control just sits on its
+   right edge without changing the header's layout. */
+.site-header {
+  position: relative;
+}
+
+.chat-exit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.chat-exit[hidden] {
+  display: none;
+}
+
+/* Chat mode: the page content steps aside and the chat takes the column. */
+.chat-view {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+html.chat-mode .chat-view {
+  display: flex;
+}
+
+.chat-view[hidden] {
+  display: none;
+}
+
+html.chat-mode .shell > main,
+html.chat-mode .shell > footer {
+  display: none;
+}
+
+html.chat-mode .shell {
+  padding-bottom: 0;
+}
+
+.chat-log {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 24px;
+}
+
+.chat-msg {
+  max-width: 88%;
+  padding: 10px 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border-radius: 16px;
+}
+
+.chat-msg--user {
+  align-self: flex-end;
+  color: var(--bg);
+  background: var(--text-primary);
+  border-bottom-right-radius: 4px;
+}
+
+.chat-msg--assistant {
+  align-self: flex-start;
+  color: var(--text-primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+}
+
+.chat-msg--error {
+  color: var(--status-red);
+}
+
+.chat-msg.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 2px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  animation: chat-pulse 1s ease-in-out infinite;
+}
+
+@keyframes chat-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Pinned to the bottom of the page, left-aligned with the content column,
+   with the suggestions sitting directly above the input. */
+.chat-composer {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+  padding: 12px 0 20px;
+  background: var(--bg);
+}
+
+/* Messages fade out as they approach the header and the composer instead of being
+   cut off by a hard edge. */
+.chat-composer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+}
+
+html.chat-mode .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+}
+
+html.chat-mode .site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+  pointer-events: none;
+}
+
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.chat-suggestions[hidden] {
+  display: none;
+}
+
+.chat-suggestions {
+  transition: opacity 0.2s ease, max-height 0.25s ease, margin-bottom 0.25s ease;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.chat-suggestions.is-tucked {
+  max-height: 0;
+  margin-bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chat-chip {
+  padding: 7px 12px;
+  font-size: 14px;
+  text-align: left;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.chat-chip:hover:not(:disabled) {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.chat-chip:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.chat-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.chat-input {
+  flex: 1;
+  min-width: 0;
+  max-height: 120px;
+  padding: 10px 14px;
+  font: inherit;
+  line-height: 1.4;
+  letter-spacing: inherit;
+  color: var(--text-primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  resize: none;
+}
+
+.chat-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--border-strong);
+}
+
+.chat-send {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--bg);
+  background: var(--text-primary);
+  border-radius: 50%;
+  transition: opacity 0.2s ease;
+}
+
+.chat-send:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.chat-send svg {
+  width: 16px;
+  height: 16px;
+}
+
+.chat-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.chat-exit:focus-visible,
+.chat-chip:focus-visible,
+.chat-send:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-msg.is-typing::after {
+    animation: none;
+  }
 }

@@ -157,7 +157,8 @@
 
   document.addEventListener("click", function (e) {
     if (e.detail === 0) return;
-    if (document.documentElement.classList.contains("admin-mode")) return;
+    var classes = document.documentElement.classList;
+    if (classes.contains("admin-mode") || classes.contains("chat-mode")) return;
     var target = e.target;
     if (!(target instanceof Element) || target.closest(INTERACTIVE)) return;
     var selection = window.getSelection && window.getSelection().toString();

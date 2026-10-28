@@ -14,7 +14,7 @@
   <title>Mahesh Marath — VP of Design at Qualitia</title>
   <meta name="description" content="Mahesh Marath, VP of Design at Qualitia. I design calm, useful tools for complex work." />
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=32" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=39" />
   <script>
     // Synchronous, pre-paint: avoids a flash of the wrong theme. Mirrors
     // the logic in assets/js/site.js — an explicit saved choice wins,
@@ -29,7 +29,7 @@
     })();
   </script>
 </head>
-<body data-data-url="data/site.json">
+<body data-chat-endpoint="https://portfolio-assistant.maheshkizhakemarath.workers.dev" data-data-url="data/site.json">
   <div class="page">
     <div class="shell">
       <header class="site-header">
@@ -65,6 +65,9 @@
         <section class="section">
           <h2 class="section-title">Connect</h2>
           <ul class="link-list" data-connect-list></ul>
+          <ul class="link-list chat-cta-list" data-chat-cta hidden>
+            <li><button type="button" class="text-link" data-chat-open>or ask me anything</button></li>
+          </ul>
         </section>
       </main>
 
@@ -107,9 +110,10 @@
     </div>
   </div>
 
-  <script src="assets/js/render.js?v=32"></script>
-  <script src="assets/js/site.js?v=32"></script>
-  <script src="assets/js/admin.js?v=32"></script>
+  <script src="assets/js/render.js?v=37"></script>
+  <script src="assets/js/site.js?v=37"></script>
+  <script src="assets/js/admin.js?v=37"></script>
+  <script src="assets/js/chat.js?v=39"></script>
   <script>
     MKM.renderHome().then(function (site) {
       if (window.MKM.onDataLoaded) window.MKM.onDataLoaded(site);
