@@ -119,6 +119,10 @@ button {
 }
 
 /* ---------- Layout ---------- */
+html {
+  scrollbar-gutter: stable;
+}
+
 .page {
   min-height: 100vh;
   display: flex;
@@ -1438,6 +1442,7 @@ html.chat-mode .shell > footer {
 }
 
 html.chat-mode .shell {
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -1521,11 +1526,18 @@ html.chat-mode .shell {
   pointer-events: none;
 }
 
+/* The shell's top padding moves into the sticky header so the logo sits at
+   the same spot in chat mode as on the page, however far the chat has scrolled. */
 html.chat-mode .site-header {
   position: sticky;
   top: 0;
   z-index: 5;
+  padding-top: 50px;
   background: var(--bg);
+}
+
+html.chat-mode .chat-exit {
+  top: 50px;
 }
 
 html.chat-mode .site-header::after {
