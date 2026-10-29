@@ -32,10 +32,10 @@
     "Hello, and welcome! I'm an AI assistant answering on Mahesh's behalf, a bit like a secretary who knows his CV by heart, and I'm happy you dropped in. What would you like to know?";
   // Each chip shows a short label and sends the full question.
   var SUGGESTIONS = [
-    { label: "Grow a studio, 1 to 40+", q: "How did you grow a design studio from 1 to 40+?" },
-    { label: "Design culture and coaching", q: "How do you build design culture and coach leads?" },
-    { label: "Business impact", q: "How has your design work moved business results?" },
     { label: "AI-first design", q: "How are you shaping AI-first design at Qualitia?" },
+    { label: "Business impact", q: "How has your design work moved business results?" },
+    { label: "Design culture and coaching", q: "How do you build design culture and coach leads?" },
+    { label: "Grow a studio, 1 to 40+", q: "How did you grow a design studio from 1 to 40+?" },
   ];
 
   var FIT_CHIP = "Check my fit";
