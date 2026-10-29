@@ -29,7 +29,7 @@
   var HISTORY_LIMIT = 10;
   var STORAGE_KEY = "mkm-chat";
   var GREETING =
-    "Hello and welcome! I'm an AI assistant answering on my behalf, a bit like a secretary who knows my CV by heart. What would you like to know?";
+    "Hello, and welcome! I'm an AI assistant answering on Mahesh's behalf, a bit like a secretary who knows his CV by heart, and I'm happy you dropped in. What would you like to know?";
   var SUGGESTIONS = [
     "What measurable impact has your work had?",
     "How large a design team have you led?",
