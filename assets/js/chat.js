@@ -362,10 +362,14 @@
     input.focus({ preventScroll: true });
   }
 
-  function loadScript(src) {
+  // Third-party readers are pinned: the browser refuses them if the file ever changes.
+  function loadScript(src, integrity) {
     return new Promise(function (resolve, reject) {
       var tag = document.createElement("script");
       tag.src = src;
+      tag.integrity = integrity;
+      tag.crossOrigin = "anonymous";
+      tag.referrerPolicy = "no-referrer";
       tag.onload = resolve;
       tag.onerror = function () {
         reject(new Error("load"));
@@ -380,9 +384,9 @@
     if (file.size > JD_FILE_MAX) throw new Error("That file is over 5 MB. Please paste the text instead.");
     if (/\.(txt|md|text)$/.test(name) || file.type === "text/plain") return file.text();
     if (/\.pdf$/.test(name)) {
-      if (!window.pdfjsLib) await loadScript(PDFJS);
+      if (!window.pdfjsLib) await loadScript(PDFJS, "sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e");
       window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
-      var pdf = await window.pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise;
+      var pdf = await window.pdfjsLib.getDocument({ data: await file.arrayBuffer(), isEvalSupported: false, enableXfa: false }).promise;
       var out = [];
       for (var i = 1; i <= Math.min(pdf.numPages, 12); i++) {
         var content = await (await pdf.getPage(i)).getTextContent();
@@ -397,7 +401,7 @@
       return out.join("\n");
     }
     if (/\.docx$/.test(name)) {
-      if (!window.mammoth) await loadScript(MAMMOTH);
+      if (!window.mammoth) await loadScript(MAMMOTH, "sha384-nFoSjZIoH3CCp8W639jJyQkuPHinJ2NHe7on1xvlUA7SuGfJAfvMldrsoAVm6ECz");
       return (await window.mammoth.extractRawText({ arrayBuffer: await file.arrayBuffer() })).value;
     }
     throw new Error("I can read PDF, Word (.docx) and text files. For anything else, please paste the text.");

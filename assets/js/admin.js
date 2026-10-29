@@ -572,7 +572,7 @@
             </label>
           </div>
           <div class="admin-row-actions">
-            <a class="admin-link" href="${csUrl(cs.slug)}" target="_blank">View</a>
+            <a class="admin-link" href="${csUrl(cs.slug)}" target="_blank" rel="noopener noreferrer">View</a>
             <button type="button" class="admin-btn admin-btn--sm" data-open-editor="${window.MKM.esc(cs.slug)}">Edit content</button>
             <button type="button" class="admin-btn admin-btn--sm admin-btn--danger" data-delete="${window.MKM.esc(cs.slug)}">Delete</button>
           </div>

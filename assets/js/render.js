@@ -6,10 +6,31 @@
 (function () {
   const DATA_URL = document.body.dataset.dataUrl || "data/site.json";
 
+  // Escapes text for use in HTML *and* inside quoted attributes (quotes included), so a
+  // value can never break out of an attribute.
+  const ESC_MAP = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
   function esc(s) {
-    const d = document.createElement("div");
-    d.textContent = s == null ? "" : String(s);
-    return d.innerHTML;
+    return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ESC_MAP[c]);
+  }
+
+  // Only plain web addresses (and mailto/tel) may become links; anything else, such as
+  // "javascript:", turns into a dead "#".
+  function safeUrl(u) {
+    try {
+      const x = new URL(String(u), location.href);
+      return ["http:", "https:", "mailto:", "tel:"].includes(x.protocol) ? String(u) : "#";
+    } catch (e) {
+      return "#";
+    }
+  }
+
+  // Embedded frames must be HTTPS.
+  function safeEmbedUrl(u) {
+    try {
+      return new URL(String(u), location.href).protocol === "https:" ? String(u) : "about:blank";
+    } catch (e) {
+      return "about:blank";
+    }
   }
 
   // Lightweight markdown-style links: "[label](https://example.com)" inside
@@ -20,7 +41,7 @@
   function linkify(s) {
     return esc(s).replace(
       LINK_PATTERN,
-      (_, label, url) => `<a class="text-link" href="${url}" target="_blank" rel="noopener">${label}</a>`
+      (_, label, url) => `<a class="text-link" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`
     );
   }
 
@@ -90,7 +111,7 @@
         openSection();
         if (!b.url) continue;
         out.push(
-          `<div class="case-embed"><iframe src="${esc(b.url)}" title="Embedded video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+          `<div class="case-embed"><iframe src="${esc(safeEmbedUrl(b.url))}" referrerpolicy="strict-origin-when-cross-origin" title="Embedded video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
         );
       }
     }
@@ -180,7 +201,7 @@
     connectEl.innerHTML = (site.connect || [])
       .map(
         (c) =>
-          `<li><a class="text-link" href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.label)}</a></li>`
+          `<li><a class="text-link" href="${esc(safeUrl(c.url))}" target="_blank" rel="noopener noreferrer">${esc(c.label)}</a></li>`
       )
       .join("");
 
@@ -397,4 +418,5 @@
   window.MKM.renderBlocksHTML = renderBlocksHTML;
   window.MKM.getSlugFromUrl = getSlugFromUrl;
   window.MKM.esc = esc;
+  window.MKM.safeUrl = safeUrl;
 })();

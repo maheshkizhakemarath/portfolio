@@ -2,32 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://api.github.com https://portfolio-assistant.maheshkizhakemarath.workers.dev https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://cloudflareinsights.com https://*.cloudflareinsights.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; worker-src blob: https://cdnjs.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6GTJ2YS2T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-J6GTJ2YS2T");
-  </script>
+  <script src="assets/js/analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mahesh Marath — VP of Design at Qualitia</title>
   <meta name="description" content="Mahesh Marath, VP of Design at Qualitia. I design calm, useful tools for complex work." />
   <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=45" />
-  <script>
-    // Synchronous, pre-paint: avoids a flash of the wrong theme. Mirrors
-    // the logic in assets/js/site.js — an explicit saved choice wins,
-    // otherwise follow the OS/browser preference.
-    (function () {
-      var stored = null;
-      try {
-        stored = localStorage.getItem("mkm-theme");
-      } catch (e) {}
-      var dark = stored ? stored === "dark" : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (dark) document.documentElement.setAttribute("data-theme", "dark");
-    })();
-  </script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=48" />
+  <script src="assets/js/boot.js"></script>
 </head>
 <body data-chat-endpoint="https://portfolio-assistant.maheshkizhakemarath.workers.dev" data-data-url="data/site.json">
   <div class="page">
@@ -47,7 +32,7 @@
               <h1 class="name" data-name></h1>
             </div>
             <p class="role" data-role></p>
-            <img class="name-portrait name-portrait--light" src="assets/img/mahesh-sketch.png?v=4" alt="" aria-hidden="true" />
+            <img class="name-portrait name-portrait--light" src="assets/img/mahesh-sketch.png?v=48" alt="" aria-hidden="true" />
             <img class="name-portrait name-portrait--dark" src="assets/img/mahesh-sketch-dark.png?v=1" alt="" aria-hidden="true" />
           </div>
         </div>
@@ -110,15 +95,11 @@
     </div>
   </div>
 
-  <script src="assets/js/render.js?v=37"></script>
-  <script src="assets/js/site.js?v=37"></script>
-  <script src="assets/js/admin.js?v=37"></script>
-  <script src="assets/js/chat.js?v=47"></script>
-  <script>
-    MKM.renderHome().then(function (site) {
-      if (window.MKM.onDataLoaded) window.MKM.onDataLoaded(site);
-    });
-  </script>
+  <script src="assets/js/render.js?v=48"></script>
+  <script src="assets/js/site.js?v=48"></script>
+  <script src="assets/js/admin.js?v=48"></script>
+  <script src="assets/js/chat.js?v=48"></script>
+  <script src="assets/js/home-init.js?v=48"></script>
   <!-- Cloudflare Web Analytics -->
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6d2f0ac929544ed1a84deaeffd1ffd50"}'></script>
   <!-- End Cloudflare Web Analytics -->
