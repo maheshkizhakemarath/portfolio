@@ -1607,6 +1607,26 @@ html.chat-mode .site-header::after {
   overflow: hidden;
 }
 
+/* On phones the chips sit in one swipeable row (hidden scrollbar, soft fade on the right
+   edge to hint there is more) instead of stacking into a tall block above the input. */
+@media (max-width: 600px) {
+  .chat-suggestions {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    margin-right: -24px;
+    padding-right: 24px;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+  }
+
+  .chat-suggestions::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .chat-suggestions.is-tucked {
   max-height: 0;
   margin-bottom: 0;
@@ -1615,6 +1635,8 @@ html.chat-mode .site-header::after {
 }
 
 .chat-chip {
+  flex-shrink: 0;
+  white-space: nowrap;
   padding: 7px 12px;
   font-size: 13px;
   text-align: left;

@@ -30,15 +30,15 @@
   var STORAGE_KEY = "mkm-chat";
   var GREETING =
     "Hello, and welcome! I'm an AI assistant answering on Mahesh's behalf, a bit like a secretary who knows his CV by heart, and I'm happy you dropped in. What would you like to know?";
+  // Each chip shows a short label and sends the full question.
   var SUGGESTIONS = [
-    "How did you grow a design studio from 1 to 40+?",
-    "How do you build design culture and coach leads?",
-    "How has your design work moved business results?",
-    "How are you shaping AI-first design at Qualitia?",
+    { label: "Grow a studio, 1 to 40+", q: "How did you grow a design studio from 1 to 40+?" },
+    { label: "Design culture and coaching", q: "How do you build design culture and coach leads?" },
+    { label: "Business impact", q: "How has your design work moved business results?" },
+    { label: "AI-first design", q: "How are you shaping AI-first design at Qualitia?" },
   ];
 
-
-  var FIT_CHIP = "Check my fit for a job description";
+  var FIT_CHIP = "Check my fit";
   var JD_MIN = 200;
   var JD_MAX = 7900;
   var JD_FILE_MAX = 5 * 1024 * 1024;
@@ -192,14 +192,14 @@
       openFit();
     });
     suggestions.appendChild(fitChip);
-    SUGGESTIONS.filter(function (q) {
-      return asked.indexOf(q) === -1;
-    }).forEach(function (q) {
-      var chip = el("button", "chat-chip", q);
+    SUGGESTIONS.filter(function (item) {
+      return asked.indexOf(item.q) === -1;
+    }).forEach(function (item) {
+      var chip = el("button", "chat-chip", item.label);
       chip.type = "button";
       chip.disabled = pending;
       chip.addEventListener("click", function () {
-        send(q);
+        send(item.q);
       });
       suggestions.appendChild(chip);
     });
