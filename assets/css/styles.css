@@ -25,6 +25,7 @@
 :root {
   --bg: oklch(1 0 0);
   --bg-card: oklch(0.985 0.003 85);
+  --chat-reply-bg: oklch(0.96 0.004 85);
   --text-primary: oklch(0.24 0.004 75);
   --text-secondary: oklch(0.58 0.006 80);
   --text-tertiary: oklch(0.58 0.006 80);
@@ -54,6 +55,7 @@
 [data-theme="dark"] {
   --bg: oklch(0.185 0.003 75);
   --bg-card: oklch(0.225 0.003 75);
+  --chat-reply-bg: oklch(0.25 0.003 75);
   --text-primary: oklch(0.93 0.003 85);
   --text-secondary: oklch(0.64 0.005 80);
   --text-tertiary: oklch(0.64 0.005 80);
@@ -1442,13 +1444,14 @@ html.chat-mode .shell {
 .chat-log {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   padding-bottom: 24px;
 }
 
 .chat-msg {
   max-width: 88%;
   padding: 10px 14px;
+  font-size: 13px;
   line-height: 1.5;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -1457,17 +1460,17 @@ html.chat-mode .shell {
 
 .chat-msg--user {
   align-self: flex-end;
-  color: var(--bg);
-  background: var(--text-primary);
+  color: var(--text-primary);
+  background: var(--chat-reply-bg);
   border-bottom-right-radius: 4px;
 }
 
 .chat-msg--assistant {
   align-self: flex-start;
   color: var(--text-primary);
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-bottom-left-radius: 4px;
+  max-width: 100%;
+  padding: 0;
+  border-radius: 0;
 }
 
 .chat-msg--error {
@@ -1563,7 +1566,7 @@ html.chat-mode .site-header::after {
 
 .chat-chip {
   padding: 7px 12px;
-  font-size: 14px;
+  font-size: 13px;
   text-align: left;
   color: var(--text-secondary);
   border: 1px solid var(--border);
@@ -1593,6 +1596,7 @@ html.chat-mode .site-header::after {
   max-height: 120px;
   padding: 10px 14px;
   font: inherit;
+  font-size: 13px;
   line-height: 1.4;
   letter-spacing: inherit;
   color: var(--text-primary);
@@ -1684,7 +1688,7 @@ html.chat-mode .site-header::after {
 
 .chat-fit-title {
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.45;
   color: var(--text-primary);
 }
@@ -1695,7 +1699,7 @@ html.chat-mode .site-header::after {
   max-height: 180px;
   padding: 10px 12px;
   font: inherit;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.45;
   letter-spacing: inherit;
   color: var(--text-primary);
@@ -1779,6 +1783,8 @@ html.chat-mode .site-header::after {
   width: 100%;
   max-width: 100%;
   padding: 16px;
+  background: var(--chat-reply-bg);
+  border-radius: 16px;
   white-space: normal;
 }
 
@@ -1790,7 +1796,7 @@ html.chat-mode .site-header::after {
 }
 
 .fit-score {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -1798,13 +1804,13 @@ html.chat-mode .site-header::after {
 }
 
 .fit-band {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--text-secondary);
 }
 
 .fit-role {
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-secondary);
 }
 
@@ -1824,6 +1830,7 @@ html.chat-mode .site-header::after {
 
 .fit-summary {
   margin-top: 14px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -1876,12 +1883,12 @@ html.chat-mode .site-header::after {
 }
 
 .fit-item-text {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
 }
 
 .fit-item-evidence {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.4;
   color: var(--text-secondary);
 }
@@ -1901,5 +1908,13 @@ html.chat-mode .site-header::after {
   .fit-tag {
     flex-basis: auto;
     padding: 2px 10px;
+  }
+}
+
+/* Phones zoom the page when a field under 16px is focused, so keep the inputs at 16px there. */
+@media (pointer: coarse) {
+  .chat-input,
+  .chat-fit-text {
+    font-size: 16px;
   }
 }
