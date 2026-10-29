@@ -1509,7 +1509,7 @@ html.chat-mode .shell {
   position: sticky;
   bottom: 0;
   margin-top: auto;
-  padding: 12px 0 20px;
+  padding: 12px 0 max(20px, env(safe-area-inset-bottom));
   background: var(--bg);
 }
 
@@ -1538,6 +1538,44 @@ html.chat-mode .site-header {
 
 html.chat-mode .chat-exit {
   top: 50px;
+}
+
+/* Phone keyboard open: the input rides above the keyboard, the header shrinks, and the
+   suggestions, note and fit link step aside so the conversation keeps the room. */
+html.chat-mode .site-header {
+  top: var(--vv-top, 0px);
+}
+
+html.chat-mode .chat-composer {
+  bottom: var(--kb-inset, 0px);
+}
+
+html.kb-open.chat-mode .site-header {
+  padding-top: 14px;
+  margin-bottom: 0;
+}
+
+html.kb-open.chat-mode .chat-exit {
+  top: 14px;
+}
+
+html.kb-open.chat-mode .chat-suggestions,
+html.kb-open.chat-mode .chat-note,
+html.kb-open.chat-mode .chat-fit-link {
+  display: none;
+}
+
+html.kb-open.chat-mode .chat-composer {
+  padding: 8px 0 10px;
+}
+
+html.kb-open.chat-mode .chat-fit-title,
+html.kb-open.chat-mode .chat-fit-privacy {
+  display: none;
+}
+
+html.kb-open.chat-mode .chat-fit-text {
+  max-height: 96px;
 }
 
 html.chat-mode .site-header::after {

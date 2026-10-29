@@ -217,6 +217,28 @@
   }
   window.addEventListener("scroll", syncSuggestionsToScroll, { passive: true });
 
+  // On phones the on-screen keyboard covers the bottom of the page without resizing it, so a
+  // bottom-pinned input ends up hidden behind it. Track the visible area and lift the input
+  // (and keep the header) inside it; while the keyboard is up, drop the extras to leave room.
+  var vv = window.visualViewport;
+  function syncKeyboard() {
+    var inset = 0;
+    var up = false;
+    if (vv && isOpen()) {
+      inset = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop));
+      up = window.innerHeight - vv.height > 120;
+    }
+    root.style.setProperty("--kb-inset", inset + "px");
+    root.style.setProperty("--vv-top", (vv && isOpen() ? Math.round(vv.offsetTop) : 0) + "px");
+    var wasUp = root.classList.contains("kb-open");
+    root.classList.toggle("kb-open", up);
+    if (up && !wasUp) scrollToEnd();
+  }
+  if (vv) {
+    vv.addEventListener("resize", syncKeyboard);
+    vv.addEventListener("scroll", syncKeyboard);
+  }
+
   function enter() {
     if (isOpen()) return;
     scrollBeforeOpen = window.scrollY;
@@ -239,6 +261,7 @@
   function exit() {
     if (!isOpen()) return;
     root.classList.remove("chat-mode");
+    syncKeyboard();
     view.hidden = true;
     exitBtn.hidden = true;
     window.scrollTo(0, scrollBeforeOpen);
