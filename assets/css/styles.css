@@ -1680,6 +1680,20 @@ html.chat-mode .site-header::after {
   color: var(--text-tertiary);
 }
 
+/* The longer placeholder has to stay on one line on narrow phones. The input itself stays
+   16px so iOS doesn't zoom; only the placeholder text is smaller. */
+@media (max-width: 480px) {
+  .chat-input::placeholder {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .chat-input::placeholder {
+    font-size: 12px;
+  }
+}
+
 .chat-input:focus {
   outline: none;
   border-color: var(--border-strong);

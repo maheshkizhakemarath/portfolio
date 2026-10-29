@@ -96,7 +96,7 @@
   var input = el("textarea", "chat-input");
   input.rows = 1;
   input.maxLength = MAX_LEN;
-  input.placeholder = "Ask away. AI can be wrong.";
+  input.placeholder = "Ask • AI can err • For critical info, connect.";
   input.setAttribute("aria-label", "Your question");
   var sendBtn = el("button", "chat-send");
   sendBtn.type = "submit";
