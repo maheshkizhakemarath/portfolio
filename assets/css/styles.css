@@ -125,6 +125,8 @@ html {
 
 .page {
   min-height: 100vh;
+  /* dvh tracks the visible area on phones, so the footer isn't pushed under the browser's toolbar */
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -330,6 +332,7 @@ html.is-ready .column > :nth-child(5) { animation-delay: 0.24s; }
 .site-footer {
   margin-top: auto;
   padding-top: 128px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -337,6 +340,12 @@ html.is-ready .column > :nth-child(5) { animation-delay: 0.24s; }
   font-size: 14px;
   line-height: 20px;
   color: var(--text-tertiary);
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding-top: 64px;
+  }
 }
 
 .theme-toggle {
