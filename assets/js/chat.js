@@ -34,7 +34,7 @@
     "How did you grow a design studio from 1 to 40+?",
     "How do you build design culture and coach leads?",
     "How has your design work moved business results?",
-    "How are you shaping AI-first product design at Qualitia?",
+    "How are you shaping AI-first design at Qualitia?",
   ];
 
 
