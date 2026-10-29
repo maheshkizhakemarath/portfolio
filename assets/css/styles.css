@@ -1541,7 +1541,7 @@ html.chat-mode .chat-exit {
 }
 
 /* Phone keyboard open: the input rides above the keyboard, the header shrinks, and the
-   suggestions, note and fit link step aside so the conversation keeps the room. */
+   suggestions step aside so the conversation keeps the room. */
 html.chat-mode .site-header {
   top: var(--vv-top, 0px);
 }
@@ -1559,9 +1559,7 @@ html.kb-open.chat-mode .chat-exit {
   top: 14px;
 }
 
-html.kb-open.chat-mode .chat-suggestions,
-html.kb-open.chat-mode .chat-note,
-html.kb-open.chat-mode .chat-fit-link {
+html.kb-open.chat-mode .chat-suggestions {
   display: none;
 }
 
@@ -1710,12 +1708,6 @@ html.chat-mode .site-header::after {
   height: 16px;
 }
 
-.chat-note {
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--text-tertiary);
-}
-
 .chat-exit:focus-visible,
 .chat-chip:focus-visible,
 .chat-send:focus-visible {
@@ -1730,17 +1722,6 @@ html.chat-mode .site-header::after {
 }
 
 /* ---------- Job description fit check ---------- */
-.chat-fit-link {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 13px;
-}
-
-.chat-fit-link:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
 .chat-chip--fit {
   color: var(--text-primary);
   border-color: var(--border-strong);
@@ -1843,7 +1824,6 @@ html.chat-mode .site-header::after {
   color: var(--text-tertiary);
 }
 
-.chat-fit-link:focus-visible,
 .chat-fit-upload:focus-visible,
 .chat-fit-run:focus-visible {
   outline: 2px solid var(--text-primary);

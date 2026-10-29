@@ -38,7 +38,7 @@
     { label: "Grow a studio, 1 to 40+", q: "How did you grow a design studio from 1 to 40+?" },
   ];
 
-  var FIT_CHIP = "Check my fit";
+  var FIT_CHIP = "Have a JD? Check my fit";
   var JD_MIN = 200;
   var JD_MAX = 7900;
   var JD_FILE_MAX = 5 * 1024 * 1024;
@@ -96,7 +96,7 @@
   var input = el("textarea", "chat-input");
   input.rows = 1;
   input.maxLength = MAX_LEN;
-  input.placeholder = "Ask a question…";
+  input.placeholder = "Ask away. AI can be wrong.";
   input.setAttribute("aria-label", "Your question");
   var sendBtn = el("button", "chat-send");
   sendBtn.type = "submit";
@@ -105,15 +105,6 @@
     '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M3.5 7.5L8 3l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   form.appendChild(input);
   form.appendChild(sendBtn);
-
-  var note = el(
-    "p",
-    "chat-note",
-    "AI can make mistakes. For anything important, please contact me directly."
-  );
-
-  var fitLink = el("button", "chat-fit-link text-link", "Have a job description? Check my fit");
-  fitLink.type = "button";
 
   var fitPanel = el("div", "chat-fit");
   fitPanel.hidden = true;
@@ -151,8 +142,6 @@
   composer.appendChild(suggestions);
   composer.appendChild(fitPanel);
   composer.appendChild(form);
-  composer.appendChild(fitLink);
-  composer.appendChild(note);
   view.appendChild(log);
   view.appendChild(composer);
   main.after(view);
@@ -294,7 +283,6 @@
     pending = on;
     sendBtn.disabled = on;
     input.disabled = on;
-    fitLink.disabled = on;
     fitRun.disabled = on;
     fitUpload.disabled = on;
     Array.prototype.forEach.call(suggestions.children, function (chip) {
@@ -449,10 +437,6 @@
     }
   });
   fitCancel.addEventListener("click", closeFit);
-  fitLink.addEventListener("click", function () {
-    if (fitPanel.hidden) openFit();
-    else closeFit();
-  });
   fitRun.addEventListener("click", function () {
     runFit(fitText.value);
   });
