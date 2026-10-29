@@ -38,6 +38,7 @@
     { label: "Grow a studio, 1 to 40+", q: "How did you grow a design studio from 1 to 40+?" },
   ];
 
+  var PLACEHOLDER = "Ask • AI can err • For critical info, connect.";
   var FIT_CHIP = "Have a JD? Check my fit";
   var JD_MIN = 200;
   var JD_MAX = 7900;
@@ -96,7 +97,7 @@
   var input = el("textarea", "chat-input");
   input.rows = 1;
   input.maxLength = MAX_LEN;
-  input.placeholder = "Ask • AI can err • For critical info, connect.";
+  input.placeholder = PLACEHOLDER;
   input.setAttribute("aria-label", "Your question");
   var sendBtn = el("button", "chat-send");
   sendBtn.type = "submit";
@@ -228,6 +229,29 @@
     vv.addEventListener("scroll", syncKeyboard);
   }
 
+  // Keep the placeholder on one line: if it would wrap, cut it short with an ellipsis.
+  var measure = document.createElement("canvas").getContext("2d");
+  function fitPlaceholder() {
+    var avail = input.clientWidth;
+    if (!avail || !measure) return;
+    var cs = window.getComputedStyle(input);
+    avail -= parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight) + 4;
+    measure.font = cs.fontWeight + " " + cs.fontSize + " " + cs.fontFamily;
+    if (measure.measureText(PLACEHOLDER).width <= avail) {
+      input.placeholder = PLACEHOLDER;
+      return;
+    }
+    var n = PLACEHOLDER.length;
+    var cut = PLACEHOLDER;
+    while (n > 1) {
+      cut = PLACEHOLDER.slice(0, n).replace(/[\s•,.]+$/, "") + "…";
+      if (measure.measureText(cut).width <= avail) break;
+      n--;
+    }
+    input.placeholder = cut;
+  }
+  window.addEventListener("resize", fitPlaceholder);
+
   function enter() {
     if (isOpen()) return;
     scrollBeforeOpen = window.scrollY;
@@ -243,6 +267,7 @@
     root.classList.add("chat-mode");
     view.hidden = false;
     exitBtn.hidden = false;
+    fitPlaceholder();
     scrollToEnd();
     input.focus({ preventScroll: true });
   }
