@@ -31,10 +31,10 @@
   var GREETING =
     "Hello, and welcome! I'm an AI assistant answering on Mahesh's behalf, a bit like a secretary who knows his CV by heart, and I'm happy you dropped in. What would you like to know?";
   var SUGGESTIONS = [
-    "What measurable impact has your work had?",
-    "How large a design team have you led?",
-    "Have you designed AI products?",
-    "How do you work with product and engineering?",
+    "How did you grow a design studio from 1 to 40+?",
+    "How do you build design culture and coach leads?",
+    "How has your design work moved business results?",
+    "How are you shaping AI-first product design at Qualitia?",
   ];
 
 
